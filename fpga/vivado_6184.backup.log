@@ -1,0 +1,26 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:36:41 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Wed Mar  6 19:54:31 2024
+# Process ID: 6184
+# Current directory: /home/binh/work/pulpino-binh/fpga
+# Command line: vivado
+# Log file: /home/binh/work/pulpino-binh/fpga/vivado.log
+# Journal file: /home/binh/work/pulpino-binh/fpga/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /home/binh/work/pulpino-binh/fpga/pulpino/pulpino.xpr
+CRITICAL WARNING: [Project 1-863] The design checkpoint file /home/binh/work/pulpino-binh/fpga/pulpino/pulpino.srcs/sources_1/ip/xilinx_mem_8192x32/xilinx_mem_8192x32.dcp was generated for a block design or an IP or BD by an out of context synthesis run and should not directly be used as a source in a Vivado flow to refer to an IP source.  As of 2017.1, the DCP from OOC runs will not contain XDC timing constraints because these are expected to be referred to by the IP .xci or .xcix file source. DCP files prior to 2017.1 will contain incorrect constraints because they were generated with default OOC clock period which will not likely match your top level clock constraints when used in the full design context. 
+ 
+Scanning sources...
+Finished scanning sources
+CRITICAL WARNING: [Project 1-863] The design checkpoint file /home/binh/work/pulpino-binh/fpga/pulpino/pulpino.srcs/sources_1/ip/xilinx_mem_8192x32/xilinx_mem_8192x32.dcp was generated for a block design or an IP or BD by an out of context synthesis run and should not directly be used as a source in a Vivado flow to refer to an IP source.  As of 2017.1, the DCP from OOC runs will not contain XDC timing constraints because these are expected to be referred to by the IP .xci or .xcix file source. DCP files prior to 2017.1 will contain incorrect constraints because they were generated with default OOC clock period which will not likely match your top level clock constraints when used in the full design context. 
+ 
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/binh/Downloads/vivado-2018.3/Vivado/2018.3/data/ip'.
+update_compile_order -fileset sources_1
+close_project
+exit
+INFO: [Common 17-206] Exiting Vivado at Wed Mar  6 20:32:13 2024...

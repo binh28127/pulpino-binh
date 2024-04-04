@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../libs/sys_lib/inc/event.h
+pulpino.h
+-
+
+../libs/sys_lib/inc/gpio.h
+pulpino.h
+-
+
+../libs/sys_lib/inc/int.h
+spr-defs.h
+../libs/sys_lib/inc/spr-defs.h
+
+../libs/sys_lib/inc/pulpino.h
+
+../libs/sys_lib/inc/spr-defs.h
+
+../libs/sys_lib/inc/utils.h
+event.h
+../libs/sys_lib/inc/event.h
+
+/home/binh/work/pulpino-binh/sw/apps/fpga/gpio_demo/main.c
+stdio.h
+-
+gpio.h
+/home/binh/work/pulpino-binh/sw/apps/fpga/gpio_demo/gpio.h
+int.h
+/home/binh/work/pulpino-binh/sw/apps/fpga/gpio_demo/int.h
+utils.h
+/home/binh/work/pulpino-binh/sw/apps/fpga/gpio_demo/utils.h
+

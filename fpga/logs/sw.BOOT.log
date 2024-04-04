@@ -1,0 +1,8 @@
+cp ../pulpemu/pulpemu_top.bit sd_image/pulpemu_top.bit
+bootgen -image ./boot.bif -o i ./sd_image/BOOT.BIN -w on
+
+
+****** Xilinx Bootgen v2018.3
+  **** Build date : Dec  6 2018-23:41:49
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+

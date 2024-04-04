@@ -1,0 +1,24 @@
+cp ../pulpemu/pulpemu_top.sysdef hsi/pulpemu_top.sysdef
+cd device_tree_repo && git checkout -f tags/xilinx-v2018.3
+HEAD is now at b7466bb kernel: v2018.3: Sync dts files
+cd hsi && hsi -mode batch -source dt.tcl -tclargs dts_out/2018.3-zedboard
+
+****** hsi v2018.3 (64-bit)
+  **** SW Build 2405991 on Thu Dec  6 23:36:41 MST 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source dt.tcl
+# set out_dir [lindex $argv 0]
+# if { ${out_dir} eq "" } {
+#    puts "ERROR: Please supply an output directory!"
+#    exit 1
+# }
+# open_hw_design pulpemu_top.sysdef
+INFO: [Hsi 55-1698] elapsed time for repository loading 0 seconds
+# set_repo_path ../device_tree_repo
+# create_sw_design device-tree -os device_tree -proc ps7_cortexa9_0
+# generate_target -dir ${out_dir}
+WARNING: ps7_ethernet_0: No reset found
+WARNING: ps7_usb_0: No reset found
+INFO: [Common 17-206] Exiting hsi at Fri Mar  1 07:18:34 2024...
+linux-xlnx/scripts/dtc/dtc -I dts -O dtb -o sd_image/devicetree.dtb device-tree/2018.3-zedboard.dts

@@ -1,0 +1,107 @@
+make -C ips/xilinx_clock_manager/ clean
+make[1]: Entering directory '/home/binh/work/pulpino-18/fpga/ips/xilinx_clock_manager'
+rm -rf ip/*
+rm -rf xilinx_clock_manager.xpr
+rm -rf xilinx_clock_manager.hw
+rm -rf xilinx_clock_manager.data
+rm -rf xilinx_clock_manager.runs
+rm -rf xilinx_clock_manager.sim
+rm -rf xilinx_clock_manager.srcs
+rm -rf xilinx_clock_manager.cache
+rm -rf xilinx_clock_manager.ip_user_files
+rm -rf component.xml
+rm -rf vivado*.jou
+rm -rf vivado*.log
+rm -rf vivado*.str
+rm -rf xgui
+rm -rf .Xil
+make[1]: Leaving directory '/home/binh/work/pulpino-18/fpga/ips/xilinx_clock_manager'
+make -C ips/xilinx_mem_8192x32/ clean
+make[1]: Entering directory '/home/binh/work/pulpino-18/fpga/ips/xilinx_mem_8192x32'
+rm -rf ip/*
+rm -rf xilinx_mem_8192x32.xpr
+rm -rf xilinx_mem_8192x32.hw
+rm -rf xilinx_mem_8192x32.data
+rm -rf xilinx_mem_8192x32.runs
+rm -rf xilinx_mem_8192x32.sim
+rm -rf xilinx_mem_8192x32.srcs
+rm -rf xilinx_mem_8192x32.cache
+rm -rf xilinx_mem_8192x32.ip_user_files
+rm -rf component.xml
+rm -rf vivado*.jou
+rm -rf vivado*.log
+rm -rf vivado*.str
+rm -rf xgui
+make[1]: Leaving directory '/home/binh/work/pulpino-18/fpga/ips/xilinx_mem_8192x32'
+make -C ips/xilinx_fp_fma/ clean
+make[1]: Entering directory '/home/binh/work/pulpino-18/fpga/ips/xilinx_fp_fma'
+rm -rf ip/*
+rm -rf xilinx_fp_fma.xpr
+rm -rf xilinx_fp_fma.hw
+rm -rf xilinx_fp_fma.data
+rm -rf xilinx_fp_fma.runs
+rm -rf xilinx_fp_fma.sim
+rm -rf xilinx_fp_fma.srcs
+rm -rf xilinx_fp_fma.cache
+rm -rf xilinx_fp_fma.ip_user_files
+rm -rf component.xml
+rm -rf vivado*.jou
+rm -rf vivado*.log
+rm -rf vivado*.str
+rm -rf xgui
+make[1]: Leaving directory '/home/binh/work/pulpino-18/fpga/ips/xilinx_fp_fma'
+make -C pulpino clean
+make[1]: Entering directory '/home/binh/work/pulpino-18/fpga/pulpino'
+rm -rf pulpino.xpr
+rm -rf pulpino.data
+rm -rf pulpino.runs
+rm -rf pulpino.srcs
+rm -rf pulpino.sim
+rm -rf pulpino.cache
+rm -rf pulpino.ioplanning
+rm -rf pulpino.ip_user_files
+rm -rf pulpino.hw
+rm -rf component.xml
+rm -rf vivado*
+rm -rf .Xil
+rm -rf xgui
+rm -rf pulpino.edn
+rm -rf pulpino_stub.v
+rm -rf pulpino_funcsim.v
+make[1]: Leaving directory '/home/binh/work/pulpino-18/fpga/pulpino'
+make -C pulpemu clean
+make[1]: Entering directory '/home/binh/work/pulpino-18/fpga/pulpemu'
+rm -rf pulpemu.hw
+rm -rf pulpemu.xpr
+rm -rf pulpemu.data
+rm -rf pulpemu.runs
+rm -rf pulpemu.srcs
+rm -rf pulpemu.sim
+rm -rf pulpemu.sdk
+rm -rf pulpemu.cache
+rm -rf pulpemu.ioplanning
+rm -rf pulpemu.ip_user_files
+rm -rf pulpemu.hwdef
+rm -rf *.log
+rm -rf ulpsoc.txt
+rm -rf ulpcluster.txt
+rm -rf component.xml
+rm -rf vivado*
+rm -rf xgui
+rm -rf .Xil
+rm -rf ps_clock*
+rm -rf pulpemu_top*
+rm -rf pulpemu.edn
+make[1]: Leaving directory '/home/binh/work/pulpino-18/fpga/pulpemu'
+make -C sw clean
+make[1]: Entering directory '/home/binh/work/pulpino-18/fpga/sw'
+make -C apps/spiload clean ;
+make[2]: Entering directory '/home/binh/work/pulpino-18/fpga/sw/apps/spiload'
+make[2]: Leaving directory '/home/binh/work/pulpino-18/fpga/sw/apps/spiload'
+rm -f u-boot-xlnx/.config
+rm -f linux-xlnx/.config
+rm -f buildroot/.config
+rm -f hsi/pulpemu_top.sysdef
+rm -fr hsi/dts_out/
+rm -f sd_image/*
+make[1]: Leaving directory '/home/binh/work/pulpino-18/fpga/sw'

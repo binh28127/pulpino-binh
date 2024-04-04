@@ -1,0 +1,2524 @@
+cd buildroot && make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- busybox-source
+make[1]: Entering directory '/home/binh/work/pulpino-binh/fpga/sw/buildroot'
+make[1]: Leaving directory '/home/binh/work/pulpino-binh/fpga/sw/buildroot'
+cp config/busybox.config.2018.3 buildroot/output/build/busybox-1.27.1/.config
+cd buildroot && make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- -j4
+make[1]: Entering directory '/home/binh/work/pulpino-binh/fpga/sw/buildroot'
+/usr/bin/sed -i -e "/\\<CONFIG_NOMMU\\>/d" /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/busybox-1.27.1/.config
+echo '# CONFIG_NOMMU is not set' >> /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/busybox-1.27.1/.config
+/usr/bin/sed -i -e "/\\<CONFIG_INIT\\>/d" /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/busybox-1.27.1/.config
+echo 'CONFIG_INIT=y' >> /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/busybox-1.27.1/.config
+make[2]: Entering directory '/home/binh/work/pulpino-binh/fpga/sw/buildroot'
+make[2]: warning: jobserver unavailable: using -j1.  Add '+' to parent make rule.
+scripts/kconfig/conf -o Config.in
+.config:98:warning: trying to assign nonexistent symbol FEATURE_SYSTEMD
+.config:105:warning: trying to assign nonexistent symbol FEATURE_USE_TERMIOS
+.config:154:warning: trying to assign nonexistent symbol FEATURE_DPKG_DEB_EXTRACT_ONLY
+.config:202:warning: trying to assign nonexistent symbol CATV
+.config:318:warning: trying to assign nonexistent symbol FEATURE_AUTOWIDTH
+.config:433:warning: trying to assign nonexistent symbol FEATURE_GREP_EGREP_ALIAS
+.config:434:warning: trying to assign nonexistent symbol FEATURE_GREP_FGREP_ALIAS
+.config:457:warning: trying to assign nonexistent symbol FEATURE_EXTRA_QUIET
+.config:459:warning: trying to assign nonexistent symbol FEATURE_INITRD
+.config:516:warning: trying to assign nonexistent symbol FEATURE_MODPROBE_SMALL_OPTIONS_ON_CMDLINE
+.config:617:warning: trying to assign nonexistent symbol SWAPONOFF
+.config:722:warning: trying to assign nonexistent symbol FEATURE_LAST_SMALL
+.config:777:warning: trying to assign nonexistent symbol FEATURE_FTP_WRITE
+.config:779:warning: trying to assign nonexistent symbol FEATURE_FTP_AUTHENTICATION
+.config:804:warning: trying to assign nonexistent symbol IFUPDOWN
+.config:807:warning: trying to assign nonexistent symbol FEATURE_IFUPDOWN_IP_BUILTIN
+.config:808:warning: trying to assign nonexistent symbol FEATURE_IFUPDOWN_IFCONFIG_BUILTIN
+.config:826:warning: trying to assign nonexistent symbol FEATURE_IP_SHORT_FORMS
+.config:867:warning: trying to assign nonexistent symbol FEATURE_TRACEROUTE_SOURCE_ROUTE
+.config:996:warning: trying to assign nonexistent symbol ASH_BUILTIN_ECHO
+.config:997:warning: trying to assign nonexistent symbol ASH_BUILTIN_PRINTF
+.config:998:warning: trying to assign nonexistent symbol ASH_BUILTIN_TEST
+.config:1023:warning: trying to assign nonexistent symbol FEATURE_SH_IS_ASH
+.config:1024:warning: trying to assign nonexistent symbol FEATURE_SH_IS_HUSH
+.config:1025:warning: trying to assign nonexistent symbol FEATURE_SH_IS_NONE
+.config:1026:warning: trying to assign nonexistent symbol FEATURE_BASH_IS_ASH
+.config:1027:warning: trying to assign nonexistent symbol FEATURE_BASH_IS_HUSH
+.config:1028:warning: trying to assign nonexistent symbol FEATURE_BASH_IS_NONE
+.config:1029:warning: trying to assign nonexistent symbol SH_MATH_SUPPORT
+.config:1030:warning: trying to assign nonexistent symbol SH_MATH_SUPPORT_64
+#
+# using defaults found in .config
+#
+*
+* Busybox Configuration
+*
+*
+* Busybox Settings
+*
+Enable options for full-blown desktop systems (DESKTOP) [Y/n/?] y
+Provide compatible behavior for rare corner cases (bigger code) (EXTRA_COMPAT) [N/y/?] n
+Enable obsolete features removed before SUSv3 (INCLUDE_SUSv2) [Y/n/?] y
+Avoid using GCC-specific code constructs (USE_PORTABLE_CODE) [N/y/?] n
+Show applet usage messages (SHOW_USAGE) [Y/n/?] y
+  Show verbose applet usage messages (FEATURE_VERBOSE_USAGE) [Y/n/?] y
+  Store applet usage messages in compressed form (FEATURE_COMPRESS_USAGE) [N/y/?] n
+Include busybox applet (BUSYBOX) [Y/n/?] (NEW)   Support --install [-s] to install applet links at runtime (FEATURE_INSTALLER) [Y/n/?] y
+Don't use /usr (INSTALL_NO_USR) [N/y/?] n
+Support PAM (Pluggable Authentication Modules) (PAM) [N/y/?] n
+Support --long-options (LONG_OPTS) [Y/?] y
+Use the devpts filesystem for Unix98 PTYs (FEATURE_DEVPTS) [Y/n/?] y
+Clean up all memory before exiting (usually not needed) (FEATURE_CLEAN_UP) [Y/n/?] y
+Support utmp file (FEATURE_UTMP) [Y/n/?] y
+  Support wtmp file (FEATURE_WTMP) [Y/n/?] y
+Support writing pidfiles (FEATURE_PIDFILE) [N/y/?] n
+Support SUID/SGID handling (FEATURE_SUID) [Y/n/?] y
+  Runtime SUID/SGID configuration via /etc/busybox.conf (FEATURE_SUID_CONFIG) [N/y/?] n
+Support NSA Security Enhanced Linux (SELINUX) [N/y/?] n
+exec prefers applets (FEATURE_PREFER_APPLETS) [N/y/?] n
+Path to BusyBox executable (BUSYBOX_EXEC_PATH) [/proc/self/exe] /proc/self/exe
+*
+* Build Options
+*
+Build BusyBox as a static binary (no shared libs) (STATIC) [N/y/?] n
+  Build BusyBox as a position independent executable (PIE) [N/y/?] n
+Force NOMMU build (NOMMU) [N/y/?] n
+Build shared libbusybox (BUILD_LIBBUSYBOX) [N/y/?] n
+Build with Large File Support (for accessing files > 2 GB) (LFS) [Y/n/?] y
+Cross Compiler prefix (CROSS_COMPILER_PREFIX) [] 
+Path to sysroot (SYSROOT) [] 
+Additional CFLAGS (EXTRA_CFLAGS) [] 
+Additional LDFLAGS (EXTRA_LDFLAGS) [] 
+Additional LDLIBS (EXTRA_LDLIBS) [] 
+*
+* Installation Options ("make install" behavior)
+*
+What kind of applet links to install
+> 1. as soft-links (INSTALL_APPLET_SYMLINKS)
+  2. as hard-links (INSTALL_APPLET_HARDLINKS)
+  3. as script wrappers (INSTALL_APPLET_SCRIPT_WRAPPERS)
+  4. not installed (INSTALL_APPLET_DONT)
+choice[1-4?]: 1
+BusyBox installation prefix (PREFIX) [./_install] ./_install
+*
+* Debugging Options
+*
+Build BusyBox with extra Debugging symbols (DEBUG) [N/y/?] n
+Enable runtime sanitizers (ASAN/LSAN/USAN/etc...) (DEBUG_SANITIZE) [N/y/?] (NEW) Build unit tests (UNIT_TEST) [N/y/?] n
+Abort compilation on any warning (WERROR) [N/y/?] n
+Additional debugging library
+> 1. None (NO_DEBUG_LIB)
+  2. Dmalloc (DMALLOC)
+  3. Electric-fence (EFENCE)
+choice[1-3?]: 1
+*
+* Busybox Library Tuning
+*
+Use the end of BSS page (FEATURE_USE_BSS_TAIL) [N/y/?] (NEW) Support RTMIN[+n] and RTMAX[-n] signal names (FEATURE_RTMINMAX) [Y/n/?] y
+Buffer allocation policy
+> 1. Allocate with Malloc (FEATURE_BUFFERS_USE_MALLOC)
+  2. Allocate on the Stack (FEATURE_BUFFERS_GO_ON_STACK)
+  3. Allocate in the .bss section (FEATURE_BUFFERS_GO_IN_BSS)
+choice[1-3?]: 1
+Minimum password length (PASSWORD_MINLEN) [6] 6
+MD5: Trade bytes for speed (0:fast, 3:slow) (MD5_SMALL) [1] 1
+SHA3: Trade bytes for speed (0:fast, 1:slow) (SHA3_SMALL) [1] 1
+Faster /proc scanning code (+100 bytes) (FEATURE_FAST_TOP) [N/y/?] n
+Support /etc/networks (FEATURE_ETC_NETWORKS) [N/y/?] n
+Command line editing (FEATURE_EDITING) [Y/n/?] y
+  Maximum length of input (FEATURE_EDITING_MAX_LEN) [1024] 1024
+  vi-style line editing commands (FEATURE_EDITING_VI) [Y/n/?] y
+  History size (FEATURE_EDITING_HISTORY) [999] 999
+  History saving (FEATURE_EDITING_SAVEHISTORY) [Y/n/?] y
+    Save history on shell exit, not after every command (FEATURE_EDITING_SAVE_ON_EXIT) [N/y/?] n
+  Reverse history search (FEATURE_REVERSE_SEARCH) [Y/n/?] y
+  Tab completion (FEATURE_TAB_COMPLETION) [Y/n] y
+    Username completion (FEATURE_USERNAME_COMPLETION) [N/y] n
+  Fancy shell prompts (FEATURE_EDITING_FANCY_PROMPT) [Y/n/?] y
+  Query cursor position from terminal (FEATURE_EDITING_ASK_TERMINAL) [N/y/?] n
+Enable locale support (system needs locale for this to work) (LOCALE_SUPPORT) [N/y/?] n
+Support Unicode (UNICODE_SUPPORT) [N/y/?] n
+Non-POSIX, but safer, copying to special nodes (FEATURE_NON_POSIX_CP) [Y/n/?] y
+Give more precise messages when copy fails (cp, mv etc) (FEATURE_VERBOSE_CP_MESSAGE) [N/y/?] n
+Use sendfile system call (FEATURE_USE_SENDFILE) [Y/n/?] y
+Copy buffer size, in kilobytes (FEATURE_COPYBUF_KB) [4] 4
+Skip rootfs in mount table (FEATURE_SKIP_ROOTFS) [Y/n/?] y
+Use clock_gettime(CLOCK_MONOTONIC) syscall (MONOTONIC_SYSCALL) [Y/n/?] y
+Use ioctl names rather than hex values in error messages (IOCTL_HEX2STR_ERROR) [Y/n/?] y
+Support infiniband HW (FEATURE_HWIB) [Y/n/?] y
+*
+* Applets
+*
+*
+* Archival Utilities
+*
+Make tar, rpm, modprobe etc understand .xz data (FEATURE_SEAMLESS_XZ) [N/y] n
+Make tar, rpm, modprobe etc understand .lzma data (FEATURE_SEAMLESS_LZMA) [N/y] n
+Make tar, rpm, modprobe etc understand .bz2 data (FEATURE_SEAMLESS_BZ2) [N/y] n
+Make tar, rpm, modprobe etc understand .gz data (FEATURE_SEAMLESS_GZ) [N/y] n
+Make tar, rpm, modprobe etc understand .Z data (FEATURE_SEAMLESS_Z) [N/y] n
+ar (AR) [Y/n/?] y
+  Support long filenames (not needed for debs) (FEATURE_AR_LONG_FILENAMES) [N/y/?] n
+  Support archive creation (FEATURE_AR_CREATE) [Y/n/?] y
+uncompress (UNCOMPRESS) [N/y/?] n
+gunzip (GUNZIP) [Y/n/?] y
+zcat (ZCAT) [Y/n/?] (NEW)   Enable long options (FEATURE_GUNZIP_LONG_OPTIONS) [Y/n] (NEW) bunzip2 (BUNZIP2) [Y/n/?] y
+bzcat (BZCAT) [Y/n/?] (NEW) unlzma (UNLZMA) [Y/n/?] y
+lzcat (LZCAT) [Y/n/?] (NEW) lzma -d (LZMA) [Y/n/?] y
+  Optimize for speed (FEATURE_LZMA_FAST) [N/y/?] n
+unxz (UNXZ) [Y/n/?] y
+xzcat (XZCAT) [Y/n/?] (NEW) xz -d (XZ) [Y/n/?] y
+bzip2 (BZIP2) [N/y/?] n
+  Enable decompression (FEATURE_BZIP2_DECOMPRESS) [Y/?] (NEW) y
+cpio (CPIO) [Y/n/?] y
+  Support archive creation (FEATURE_CPIO_O) [N/y/?] n
+dpkg (DPKG) [N/y/?] n
+dpkg_deb (DPKG_DEB) [N/y/?] n
+gzip (GZIP) [Y/n/?] y
+  Enable long options (FEATURE_GZIP_LONG_OPTIONS) [N/y] n
+  Trade memory for speed (0:small,slow - 2:fast,big) (GZIP_FAST) [0] 0
+  Enable compression levels (FEATURE_GZIP_LEVELS) [N/y/?] (NEW)   Enable decompression (FEATURE_GZIP_DECOMPRESS) [Y/?] (NEW) y
+lzop (LZOP) [N/y/?] n
+unlzop (UNLZOP) [N/y/?] (NEW) lzopcat (LZOPCAT) [N/y/?] (NEW) rpm (RPM) [N/y/?] n
+rpm2cpio (RPM2CPIO) [N/y/?] n
+tar (TAR) [Y/n/?] y
+  Enable long options (FEATURE_TAR_LONG_OPTIONS) [Y/n] y
+  Enable -c (archive creation) (FEATURE_TAR_CREATE) [Y/n] y
+  Enable -X (exclude from) and -T (include from) options) (FEATURE_TAR_FROM) [Y/n/?] y
+  Support old tar header format (FEATURE_TAR_OLDGNU_COMPATIBILITY) [N/y/?] n
+  Enable untarring of tarballs with checksums produced by buggy Sun tar (FEATURE_TAR_OLDSUN_COMPATIBILITY) [N/y/?] n
+  Support GNU tar extensions (long filenames) (FEATURE_TAR_GNU_EXTENSIONS) [Y/n] y
+  Support writing to an external program (--to-command) (FEATURE_TAR_TO_COMMAND) [Y/n/?] y
+  Enable use of user and group names (FEATURE_TAR_UNAME_GNAME) [N/y/?] n
+  Enable -m (do not preserve time) GNU option (FEATURE_TAR_NOPRESERVE_TIME) [N/y] n
+unzip (UNZIP) [Y/n/?] y
+  Read and use Central Directory data (FEATURE_UNZIP_CDF) [Y/n/?] (NEW)     Support compression method 12 (bzip2) (FEATURE_UNZIP_BZIP2) [Y/n] (NEW)     Support compression method 14 (lzma) (FEATURE_UNZIP_LZMA) [Y/n] (NEW)     Support compression method 95 (xz) (FEATURE_UNZIP_XZ) [Y/n] (NEW) *
+* Coreutils
+*
+basename (BASENAME) [Y/n/?] y
+cat (CAT) [Y/n/?] y
+  cat -v[etA] (FEATURE_CATV) [Y/n/?] (NEW) chgrp (CHGRP) [Y/n/?] y
+chmod (CHMOD) [Y/n/?] y
+chown (CHOWN) [Y/n/?] y
+  Enable long options (FEATURE_CHOWN_LONG_OPTIONS) [N/y] n
+chroot (CHROOT) [Y/n/?] y
+cksum (CKSUM) [Y/n/?] y
+comm (COMM) [N/y/?] n
+cp (CP) [Y/n/?] y
+  Enable long options (FEATURE_CP_LONG_OPTIONS) [N/y/?] n
+cut (CUT) [Y/n/?] y
+date (DATE) [Y/n/?] y
+  Enable ISO date format output (-I) (FEATURE_DATE_ISOFMT) [Y/n/?] y
+  Support %[num]N nanosecond format specifier (FEATURE_DATE_NANO) [N/y/?] n
+  Support weird 'date MMDDhhmm[[YY]YY][.ss]' format (FEATURE_DATE_COMPAT) [Y/n/?] y
+dd (DD) [Y/n/?] y
+  Enable signal handling for status reporting (FEATURE_DD_SIGNAL_HANDLING) [Y/n/?] y
+    Enable the third status line upon signal (FEATURE_DD_THIRD_STATUS_LINE) [N/y/?] n
+  Enable ibs, obs and conv options (FEATURE_DD_IBS_OBS) [Y/n/?] y
+  Enable status display options (FEATURE_DD_STATUS) [Y/n/?] (NEW) df (DF) [Y/n/?] y
+  Enable -a, -i, -B (FEATURE_DF_FANCY) [N/y/?] n
+dirname (DIRNAME) [Y/n/?] y
+dos2unix (DOS2UNIX) [Y/n/?] y
+unix2dos (UNIX2DOS) [Y/n/?] y
+du (default blocksize of 512 bytes) (DU) [Y/n/?] y
+  Use a default blocksize of 1024 bytes (1K) (FEATURE_DU_DEFAULT_BLOCKSIZE_1K) [Y/n/?] y
+echo (basic SuSv3 version taking no options) (ECHO) [Y/n/?] y
+  Enable -n and -e options (FEATURE_FANCY_ECHO) [Y/n] y
+env (ENV) [Y/n/?] y
+  Enable long options (FEATURE_ENV_LONG_OPTIONS) [N/y] n
+expand (EXPAND) [N/y/?] n
+unexpand (UNEXPAND) [N/y/?] n
+expr (EXPR) [Y/n/?] y
+  Extend Posix numbers support to 64 bit (EXPR_MATH_SUPPORT_64) [Y/n/?] y
+factor (FACTOR) [Y/n/?] (NEW) false (FALSE) [Y/n/?] y
+fold (FOLD) [Y/n/?] y
+fsync (FSYNC) [N/y/?] n
+head (HEAD) [Y/n/?] y
+  Enable -c, -q, and -v (FEATURE_FANCY_HEAD) [Y/n] y
+hostid (HOSTID) [Y/n/?] y
+id (ID) [Y/n/?] y
+groups (GROUPS) [N/y/?] n
+install (INSTALL) [Y/n/?] y
+  Enable long options (FEATURE_INSTALL_LONG_OPTIONS) [Y/n] y
+link (LINK) [Y/n/?] (NEW) ln (LN) [Y/n/?] y
+logname (LOGNAME) [Y/n/?] y
+ls (LS) [Y/n/?] y
+  Enable filetyping options (-p and -F) (FEATURE_LS_FILETYPES) [Y/n] y
+  Enable symlinks dereferencing (-L) (FEATURE_LS_FOLLOWLINKS) [Y/n] y
+  Enable recursion (-R) (FEATURE_LS_RECURSIVE) [Y/n] y
+  Enable -w WIDTH and window size autodetection (FEATURE_LS_WIDTH) [Y/n] (NEW)   Sort the file names (FEATURE_LS_SORTFILES) [Y/n/?] y
+  Show file timestamps (FEATURE_LS_TIMESTAMPS) [Y/n/?] y
+  Show username/groupnames (FEATURE_LS_USERNAME) [Y/n/?] y
+  Allow use of color to identify file types (FEATURE_LS_COLOR) [Y/n/?] y
+    Produce colored ls output by default (FEATURE_LS_COLOR_IS_DEFAULT) [Y/n/?] y
+md5sum (MD5SUM) [Y/n/?] y
+sha1sum (SHA1SUM) [Y/n/?] y
+sha256sum (SHA256SUM) [Y/n/?] y
+sha512sum (SHA512SUM) [Y/n/?] y
+sha3sum (SHA3SUM) [Y/n/?] y
+  *
+  * Common options for md5sum, sha1sum, sha256sum, sha512sum, sha3sum
+  *
+  Enable -c, -s and -w options (FEATURE_MD5_SHA1_SUM_CHECK) [Y/n/?] y
+mkdir (MKDIR) [Y/n/?] y
+  Enable long options (FEATURE_MKDIR_LONG_OPTIONS) [Y/n] y
+mkfifo (MKFIFO) [Y/n/?] y
+mknod (MKNOD) [Y/n/?] y
+mktemp (MKTEMP) [Y/n/?] y
+mv (MV) [Y/n/?] y
+  Enable long options (FEATURE_MV_LONG_OPTIONS) [Y/n] y
+nice (NICE) [Y/n/?] y
+nl (NL) [Y/n/?] (NEW) nohup (NOHUP) [Y/n/?] y
+nproc (NPROC) [Y/n/?] (NEW) od (OD) [Y/n/?] y
+paste (PASTE) [Y/n/?] (NEW) printenv (PRINTENV) [Y/n/?] y
+printf (PRINTF) [Y/n/?] y
+pwd (PWD) [Y/n/?] y
+readlink (READLINK) [Y/n/?] y
+  Enable canonicalization by following all symlinks (-f) (FEATURE_READLINK_FOLLOW) [Y/n/?] y
+realpath (REALPATH) [Y/n/?] y
+rm (RM) [Y/n/?] y
+rmdir (RMDIR) [Y/n/?] y
+  Enable long options (FEATURE_RMDIR_LONG_OPTIONS) [N/y/?] n
+seq (SEQ) [Y/n/?] y
+shred (SHRED) [Y/n/?] (NEW) shuf (SHUF) [N/y/?] n
+sleep (SLEEP) [Y/n/?] y
+  Enable multiple arguments and s/m/h/d suffixes (FEATURE_FANCY_SLEEP) [N/y/?] n
+sort (SORT) [Y/n/?] y
+  Full SuSv3 compliant sort (support -ktcsbdfiozgM) (FEATURE_SORT_BIG) [Y/n/?] y
+split (SPLIT) [N/y/?] n
+stat (STAT) [N/y/?] n
+stty (STTY) [Y/n/?] y
+sum (SUM) [N/y/?] n
+sync (SYNC) [Y/n/?] y
+  Enable -d and -f flags (requires syncfs(2) in libc) (FEATURE_SYNC_FANCY) [Y/n/?] (NEW) tac (TAC) [N/y/?] n
+tail (TAIL) [Y/n/?] y
+  Enable -q, -s, -v, and -F options (FEATURE_FANCY_TAIL) [Y/n/?] y
+tee (TEE) [Y/n/?] y
+  Enable block I/O (larger/faster) instead of byte I/O (FEATURE_TEE_USE_BLOCK_IO) [Y/n/?] y
+test (TEST) [Y/n/?] y
+test as [ (TEST1) [Y/n/?] (NEW) test as [[ (TEST2) [Y/n/?] (NEW)   Extend test to 64 bit (FEATURE_TEST_64) [Y/n/?] y
+timeout (TIMEOUT) [N/y/?] n
+touch (TOUCH) [Y/n/?] y
+  Add support for -h (FEATURE_TOUCH_NODEREF) [N/y/?] n
+  Add support for SUSV3 features (-d -t -r) (FEATURE_TOUCH_SUSV3) [Y/n/?] y
+tr (TR) [Y/n/?] y
+  Enable character classes (such as [:upper:]) (FEATURE_TR_CLASSES) [Y/n/?] y
+  Enable equivalence classes (FEATURE_TR_EQUIV) [Y/n/?] y
+true (TRUE) [Y/n/?] y
+truncate (TRUNCATE) [Y/n/?] (NEW) tty (TTY) [Y/n/?] y
+uname (UNAME) [Y/n/?] y
+  Operating system name (UNAME_OSNAME) [GNU/Linux] (NEW) uniq (UNIQ) [Y/n/?] y
+unlink (UNLINK) [Y/n/?] y
+usleep (USLEEP) [Y/n/?] y
+uudecode (UUDECODE) [Y/n/?] y
+base64 (BASE64) [N/y/?] n
+uuencode (UUENCODE) [Y/n/?] y
+wc (WC) [Y/n/?] y
+  Support very large counts (FEATURE_WC_LARGE) [N/y/?] n
+who (WHO) [Y/n/?] y
+w (W) [Y/n/?] (NEW) users (USERS) [N/y/?] n
+whoami (WHOAMI) [Y/n/?] y
+yes (YES) [Y/n/?] y
+*
+* Common options
+*
+Support verbose options (usually -v) for various applets (FEATURE_VERBOSE) [Y/n/?] y
+*
+* Common options for cp and mv
+*
+Preserve hard links (FEATURE_PRESERVE_HARDLINKS) [Y/n/?] y
+*
+* Common options for df, du, ls
+*
+Support human readable output (example 13k, 23M, 235G) (FEATURE_HUMAN_READABLE) [Y/n/?] y
+*
+* Console Utilities
+*
+chvt (CHVT) [Y/n/?] y
+clear (CLEAR) [Y/n/?] y
+deallocvt (DEALLOCVT) [Y/n/?] y
+dumpkmap (DUMPKMAP) [Y/n/?] y
+fgconsole (FGCONSOLE) [N/y/?] n
+kbd_mode (KBD_MODE) [N/y/?] n
+loadfont (LOADFONT) [Y/n/?] y
+setfont (SETFONT) [N/y/?] n
+  *
+  * Common options for loadfont and setfont
+  *
+  Support PSF2 console fonts (FEATURE_LOADFONT_PSF2) [Y/n] y
+  Support old (raw) console fonts (FEATURE_LOADFONT_RAW) [Y/n] y
+loadkmap (LOADKMAP) [Y/n/?] y
+openvt (OPENVT) [Y/n/?] y
+reset (RESET) [Y/n/?] y
+resize (RESIZE) [Y/n/?] y
+  Print environment variables (FEATURE_RESIZE_PRINT) [Y/n/?] y
+setconsole (SETCONSOLE) [Y/n/?] y
+  Enable long options (FEATURE_SETCONSOLE_LONG_OPTIONS) [N/y] n
+setkeycodes (SETKEYCODES) [Y/n/?] y
+setlogcons (SETLOGCONS) [Y/n/?] y
+showkey (SHOWKEY) [N/y/?] n
+*
+* Debian Utilities
+*
+pipe_progress (PIPE_PROGRESS) [Y/n/?] y
+run-parts (RUN_PARTS) [Y/n/?] y
+  Enable long options (FEATURE_RUN_PARTS_LONG_OPTIONS) [Y/n] y
+  Support additional arguments (FEATURE_RUN_PARTS_FANCY) [N/y/?] n
+start-stop-daemon (START_STOP_DAEMON) [Y/n/?] y
+  Enable long options (FEATURE_START_STOP_DAEMON_LONG_OPTIONS) [Y/n] y
+  Support additional arguments (FEATURE_START_STOP_DAEMON_FANCY) [Y/n/?] y
+which (WHICH) [Y/n/?] y
+*
+* Editors
+*
+awk (AWK) [Y/n/?] y
+  Enable math functions (requires libm) (FEATURE_AWK_LIBM) [N/y/?] n
+  Enable a few GNU extensions (FEATURE_AWK_GNU_EXTENSIONS) [Y/n/?] y
+cmp (CMP) [Y/n/?] y
+diff (DIFF) [Y/n/?] y
+  Enable long options (FEATURE_DIFF_LONG_OPTIONS) [N/y] n
+  Enable directory support (FEATURE_DIFF_DIR) [Y/n/?] y
+ed (ED) [N/y/?] n
+patch (PATCH) [Y/n/?] y
+sed (SED) [Y/n/?] y
+vi (VI) [Y/n/?] y
+  Maximum screen width (FEATURE_VI_MAX_LEN) [4096] 4096
+  Allow to display 8-bit chars (otherwise shows dots) (FEATURE_VI_8BIT) [Y/n/?] y
+  Enable ":" colon commands (no "ex" mode) (FEATURE_VI_COLON) [Y/n/?] y
+  Enable yank/put commands and mark cmds (FEATURE_VI_YANKMARK) [Y/n/?] y
+  Enable search and replace cmds (FEATURE_VI_SEARCH) [Y/n/?] y
+    Enable regex in search and replace (FEATURE_VI_REGEX_SEARCH) [N/y/?] n
+  Catch signals (FEATURE_VI_USE_SIGNALS) [Y/n/?] y
+  Remember previous cmd and "." cmd (FEATURE_VI_DOT_CMD) [Y/n/?] y
+  Enable -R option and "view" mode (FEATURE_VI_READONLY) [Y/n/?] y
+  Enable settable options, ai ic showmatch (FEATURE_VI_SETOPTS) [Y/n/?] y
+  Support :set (FEATURE_VI_SET) [Y/n] y
+  Handle window resize (FEATURE_VI_WIN_RESIZE) [Y/n/?] y
+  Use 'tell me cursor position' ESC sequence to measure window (FEATURE_VI_ASK_TERMINAL) [Y/n/?] y
+  Support undo command "u" (FEATURE_VI_UNDO) [Y/n/?] y
+    Enable undo operation queuing (FEATURE_VI_UNDO_QUEUE) [Y/n/?] y
+      Maximum undo character queue size (FEATURE_VI_UNDO_QUEUE_MAX) [256] 256
+  Allow vi and awk to execute shell commands (FEATURE_ALLOW_EXEC) [Y/n/?] y
+*
+* Finding Utilities
+*
+find (FIND) [Y/n/?] y
+  Enable -print0: NUL-terminated output (FEATURE_FIND_PRINT0) [Y/n/?] y
+  Enable -mtime: modified time matching (FEATURE_FIND_MTIME) [Y/n/?] y
+  Enable -mmin: modified time matching by minutes (FEATURE_FIND_MMIN) [Y/n/?] y
+  Enable -perm: permissions matching (FEATURE_FIND_PERM) [Y/n] y
+  Enable -type: file type matching (file/dir/link/...) (FEATURE_FIND_TYPE) [Y/n/?] y
+  Enable -xdev: 'stay in filesystem' (FEATURE_FIND_XDEV) [Y/n] y
+  Enable -mindepth N and -maxdepth N (FEATURE_FIND_MAXDEPTH) [Y/n] y
+  Enable -newer: compare file modification times (FEATURE_FIND_NEWER) [Y/n/?] y
+  Enable -inum: inode number matching (FEATURE_FIND_INUM) [N/y] n
+  Enable -exec: execute commands (FEATURE_FIND_EXEC) [Y/n/?] y
+    Enable -exec ... {} + (FEATURE_FIND_EXEC_PLUS) [Y/n/?] y
+  Enable -user: username/uid matching (FEATURE_FIND_USER) [Y/n] y
+  Enable -group: group/gid matching (FEATURE_FIND_GROUP) [Y/n] y
+  Enable the 'not' (!) operator (FEATURE_FIND_NOT) [Y/n/?] y
+  Enable -depth (FEATURE_FIND_DEPTH) [Y/n/?] y
+  Enable parens in options (FEATURE_FIND_PAREN) [Y/n/?] y
+  Enable -size: file size matching (FEATURE_FIND_SIZE) [Y/n] y
+  Enable -prune: exclude subdirectories (FEATURE_FIND_PRUNE) [Y/n/?] y
+  Enable -delete: delete files/dirs (FEATURE_FIND_DELETE) [N/y/?] n
+  Enable -path: match pathname with shell pattern (FEATURE_FIND_PATH) [Y/n/?] y
+  Enable -regex: match pathname with regex (FEATURE_FIND_REGEX) [Y/n/?] y
+  Enable -links: link count matching (FEATURE_FIND_LINKS) [N/y/?] n
+grep (GREP) [Y/n/?] y
+egrep (EGREP) [Y/n/?] (NEW) fgrep (FGREP) [Y/n/?] (NEW)   Enable before and after context flags (-A, -B and -C) (FEATURE_GREP_CONTEXT) [Y/n/?] y
+xargs (XARGS) [Y/n/?] y
+  Enable -p: prompt and confirmation (FEATURE_XARGS_SUPPORT_CONFIRMATION) [N/y/?] n
+  Enable single and double quotes and backslash (FEATURE_XARGS_SUPPORT_QUOTES) [Y/n/?] y
+  Enable -x: exit if -s or -n is exceeded (FEATURE_XARGS_SUPPORT_TERMOPT) [Y/n/?] y
+  Enable -0: NUL-terminated input (FEATURE_XARGS_SUPPORT_ZERO_TERM) [Y/n/?] y
+  Enable -I STR: string to replace (FEATURE_XARGS_SUPPORT_REPL_STR) [Y/n/?] y
+*
+* Init Utilities
+*
+bootchartd (BOOTCHARTD) [N/y/?] n
+halt (HALT) [Y/n/?] y
+poweroff (POWEROFF) [Y/n/?] (NEW) reboot (REBOOT) [Y/n/?] (NEW) init (INIT) [Y/n/?] y
+linuxrc: support running init from initrd (not initramfs) (LINUXRC) [Y/n/?] (NEW)   Support reading an inittab file (FEATURE_USE_INITTAB) [Y/n/?] y
+    Support killing processes that have been removed from inittab (FEATURE_KILL_REMOVED) [Y/n/?] y
+      How long to wait between TERM and KILL (0 - send TERM only) (FEATURE_KILL_DELAY) [0] 0
+  Run commands with leading dash with controlling tty (FEATURE_INIT_SCTTY) [Y/n/?] y
+  Enable init to write to syslog (FEATURE_INIT_SYSLOG) [Y/n/?] y
+  Be quiet on boot (no 'init started:' message) (FEATURE_INIT_QUIET) [Y/n] (NEW)   Support dumping core for child processes (debugging only) (FEATURE_INIT_COREDUMPS) [N/y/?] n
+  Initial terminal type (INIT_TERMINAL_TYPE) [linux] linux
+  Clear init's command line (FEATURE_INIT_MODIFY_CMDLINE) [Y/n/?] (NEW) *
+* Login/Password Management Utilities
+*
+Support shadow passwords (FEATURE_SHADOWPASSWDS) [Y/n/?] y
+Use internal password and group functions rather than system functions (USE_BB_PWD_GRP) [N/y/?] n
+Use internal crypt functions (USE_BB_CRYPT) [Y/n/?] y
+  Enable SHA256/512 crypt functions (USE_BB_CRYPT_SHA) [N/y/?] n
+add-shell (ADD_SHELL) [N/y/?] n
+remove-shell (REMOVE_SHELL) [N/y/?] n
+addgroup (ADDGROUP) [Y/n/?] y
+  Enable long options (FEATURE_ADDGROUP_LONG_OPTIONS) [N/y] n
+  Support adding users to groups (FEATURE_ADDUSER_TO_GROUP) [N/y/?] n
+adduser (ADDUSER) [Y/n/?] y
+  Enable long options (FEATURE_ADDUSER_LONG_OPTIONS) [N/y] n
+  Enable sanity check on user/group names in adduser and addgroup (FEATURE_CHECK_NAMES) [N/y/?] n
+  Last valid uid or gid for adduser and addgroup (LAST_ID) [60000] 60000
+  First valid system uid or gid for adduser and addgroup (FIRST_SYSTEM_ID) [100] 100
+  Last valid system uid or gid for adduser and addgroup (LAST_SYSTEM_ID) [999] 999
+chpasswd (CHPASSWD) [N/y/?] n
+  Default encryption method (passwd -a, cryptpw -m, chpasswd -c ALG) (FEATURE_DEFAULT_PASSWD_ALGO) [des] des
+cryptpw (CRYPTPW) [N/y/?] n
+mkpasswd (MKPASSWD) [Y/n/?] (NEW) deluser (DELUSER) [Y/n/?] y
+delgroup (DELGROUP) [Y/n/?] y
+  Support removing users from groups (FEATURE_DEL_USER_FROM_GROUP) [N/y/?] n
+getty (GETTY) [Y/n/?] y
+login (LOGIN) [Y/n/?] y
+  Run logged in session in a child process (LOGIN_SESSION_AS_CHILD) [N/y/?] n
+  Support login scripts (LOGIN_SCRIPTS) [N/y/?] n
+  Support /etc/nologin (FEATURE_NOLOGIN) [Y/n/?] y
+  Support /etc/securetty (FEATURE_SECURETTY) [Y/n/?] y
+passwd (PASSWD) [Y/n/?] y
+  Check new passwords for weakness (FEATURE_PASSWD_WEAK_CHECK) [Y/n/?] y
+su (SU) [Y/n/?] y
+  Log to syslog all attempts to use su (FEATURE_SU_SYSLOG) [Y/n] y
+  If user's shell is not in /etc/shells, disallow -s PROG (FEATURE_SU_CHECKS_SHELLS) [Y/n] y
+  Allow blank passwords only on TTYs in /etc/securetty (FEATURE_SU_BLANK_PW_NEEDS_SECURE_TTY) [N/y] (NEW) sulogin (SULOGIN) [Y/n/?] y
+vlock (VLOCK) [Y/n/?] y
+*
+* Linux Ext2 FS Progs
+*
+chattr (CHATTR) [Y/n/?] y
+fsck (FSCK) [Y/n/?] y
+lsattr (LSATTR) [Y/n/?] y
+tune2fs (TUNE2FS) [N/y/?] n
+*
+* Linux Module Utilities
+*
+Simplified modutils (MODPROBE_SMALL) [N/y/?] n
+depmod (DEPMOD) [N/y/?] n
+insmod (INSMOD) [Y/n/?] y
+lsmod (LSMOD) [Y/n/?] y
+  Pretty output (FEATURE_LSMOD_PRETTY_2_6_OUTPUT) [Y/n/?] y
+modinfo (MODINFO) [N/y/?] n
+modprobe (MODPROBE) [Y/n/?] y
+  Blacklist support (FEATURE_MODPROBE_BLACKLIST) [N/y/?] n
+rmmod (RMMOD) [Y/n/?] y
+*
+* Options common to multiple modutils
+*
+Accept module options on modprobe command line (FEATURE_CMDLINE_MODULE_OPTIONS) [Y/n/?] (NEW) Support version 2.2/2.4 Linux kernels (FEATURE_2_4_MODULES) [N/y/?] n
+Support tainted module checking with new kernels (FEATURE_CHECK_TAINTED_MODULE) [Y/n/?] y
+Try to load module from a mmap'ed area (FEATURE_INSMOD_TRY_MMAP) [N/y/?] n
+Support module.aliases file (FEATURE_MODUTILS_ALIAS) [Y/n/?] y
+Support module.symbols file (FEATURE_MODUTILS_SYMBOLS) [Y/n/?] y
+Default directory containing modules (DEFAULT_MODULES_DIR) [/lib/modules] /lib/modules
+Default name of modules.dep (DEFAULT_DEPMOD_FILE) [modules.dep] modules.dep
+*
+* Linux System Utilities
+*
+acpid (ACPID) [N/y/?] n
+blkdiscard (BLKDISCARD) [Y/n/?] (NEW) blkid (BLKID) [Y/n/?] y
+  Print filesystem type (FEATURE_BLKID_TYPE) [N/y/?] n
+blockdev (BLOCKDEV) [N/y/?] n
+cal (CAL) [N/y/?] n
+chrt (CHRT) [Y/n/?] y
+dmesg (DMESG) [Y/n/?] y
+  Pretty output (FEATURE_DMESG_PRETTY) [Y/n/?] y
+eject (EJECT) [Y/n/?] y
+  SCSI support (FEATURE_EJECT_SCSI) [N/y/?] n
+fallocate (FALLOCATE) [Y/n/?] (NEW) fatattr (FATATTR) [N/y/?] n
+fbset (FBSET) [Y/n/?] y
+  Enable extra options (FEATURE_FBSET_FANCY) [Y/n/?] y
+  Enable readmode support (FEATURE_FBSET_READMODE) [Y/n/?] y
+fdformat (FDFORMAT) [Y/n/?] y
+fdisk (FDISK) [Y/n/?] y
+  Write support (FEATURE_FDISK_WRITABLE) [Y/n/?] y
+    Support AIX disklabels (FEATURE_AIX_LABEL) [N/y/?] n
+    Support SGI disklabels (FEATURE_SGI_LABEL) [N/y/?] n
+    Support SUN disklabels (FEATURE_SUN_LABEL) [N/y/?] n
+    Support BSD disklabels (FEATURE_OSF_LABEL) [N/y/?] n
+    Support GPT disklabels (FEATURE_GPT_LABEL) [Y/n/?] y
+    Support expert mode (FEATURE_FDISK_ADVANCED) [Y/n/?] y
+findfs (FINDFS) [N/y/?] n
+flock (FLOCK) [Y/n/?] y
+fdflush (FDFLUSH) [Y/n/?] y
+freeramdisk (FREERAMDISK) [Y/n/?] y
+fsck_minix (FSCK_MINIX) [N/y/?] n
+fsfreeze (FSFREEZE) [Y/n/?] (NEW) fstrim (FSTRIM) [Y/n/?] y
+getopt (GETOPT) [Y/n/?] y
+  Support option -l (FEATURE_GETOPT_LONG) [Y/n/?] y
+hexdump (HEXDUMP) [Y/n/?] y
+  Support -R, reverse of 'hexdump -Cv' (FEATURE_HEXDUMP_REVERSE) [N/y/?] n
+hd (HD) [N/y/?] n
+xxd (XXD) [Y/n/?] (NEW) hwclock (HWCLOCK) [Y/n/?] y
+  Support long options (--hctosys,...) (FEATURE_HWCLOCK_LONG_OPTIONS) [Y/n] y
+  Use FHS /var/lib/hwclock/adjtime (FEATURE_HWCLOCK_ADJTIME_FHS) [Y/n/?] y
+ionice (IONICE) [N/y/?] n
+ipcrm (IPCRM) [Y/n/?] y
+ipcs (IPCS) [Y/n/?] y
+last (LAST) [Y/n/?] y
+  Output extra information (FEATURE_LAST_FANCY) [N/y/?] n
+losetup (LOSETUP) [Y/n/?] y
+lspci (LSPCI) [Y/n/?] y
+lsusb (LSUSB) [Y/n/?] y
+mdev (MDEV) [Y/n/?] y
+  Support /etc/mdev.conf (FEATURE_MDEV_CONF) [Y/n/?] y
+    Support subdirs/symlinks (FEATURE_MDEV_RENAME) [Y/n/?] y
+      Support regular expressions substitutions when renaming device (FEATURE_MDEV_RENAME_REGEXP) [N/y/?] n
+    Support command execution at device addition/removal (FEATURE_MDEV_EXEC) [Y/n/?] y
+  Support loading of firmwares (FEATURE_MDEV_LOAD_FIRMWARE) [N/y/?] n
+mesg (MESG) [Y/n/?] y
+  Enable writing to tty only by group, not by everybody (FEATURE_MESG_ENABLE_ONLY_GROUP) [Y/n/?] y
+mke2fs (MKE2FS) [Y/n/?] (NEW) mkfs.ext2 (MKFS_EXT2) [N/y/?] n
+mkfs_minix (MKFS_MINIX) [N/y/?] n
+mkfs_reiser (MKFS_REISER) [N/y/?] n
+mkdosfs (MKDOSFS) [Y/n/?] (NEW) mkfs.vfat (MKFS_VFAT) [N/y/?] n
+mkswap (MKSWAP) [Y/n/?] y
+  UUID support (FEATURE_MKSWAP_UUID) [N/y/?] n
+more (MORE) [Y/n/?] y
+mount (MOUNT) [Y/n/?] y
+  Support option -f (FEATURE_MOUNT_FAKE) [N/y/?] n
+  Support option -v (FEATURE_MOUNT_VERBOSE) [N/y/?] n
+  Support mount helpers (FEATURE_MOUNT_HELPERS) [N/y/?] n
+  Support specifying devices by label or UUID (FEATURE_MOUNT_LABEL) [N/y/?] n
+  Support mounting NFS file systems on Linux < 2.6.23 (FEATURE_MOUNT_NFS) [N/y/?] n
+  Support mounting CIFS/SMB file systems (FEATURE_MOUNT_CIFS) [Y/n/?] y
+  Support lots of -o flags (FEATURE_MOUNT_FLAGS) [Y/n/?] y
+  Support /etc/fstab and -a (FEATURE_MOUNT_FSTAB) [Y/n/?] y
+    Support -T <alt_fstab> (FEATURE_MOUNT_OTHERTAB) [Y/n/?] (NEW) mountpoint (MOUNTPOINT) [Y/n/?] y
+nsenter (NSENTER) [Y/n/?] (NEW)   Enable long options (FEATURE_NSENTER_LONG_OPTS) [Y/n/?] (NEW) pivot_root (PIVOT_ROOT) [Y/n/?] y
+rdate (RDATE) [Y/n/?] y
+rdev (RDEV) [N/y/?] n
+readprofile (READPROFILE) [Y/n/?] y
+renice (RENICE) [Y/n/?] y
+rev (REV) [N/y/?] n
+rtcwake (RTCWAKE) [N/y/?] n
+script (SCRIPT) [N/y/?] n
+scriptreplay (SCRIPTREPLAY) [N/y/?] n
+setarch (SETARCH) [Y/n/?] y
+linux32 (LINUX32) [Y/n/?] (NEW) linux64 (LINUX64) [Y/n/?] (NEW) setpriv (SETPRIV) [Y/n/?] (NEW) setsid (SETSID) [Y/n/?] y
+swapon (SWAPON) [Y/n/?] (NEW)   Support discard option -d (FEATURE_SWAPON_DISCARD) [N/y/?] n
+  Support priority option -p (FEATURE_SWAPON_PRI) [N/y/?] n
+swapoff (SWAPOFF) [Y/n/?] (NEW) switch_root (SWITCH_ROOT) [Y/n/?] y
+taskset (TASKSET) [N/y/?] n
+uevent (UEVENT) [Y/n/?] (NEW) umount (UMOUNT) [Y/n/?] y
+  Support option -a (FEATURE_UMOUNT_ALL) [Y/n/?] y
+unshare (UNSHARE) [Y/n/?] (NEW) wall (WALL) [N/y/?] n
+*
+* Common options for mount/umount
+*
+Support loopback mounts (FEATURE_MOUNT_LOOP) [Y/n/?] y
+  Create new loopback devices if needed (FEATURE_MOUNT_LOOP_CREATE) [Y/n/?] y
+Support old /etc/mtab file (FEATURE_MTAB_SUPPORT) [N/y/?] n
+*
+* Filesystem/Volume identification
+*
+bcache filesystem (FEATURE_VOLUMEID_BCACHE) [Y/n] (NEW) btrfs filesystem (FEATURE_VOLUMEID_BTRFS) [N/y] n
+cramfs filesystem (FEATURE_VOLUMEID_CRAMFS) [N/y] n
+exFAT filesystem (FEATURE_VOLUMEID_EXFAT) [Y/n/?] y
+Ext filesystem (FEATURE_VOLUMEID_EXT) [Y/n] y
+f2fs filesystem (FEATURE_VOLUMEID_F2FS) [Y/n/?] y
+fat filesystem (FEATURE_VOLUMEID_FAT) [Y/n] y
+hfs filesystem (FEATURE_VOLUMEID_HFS) [N/y] n
+iso9660 filesystem (FEATURE_VOLUMEID_ISO9660) [N/y] n
+jfs filesystem (FEATURE_VOLUMEID_JFS) [N/y] n
+linuxraid (FEATURE_VOLUMEID_LINUXRAID) [N/y] n
+linux swap filesystem (FEATURE_VOLUMEID_LINUXSWAP) [N/y] n
+luks filesystem (FEATURE_VOLUMEID_LUKS) [N/y] n
+nilfs filesystem (FEATURE_VOLUMEID_NILFS) [N/y/?] n
+ntfs filesystem (FEATURE_VOLUMEID_NTFS) [N/y] n
+ocfs2 filesystem (FEATURE_VOLUMEID_OCFS2) [N/y] n
+Reiser filesystem (FEATURE_VOLUMEID_REISERFS) [N/y] n
+romfs filesystem (FEATURE_VOLUMEID_ROMFS) [N/y] n
+sysv filesystem (FEATURE_VOLUMEID_SYSV) [N/y] n
+UBIFS filesystem (FEATURE_VOLUMEID_UBIFS) [Y/n/?] (NEW) udf filesystem (FEATURE_VOLUMEID_UDF) [N/y] n
+xfs filesystem (FEATURE_VOLUMEID_XFS) [N/y] n
+*
+* Miscellaneous Utilities
+*
+adjtimex (ADJTIMEX) [N/y/?] n
+bbconfig (BBCONFIG) [N/y/?] n
+beep (BEEP) [N/y/?] n
+chat (CHAT) [N/y/?] n
+conspy (CONSPY) [N/y/?] n
+crond (CROND) [Y/n/?] y
+  Support option -d to redirect output to stderr (FEATURE_CROND_D) [N/y/?] n
+  Report command output via email (using sendmail) (FEATURE_CROND_CALL_SENDMAIL) [N/y/?] n
+  crond spool directory (FEATURE_CROND_DIR) [/var/spool/cron] /var/spool/cron
+crontab (CRONTAB) [Y/n/?] y
+dc (DC) [Y/n/?] y
+  Enable power and exp functions (requires libm) (FEATURE_DC_LIBM) [N/y/?] n
+devfsd (obsolete) (DEVFSD) [N/y/?] n
+Use devfs names for all devices (obsolete) (FEATURE_DEVFS) [N/y/?] n
+devmem (DEVMEM) [Y/n/?] y
+fbsplash (FBSPLASH) [N/y/?] n
+flash_eraseall (FLASH_ERASEALL) [N/y/?] n
+flash_lock (FLASH_LOCK) [N/y/?] n
+flash_unlock (FLASH_UNLOCK) [N/y/?] n
+flashcp (FLASHCP) [N/y/?] n
+hdparm (HDPARM) [Y/n/?] y
+  Support obtaining detailed information directly from drives (FEATURE_HDPARM_GET_IDENTITY) [Y/n/?] y
+  Register an IDE interface (DANGEROUS) (FEATURE_HDPARM_HDIO_SCAN_HWIF) [N/y/?] n
+  Un-register an IDE interface (DANGEROUS) (FEATURE_HDPARM_HDIO_UNREGISTER_HWIF) [N/y/?] n
+  Perform device reset (DANGEROUS) (FEATURE_HDPARM_HDIO_DRIVE_RESET) [N/y/?] n
+  Tristate device for hotswap (DANGEROUS) (FEATURE_HDPARM_HDIO_TRISTATE_HWIF) [N/y/?] n
+  Get/set using_dma flag (FEATURE_HDPARM_HDIO_GETSET_DMA) [N/y/?] n
+i2cget (I2CGET) [Y/n/?] (NEW) i2cset (I2CSET) [Y/n/?] (NEW) i2cdump (I2CDUMP) [Y/n/?] (NEW) i2cdetect (I2CDETECT) [Y/n/?] (NEW) inotifyd (INOTIFYD) [N/y/?] n
+less (LESS) [Y/n/?] y
+  Max number of input lines less will try to eat (FEATURE_LESS_MAXLINES) [9999999] 9999999
+  Enable bracket searching (FEATURE_LESS_BRACKETS) [Y/n/?] y
+  Enable -m/-M (FEATURE_LESS_FLAGS) [Y/n/?] y
+  Enable -S (FEATURE_LESS_TRUNCATE) [Y/n/?] (NEW)   Enable marks (FEATURE_LESS_MARKS) [N/y/?] n
+  Enable regular expressions (FEATURE_LESS_REGEXP) [Y/n/?] y
+  Enable automatic resizing on window size changes (FEATURE_LESS_WINCH) [N/y/?] n
+  Enable flag changes ('-' command) (FEATURE_LESS_DASHCMD) [N/y/?] n
+lsscsi (LSSCSI) [Y/n/?] (NEW) makedevs (MAKEDEVS) [Y/n/?] y
+  Choose makedevs behaviour
+    1. leaf (FEATURE_MAKEDEVS_LEAF)
+  > 2. table (FEATURE_MAKEDEVS_TABLE)
+  choice[1-2]: 2
+man (MAN) [N/y/?] n
+microcom (MICROCOM) [Y/n/?] y
+mt (MT) [Y/n/?] y
+nandwrite (NANDWRITE) [N/y/?] n
+nanddump (NANDDUMP) [N/y/?] n
+partprobe (PARTPROBE) [Y/n/?] (NEW) raidautorun (RAIDAUTORUN) [N/y/?] n
+readahead (READAHEAD) [N/y/?] n
+rfkill (RFKILL) [N/y/?] n
+runlevel (RUNLEVEL) [Y/n/?] y
+rx (RX) [Y/n/?] y
+setserial (SETSERIAL) [Y/n/?] y
+strings (STRINGS) [Y/n/?] y
+time (TIME) [Y/n/?] y
+ttysize (TTYSIZE) [N/y/?] n
+ubiattach (UBIATTACH) [N/y/?] n
+ubidetach (UBIDETACH) [N/y/?] n
+ubimkvol (UBIMKVOL) [N/y/?] n
+ubirmvol (UBIRMVOL) [N/y/?] n
+ubirsvol (UBIRSVOL) [N/y/?] n
+ubiupdatevol (UBIUPDATEVOL) [N/y/?] n
+ubirename (UBIRENAME) [Y/n/?] (NEW) volname (VOLNAME) [N/y/?] n
+watchdog (WATCHDOG) [Y/n/?] y
+*
+* Networking Utilities
+*
+Enable IPv6 support (FEATURE_IPV6) [Y/n/?] y
+Enable Unix domain socket support (usually not needed) (FEATURE_UNIX_LOCAL) [N/y/?] n
+Prefer IPv4 addresses from DNS queries (FEATURE_PREFER_IPV4_ADDRESS) [N/y/?] n
+Verbose resolution errors (VERBOSE_RESOLUTION_ERRORS) [N/y/?] n
+arp (ARP) [Y/n/?] y
+arping (ARPING) [Y/n/?] y
+brctl (BRCTL) [N/y/?] n
+dnsd (DNSD) [Y/n/?] y
+ether-wake (ETHER_WAKE) [Y/n/?] y
+ftpd (FTPD) [N/y/?] n
+ftpget (FTPGET) [N/y/?] n
+ftpput (FTPPUT) [N/y/?] n
+hostname (HOSTNAME) [Y/n/?] y
+dnsdomainname (DNSDOMAINNAME) [Y/n/?] (NEW) httpd (HTTPD) [N/y/?] n
+ifconfig (IFCONFIG) [Y/n/?] y
+  Enable status reporting output (+7k) (FEATURE_IFCONFIG_STATUS) [Y/n/?] y
+  Enable slip-specific options "keepalive" and "outfill" (FEATURE_IFCONFIG_SLIP) [Y/n/?] y
+  Enable options "mem_start", "io_addr", and "irq" (FEATURE_IFCONFIG_MEMSTART_IOADDR_IRQ) [Y/n/?] y
+  Enable option "hw" (ether only) (FEATURE_IFCONFIG_HW) [Y/n/?] y
+  Set the broadcast automatically (FEATURE_IFCONFIG_BROADCAST_PLUS) [N/y/?] n
+ifenslave (IFENSLAVE) [N/y/?] n
+ifplugd (IFPLUGD) [N/y/?] n
+ifup (IFUP) [Y/n/?] (NEW) ifdown (IFDOWN) [Y/n/?] (NEW)   Absolute path to ifstate file (IFUPDOWN_IFSTATE_PATH) [/var/run/ifstate] /var/run/ifstate
+  Use ip tool (else ifconfig/route is used) (FEATURE_IFUPDOWN_IP) [Y/n/?] y
+  Support IPv4 (FEATURE_IFUPDOWN_IPV4) [Y/n/?] y
+  Support IPv6 (FEATURE_IFUPDOWN_IPV6) [Y/n/?] y
+  Enable mapping support (FEATURE_IFUPDOWN_MAPPING) [Y/n/?] y
+  Support external DHCP clients (FEATURE_IFUPDOWN_EXTERNAL_DHCP) [N/y/?] n
+inetd (INETD) [Y/n/?] y
+  Support echo service (FEATURE_INETD_SUPPORT_BUILTIN_ECHO) [Y/n/?] y
+  Support discard service (FEATURE_INETD_SUPPORT_BUILTIN_DISCARD) [Y/n/?] y
+  Support time service (FEATURE_INETD_SUPPORT_BUILTIN_TIME) [Y/n/?] y
+  Support daytime service (FEATURE_INETD_SUPPORT_BUILTIN_DAYTIME) [Y/n/?] y
+  Support chargen service (FEATURE_INETD_SUPPORT_BUILTIN_CHARGEN) [Y/n/?] y
+  Support RPC services (FEATURE_INETD_RPC) [N/y/?] n
+ip (IP) [Y/n/?] y
+ipaddr (IPADDR) [Y/n/?] y
+iplink (IPLINK) [Y/n/?] y
+iproute (IPROUTE) [Y/n/?] y
+iptunnel (IPTUNNEL) [Y/n/?] y
+iprule (IPRULE) [Y/n/?] y
+ipneigh (IPNEIGH) [Y/n/?] (NEW) ip address (FEATURE_IP_ADDRESS) [Y/?] y
+ip link (FEATURE_IP_LINK) [Y/?] y
+ip route (FEATURE_IP_ROUTE) [Y/?] y
+  ip route configuration directory (FEATURE_IP_ROUTE_DIR) [/etc/iproute2] (NEW) ip tunnel (FEATURE_IP_TUNNEL) [Y/?] y
+ip rule (FEATURE_IP_RULE) [Y/?] y
+ip neighbor (FEATURE_IP_NEIGH) [Y/?] (NEW) y
+Support displaying rarely used link types (FEATURE_IP_RARE_PROTOCOLS) [N/y/?] n
+ipcalc (IPCALC) [N/y/?] n
+fakeidentd (FAKEIDENTD) [N/y/?] n
+nameif (NAMEIF) [Y/n/?] y
+  Extended nameif (FEATURE_NAMEIF_EXTENDED) [N/y/?] n
+nbd-client (NBDCLIENT) [N/y/?] n
+nc (NC) [N/y/?] n
+netstat (NETSTAT) [Y/n/?] y
+  Enable wide output (FEATURE_NETSTAT_WIDE) [N/y/?] n
+  Enable PID/Program name output (FEATURE_NETSTAT_PRG) [N/y/?] n
+nslookup (NSLOOKUP) [Y/n/?] y
+ntpd (NTPD) [N/y/?] n
+ping (PING) [Y/n/?] y
+ping6 (PING6) [N/y/?] n
+Enable fancy ping output (FEATURE_FANCY_PING) [Y/n/?] y
+pscan (PSCAN) [N/y/?] n
+route (ROUTE) [Y/n/?] y
+slattach (SLATTACH) [N/y/?] n
+ssl_client (SSL_CLIENT) [Y/n/?] (NEW) tcpsvd (TCPSVD) [N/y/?] n
+udpsvd (UDPSVD) [N/y/?] n
+telnet (TELNET) [Y/n/?] y
+  Pass TERM type to remote host (FEATURE_TELNET_TTYPE) [Y/n/?] y
+  Pass USER type to remote host (FEATURE_TELNET_AUTOLOGIN) [Y/n/?] y
+  Enable window size autodetection (FEATURE_TELNET_WIDTH) [Y/n] (NEW) telnetd (TELNETD) [N/y/?] n
+tftp (TFTP) [Y/n/?] y
+tftpd (TFTPD) [N/y/?] n
+  *
+  * Common options for tftp/tftpd
+  *
+  Enable 'tftp get' and/or tftpd upload code (FEATURE_TFTP_GET) [Y/n/?] y
+  Enable 'tftp put' and/or tftpd download code (FEATURE_TFTP_PUT) [Y/n/?] y
+  Enable 'blksize' and 'tsize' protocol options (FEATURE_TFTP_BLOCKSIZE) [Y/n/?] y
+    Enable progress bar (FEATURE_TFTP_PROGRESS_BAR) [N/y] n
+  Enable debug (TFTP_DEBUG) [N/y/?] n
+traceroute (TRACEROUTE) [Y/n/?] y
+traceroute6 (TRACEROUTE6) [N/y/?] n
+Enable verbose output (FEATURE_TRACEROUTE_VERBOSE) [N/y/?] n
+Enable -I option (use ICMP instead of UDP) (FEATURE_TRACEROUTE_USE_ICMP) [N/y] n
+tunctl (TUNCTL) [N/y/?] n
+vconfig (VCONFIG) [Y/n/?] y
+wget (WGET) [Y/n/?] y
+  Enable long options (FEATURE_WGET_LONG_OPTIONS) [Y/n] y
+  Enable progress bar (+2k) (FEATURE_WGET_STATUSBAR) [Y/n] y
+  Enable HTTP authentication (FEATURE_WGET_AUTHENTICATION) [Y/n/?] y
+  Enable timeout option -T SEC (FEATURE_WGET_TIMEOUT) [Y/n/?] y
+  Support HTTPS using internal TLS code (FEATURE_WGET_HTTPS) [Y/n/?] (NEW)   Try to connect to HTTPS using openssl (FEATURE_WGET_OPENSSL) [Y/n/?] (NEW) whois (WHOIS) [N/y/?] n
+zcip (ZCIP) [N/y/?] n
+udhcpc6 (DHCPv6 client, EXPERIMENTAL) (UDHCPC6) [N/y/?] n
+udhcpd (DHCP server) (UDHCPD) [N/y/?] n
+dumpleases (DUMPLEASES) [N/y/?] n
+dhcprelay (DHCPRELAY) [N/y/?] n
+udhcpc (DHCP client) (UDHCPC) [Y/n/?] y
+  Verify that the offered address is free, using ARP ping (FEATURE_UDHCPC_ARPING) [Y/n/?] y
+  Do not pass malformed host and domain names (FEATURE_UDHCPC_SANITIZEOPT) [Y/n/?] y
+  Absolute path to config script (UDHCPC_DEFAULT_SCRIPT) [/usr/share/udhcpc/default.script] /usr/share/udhcpc/default.script
+  Enable '-P port' option for udhcpd and udhcpc (FEATURE_UDHCP_PORT) [N/y/?] n
+  Maximum verbosity level for udhcp applets (0..9) (UDHCP_DEBUG) [0] 0
+  Support RFC3397 domain search (experimental) (FEATURE_UDHCP_RFC3397) [N/y/?] n
+  Support 802.1Q VLAN parameters (FEATURE_UDHCP_8021Q) [Y/n/?] y
+  DHCP options slack buffer size (UDHCPC_SLACK_FOR_BUGGY_SERVERS) [80] 80
+ifup udhcpc command line options (IFUPDOWN_UDHCPC_CMD_OPTIONS) [-R -n] -R -n
+*
+* Print Utilities
+*
+lpd (LPD) [N/y/?] n
+lpr (LPR) [N/y/?] n
+lpq (LPQ) [N/y/?] n
+*
+* Mail Utilities
+*
+makemime (MAKEMIME) [N/y/?] n
+popmaildir (POPMAILDIR) [N/y/?] n
+reformime (REFORMIME) [N/y/?] n
+sendmail (SENDMAIL) [N/y/?] n
+*
+* Process Utilities
+*
+free (FREE) [Y/n/?] y
+fuser (FUSER) [Y/n/?] y
+iostat (IOSTAT) [N/y/?] n
+kill (KILL) [Y/n/?] y
+killall (KILLALL) [Y/n/?] y
+killall5 (KILLALL5) [Y/n/?] y
+lsof (LSOF) [Y/n/?] y
+mpstat (MPSTAT) [N/y/?] n
+nmeter (NMETER) [N/y/?] n
+pgrep (PGREP) [N/y/?] n
+pkill (PKILL) [N/y/?] n
+pidof (PIDOF) [Y/n/?] y
+  Enable single shot (-s) (FEATURE_PIDOF_SINGLE) [Y/n/?] y
+  Enable omitting pids (-o PID) (FEATURE_PIDOF_OMIT) [Y/n/?] y
+pmap (PMAP) [N/y/?] n
+powertop (POWERTOP) [N/y/?] n
+ps (PS) [Y/n/?] y
+  Support -o time and -o etime output specifiers (FEATURE_PS_TIME) [N/y] n
+  Support -o rgroup, -o ruser, -o nice specifiers (FEATURE_PS_ADDITIONAL_COLUMNS) [N/y] n
+pstree (PSTREE) [N/y/?] n
+pwdx (PWDX) [N/y/?] n
+smemcap (SMEMCAP) [N/y/?] n
+sysctl (BB_SYSCTL) [Y/n/?] y
+top (TOP) [Y/n/?] y
+  Accept keyboard commands (FEATURE_TOP_INTERACTIVE) [Y/n/?] (NEW)   Show CPU per-process usage percentage (FEATURE_TOP_CPU_USAGE_PERCENTAGE) [Y/n/?] y
+    Show CPU global usage percentage (FEATURE_TOP_CPU_GLOBAL_PERCENTS) [Y/n/?] y
+      SMP CPU usage display ('c' key) (FEATURE_TOP_SMP_CPU) [N/y/?] n
+    Show 1/10th of a percent in CPU/mem statistics (FEATURE_TOP_DECIMALS) [N/y/?] n
+  Show CPU process runs on ('j' field) (FEATURE_TOP_SMP_PROCESS) [N/y/?] n
+  Topmem command ('s' key) (FEATURE_TOPMEM) [N/y/?] n
+uptime (UPTIME) [Y/n/?] y
+  Show the number of users (FEATURE_UPTIME_UTMP_SUPPORT) [N/y/?] n
+watch (WATCH) [Y/n/?] y
+Support thread display in ps/pstree/top (FEATURE_SHOW_THREADS) [N/y/?] n
+*
+* Runit Utilities
+*
+chpst (CHPST) [N/y/?] n
+setuidgid (SETUIDGID) [N/y/?] n
+envuidgid (ENVUIDGID) [N/y/?] n
+envdir (ENVDIR) [N/y/?] n
+softlimit (SOFTLIMIT) [N/y/?] n
+runsv (RUNSV) [N/y/?] n
+runsvdir (RUNSVDIR) [N/y/?] n
+sv (SV) [N/y/?] n
+svc (SVC) [Y/n/?] (NEW) svlogd (SVLOGD) [N/y/?] n
+*
+* Shells
+*
+Choose which shell is aliased to 'sh' name
+> 1. ash (SH_IS_ASH) (NEW)
+  2. hush (SH_IS_HUSH) (NEW)
+  3. none (SH_IS_NONE) (NEW)
+choice[1-3?]: Choose which shell is aliased to 'bash' name
+  1. ash (BASH_IS_ASH) (NEW)
+  2. hush (BASH_IS_HUSH) (NEW)
+> 3. none (BASH_IS_NONE) (NEW)
+choice[1-3?]: ash (ASH) [Y/n/?] y
+  Optimize for size instead of speed (ASH_OPTIMIZE_FOR_SIZE) [Y/n] y
+  Use internal glob() implementation (ASH_INTERNAL_GLOB) [Y/n/?] (NEW)   bash-compatible extensions (ASH_BASH_COMPAT) [Y/n] y
+  Job control (ASH_JOB_CONTROL) [Y/n] y
+  Alias support (ASH_ALIAS) [Y/n] y
+  Pseudorandom generator and $RANDOM variable (ASH_RANDOM_SUPPORT) [Y/n/?] y
+  Expand prompt string (ASH_EXPAND_PRMT) [Y/n/?] y
+  Idle timeout variable $TMOUT (ASH_IDLE_TIMEOUT) [Y/n/?] y
+  Check for new mail in interactive shell (ASH_MAIL) [N/y/?] n
+  echo builtin (ASH_ECHO) [Y/n] (NEW)   printf builtin (ASH_PRINTF) [Y/n] (NEW)   test builtin (ASH_TEST) [Y/n] (NEW)   help builtin (ASH_HELP) [Y/n] y
+  getopts builtin (ASH_GETOPTS) [Y/n] y
+  command builtin (ASH_CMDCMD) [Y/n/?] y
+cttyhack (CTTYHACK) [N/y/?] n
+hush (HUSH) [N/y/?] n
+msh (deprecated: aliased to hush) (MSH) [N/y/?] n
+*
+* Options common to all shells
+*
+POSIX math support (FEATURE_SH_MATH) [Y/n/?] (NEW)   Extend POSIX math support to 64 bit (FEATURE_SH_MATH_64) [Y/n/?] (NEW) Hide message on interactive shell startup (FEATURE_SH_EXTRA_QUIET) [Y/n/?] y
+Standalone shell (FEATURE_SH_STANDALONE) [N/y/?] n
+Run 'nofork' applets directly (FEATURE_SH_NOFORK) [N/y/?] n
+Use $HISTFILESIZE (FEATURE_SH_HISTFILESIZE) [N/y/?] n
+*
+* System Logging Utilities
+*
+klogd (KLOGD) [Y/n/?] y
+  Use the klogctl() interface (FEATURE_KLOGD_KLOGCTL) [Y/n/?] y
+logger (LOGGER) [Y/n/?] y
+logread (LOGREAD) [N/y/?] n
+syslogd (SYSLOGD) [Y/n/?] y
+  Rotate message files (FEATURE_ROTATE_LOGFILE) [Y/n/?] y
+  Remote Log support (FEATURE_REMOTE_LOG) [Y/n/?] y
+  Support -D (drop dups) option (FEATURE_SYSLOGD_DUP) [N/y/?] n
+  Support syslog.conf (FEATURE_SYSLOGD_CFG) [N/y/?] n
+  Read buffer size in bytes (FEATURE_SYSLOGD_READ_BUFFER_SIZE) [256] 256
+  Circular Buffer support (FEATURE_IPC_SYSLOG) [N/y/?] n
+  Linux kernel printk buffer support (FEATURE_KMSG_SYSLOG) [N/y/?] n
+make[2]: Leaving directory '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/busybox-1.27.1'
+[7m>>> busybox 1.27.1 Configuring[27m
+/usr/bin/sed -i -e 's/^noclobber="0"$/noclobber="1"/' /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/busybox-1.27.1/applets/install.sh
+[7m>>> busybox 1.27.1 Building[27m
+PATH="/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/host/bin:/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/host/sbin:/opt/riscv/bin:/home/binh/Downloads/ModelSim-20.1/modelsim_ase/bin:/home/binh/Downloads/vivado-2018.3/SDK/2018.3/bin:/home/binh/Downloads/vivado-2018.3/SDK/2018.3/gnu/microblaze/lin/bin:/home/binh/Downloads/vivado-2018.3/SDK/2018.3/gnu/arm/lin/bin:/home/binh/Downloads/vivado-2018.3/SDK/2018.3/gnu/microblaze/linux_toolchain/lin64_le/bin:/home/binh/Downloads/vivado-2018.3/SDK/2018.3/gnu/aarch32/lin/gcc-arm-linux-gnueabi/bin:/home/binh/Downloads/vivado-2018.3/SDK/2018.3/gnu/aarch32/lin/gcc-arm-none-eabi/bin:/home/binh/Downloads/vivado-2018.3/SDK/2018.3/gnu/aarch64/lin/aarch64-linux/bin:/home/binh/Downloads/vivado-2018.3/SDK/2018.3/gnu/aarch64/lin/aarch64-none/bin:/home/binh/Downloads/vivado-2018.3/SDK/2018.3/gnu/armr5/lin/gcc-arm-none-eabi/bin:/home/binh/Downloads/vivado-2018.3/SDK/2018.3/tps/lnx64/cmake-3.3.2/bin:/home/binh/Downloads/vivado-2018.3/Vivado/2018.3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin" CFLAGS="-D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64  -Os " CFLAGS_busybox="" /usr/bin/make  CC="/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/host/bin/arm-linux-gnueabihf-gcc" ARCH=arm PREFIX="/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target" EXTRA_LDFLAGS="" CROSS_COMPILE="/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/host/bin/arm-linux-gnueabihf-" CONFIG_PREFIX="/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target" SKIP_STRIP=y -C /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/busybox-1.27.1
+make[2]: Entering directory '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/busybox-1.27.1'
+  SPLIT   include/autoconf.h -> include/config/*
+  HOSTCC  applets/usage
+  GEN     include/bbconfigopts.h
+  HOSTCC  applets/applet_tables
+  GEN     include/common_bufsiz.h
+applets/usage.c: In function ‘main’:
+applets/usage.c:52:17: warning: ignoring return value of ‘write’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+   52 |                 write(STDOUT_FILENO, usage_array[i].usage, strlen(usage_array[i].usage) + 1);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  GEN     include/usage_compressed.h
+  GEN     include/applet_tables.h include/NUM_APPLETS.h
+  GEN     include/applet_tables.h include/NUM_APPLETS.h
+  HOSTCC  applets/usage_pod
+  CC      applets/applets.o
+applets/usage_pod.c: In function ‘main’:
+applets/usage_pod.c:74:17: warning: format not a string literal and no format arguments [-Wformat-security]
+   74 |                 printf(usage_array[i].aname);
+      |                 ^~~~~~
+  LD      applets/built-in.o
+  DOC     busybox.pod
+  DOC     BusyBox.txt
+  DOC     busybox.1
+  DOC     BusyBox.html
+  CC      archival/ar.o
+  CC      applets/applets.o
+  CC      console-tools/chvt.o
+  CC      archival/libarchive/common.o
+  LD      applets/built-in.o
+  CC      console-tools/clear.o
+  CC      console-tools/deallocvt.o
+  CC      archival/libarchive/data_align.o
+  CC      archival/bbunzip.o
+  CC      archival/cpio.o
+  CC      archival/libarchive/data_extract_all.o
+  CC      console-tools/dumpkmap.o
+  CC      console-tools/loadfont.o
+  CC      console-tools/loadkmap.o
+  CC      archival/gzip.o
+  CC      archival/libarchive/data_extract_to_command.o
+  CC      console-tools/openvt.o
+  CC      archival/libarchive/data_extract_to_stdout.o
+  CC      archival/libarchive/data_skip.o
+  CC      console-tools/reset.o
+  CC      archival/libarchive/decompress_bunzip2.o
+  CC      archival/libarchive/decompress_gunzip.o
+  CC      console-tools/resize.o
+  CC      console-tools/setconsole.o
+  CC      console-tools/setkeycodes.o
+  CC      coreutils/basename.o
+  CC      archival/tar.o
+  CC      console-tools/setlogcons.o
+  CC      archival/libarchive/decompress_unlzma.o
+  CC      coreutils/cat.o
+  AR      console-tools/lib.a
+  CC      coreutils/libcoreutils/cp_mv_stat.o
+  CC      coreutils/chgrp.o
+  CC      coreutils/libcoreutils/getopt_mk_fifo_nod.o
+  CC      archival/unzip.o
+  CC      archival/libarchive/decompress_unxz.o
+  CC      coreutils/chmod.o
+  AR      coreutils/libcoreutils/lib.a
+  CC      archival/libarchive/filter_accept_all.o
+  CC      coreutils/chown.o
+  CC      archival/libarchive/filter_accept_list.o
+  CC      archival/libarchive/filter_accept_reject_list.o
+  AR      archival/lib.a
+  CC      coreutils/chroot.o
+  CC      debianutils/pipe_progress.o
+  CC      coreutils/cksum.o
+  CC      archival/libarchive/find_list_entry.o
+  CC      debianutils/run_parts.o
+  CC      coreutils/cp.o
+  CC      archival/libarchive/get_header_ar.o
+  CC      debianutils/start_stop_daemon.o
+  CC      coreutils/cut.o
+  CC      archival/libarchive/get_header_cpio.o
+  CC      archival/libarchive/get_header_tar.o
+  CC      debianutils/which.o
+  CC      coreutils/date.o
+  CC      coreutils/dd.o
+  AR      debianutils/lib.a
+  CC      e2fsprogs/chattr.o
+  CC      coreutils/df.o
+  CC      archival/libarchive/header_list.o
+  CC      archival/libarchive/header_skip.o
+  CC      coreutils/dirname.o
+  CC      e2fsprogs/e2fs_lib.o
+  CC      e2fsprogs/fsck.o
+  CC      archival/libarchive/header_verbose_list.o
+  CC      coreutils/dos2unix.o
+  CC      e2fsprogs/lsattr.o
+  CC      archival/libarchive/init_handle.o
+  CC      coreutils/du.o
+  CC      coreutils/echo.o
+  CC      archival/libarchive/open_transformer.o
+  CC      archival/libarchive/seek_by_jump.o
+  CC      coreutils/env.o
+  AR      e2fsprogs/lib.a
+  CC      editors/awk.o
+  CC      findutils/find.o
+  CC      archival/libarchive/seek_by_read.o
+  CC      coreutils/expr.o
+  CC      archival/libarchive/unpack_ar_archive.o
+  CC      archival/libarchive/unsafe_prefix.o
+  CC      coreutils/factor.o
+  AR      archival/libarchive/lib.a
+  CC      init/halt.o
+  CC      findutils/grep.o
+  CC      coreutils/false.o
+  CC      init/init.o
+  CC      coreutils/fold.o
+  CC      findutils/xargs.o
+  CC      coreutils/head.o
+  AR      init/lib.a
+  CC      coreutils/hostid.o
+  CC      libbb/appletlib.o
+  AR      findutils/lib.a
+  CC      libpwdgrp/uidgid_get.o
+  CC      coreutils/id.o
+  AR      libpwdgrp/lib.a
+  CC      coreutils/install.o
+  CC      libbb/ask_confirmation.o
+  CC      loginutils/addgroup.o
+  CC      coreutils/link.o
+  CC      libbb/auto_string.o
+loginutils/addgroup.c: In function ‘addgroup_main’:
+loginutils/addgroup.c:151:11: warning: variable ‘opts’ set but not used [-Wunused-but-set-variable]
+  unsigned opts;
+           ^~~~
+  CC      loginutils/adduser.o
+  CC      editors/cmp.o
+  CC      coreutils/ln.o
+  CC      libbb/bb_askpass.o
+  CC      editors/diff.o
+  CC      coreutils/logname.o
+  CC      loginutils/cryptpw.o
+  CC      libbb/bb_bswap_64.o
+  CC      coreutils/ls.o
+  CC      loginutils/deluser.o
+  CC      libbb/bb_cat.o
+  CC      loginutils/getty.o
+  CC      libbb/bb_do_delay.o
+  CC      libbb/bb_pwd.o
+  CC      loginutils/login.o
+  CC      libbb/bb_qsort.o
+  CC      coreutils/md5_sha1_sum.o
+  CC      editors/patch.o
+  CC      libbb/bb_strtonum.o
+  CC      coreutils/mkdir.o
+  CC      loginutils/passwd.o
+  CC      libbb/change_identity.o
+  CC      coreutils/mkfifo.o
+  CC      loginutils/su.o
+  CC      libbb/chomp.o
+  CC      coreutils/mknod.o
+  CC      editors/sed.o
+  CC      libbb/common_bufsiz.o
+  CC      loginutils/sulogin.o
+  CC      coreutils/mktemp.o
+  CC      libbb/compare_string_array.o
+  CC      loginutils/vlock.o
+  CC      coreutils/mv.o
+  CC      libbb/concat_path_file.o
+  AR      loginutils/lib.a
+  CC      coreutils/nice.o
+  CC      miscutils/crond.o
+  CC      libbb/concat_subpath_file.o
+  CC      coreutils/nl.o
+  CC      libbb/copy_file.o
+  CC      coreutils/nohup.o
+  CC      editors/vi.o
+  CC      coreutils/nproc.o
+  CC      miscutils/crontab.o
+  CC      libbb/copyfd.o
+  CC      coreutils/od.o
+  CC      miscutils/dc.o
+  CC      libbb/correct_password.o
+  CC      libbb/crc32.o
+  CC      miscutils/devmem.o
+  CC      libbb/default_error_retval.o
+  CC      miscutils/hdparm.o
+  CC      libbb/device_open.o
+  CC      coreutils/paste.o
+  CC      libbb/dump.o
+  CC      coreutils/printenv.o
+  CC      coreutils/printf.o
+libbb/dump.c: In function ‘bb_dump_dump’:
+libbb/dump.c:491:17: warning: ‘%03o’ directive writing between 3 and 11 bytes into a region of size 10 [-Wformat-overflow=]
+   sprintf(buf, "%03o", (int) *p);
+                 ^~~~
+libbb/dump.c:491:16: note: directive argument in the range [0, 2147483647]
+   sprintf(buf, "%03o", (int) *p);
+                ^~~~~~
+libbb/dump.c:491:3: note: ‘sprintf’ output between 4 and 12 bytes into a destination of size 10
+   sprintf(buf, "%03o", (int) *p);
+   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  CC      libbb/endofname.o
+  CC      coreutils/pwd.o
+  CC      libbb/executable.o
+  CC      coreutils/readlink.o
+  CC      libbb/fclose_nonstdin.o
+  CC      miscutils/i2c_tools.o
+  CC      coreutils/realpath.o
+  CC      libbb/fflush_stdout_and_exit.o
+  CC      coreutils/rm.o
+  AR      editors/lib.a
+  CC      modutils/insmod.o
+  CC      libbb/fgets_str.o
+miscutils/i2c_tools.c: In function ‘list_i2c_busses_and_exit’:
+miscutils/i2c_tools.c:1111:32: warning: ‘%s’ directive output may be truncated writing up to 255 bytes into a region of size 236 [-Wformat-truncation=]
+   snprintf(path, NAME_MAX, "%s/%s/name",
+                                ^~
+miscutils/i2c_tools.c:1111:3: note: ‘snprintf’ output between 25 and 280 bytes into a destination of size 255
+   snprintf(path, NAME_MAX, "%s/%s/name",
+   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     i2cdev_path, de->d_name);
+     ~~~~~~~~~~~~~~~~~~~~~~~~
+miscutils/i2c_tools.c:1116:10: warning: ‘%s’ directive output may be truncated writing up to 255 bytes into a region of size 236 [-Wformat-truncation=]
+      "%s/%s/device/name",
+          ^~
+miscutils/i2c_tools.c:1115:4: note: ‘snprintf’ output between 32 and 287 bytes into a destination of size 255
+    snprintf(path, NAME_MAX,
+    ^~~~~~~~~~~~~~~~~~~~~~~~
+      "%s/%s/device/name",
+      ~~~~~~~~~~~~~~~~~~~~
+      i2cdev_path, de->d_name);
+      ~~~~~~~~~~~~~~~~~~~~~~~~
+miscutils/i2c_tools.c:1124:10: warning: ‘%s’ directive output may be truncated writing up to 255 bytes into a region of size 236 [-Wformat-truncation=]
+      "%s/%s/device/name",
+          ^~
+miscutils/i2c_tools.c:1123:4: note: ‘snprintf’ output between 32 and 287 bytes into a destination of size 255
+    snprintf(path, NAME_MAX,
+    ^~~~~~~~~~~~~~~~~~~~~~~~
+      "%s/%s/device/name",
+      ~~~~~~~~~~~~~~~~~~~~
+      i2cdev_path, de->d_name);
+      ~~~~~~~~~~~~~~~~~~~~~~~~
+miscutils/i2c_tools.c:1136:12: warning: ‘%s’ directive output may be truncated writing up to 255 bytes into a region of size 236 [-Wformat-truncation=]
+        "%s/%s/device/%s/name",
+            ^~
+miscutils/i2c_tools.c:1135:6: note: ‘snprintf’ output between 33 and 543 bytes into a destination of size 255
+      snprintf(path, NAME_MAX,
+      ^~~~~~~~~~~~~~~~~~~~~~~~
+        "%s/%s/device/%s/name",
+        ~~~~~~~~~~~~~~~~~~~~~~~
+        i2cdev_path, de->d_name,
+        ~~~~~~~~~~~~~~~~~~~~~~~~
+        subde->d_name);
+        ~~~~~~~~~~~~~~
+  CC      coreutils/rmdir.o
+  CC      modutils/lsmod.o
+  CC      libbb/find_mount_point.o
+  CC      coreutils/seq.o
+  CC      modutils/modprobe.o
+  CC      libbb/find_pid_by_name.o
+  CC      coreutils/shred.o
+  CC      miscutils/less.o
+  CC      libbb/find_root_device.o
+  CC      coreutils/sleep.o
+  CC      coreutils/sort.o
+  CC      modutils/modutils.o
+  CC      libbb/full_write.o
+  CC      libbb/get_console.o
+  CC      modutils/rmmod.o
+  CC      libbb/get_last_path_component.o
+  CC      coreutils/stty.o
+  AR      modutils/lib.a
+  CC      libbb/get_line_from_file.o
+  CC      miscutils/lsscsi.o
+  CC      coreutils/sync.o
+  CC      libbb/get_shell_name.o
+  CC      miscutils/makedevs.o
+  CC      libbb/get_volsize.o
+  CC      networking/arp.o
+  CC      libbb/getopt32.o
+  CC      miscutils/microcom.o
+  CC      coreutils/tail.o
+  CC      miscutils/mt.o
+  CC      networking/arping.o
+  CC      libbb/getpty.o
+  CC      coreutils/tee.o
+  CC      miscutils/partprobe.o
+  CC      libbb/hash_md5_sha.o
+  CC      coreutils/test.o
+  CC      miscutils/runlevel.o
+  CC      networking/dnsd.o
+  CC      miscutils/rx.o
+  CC      networking/ether-wake.o
+  CC      coreutils/test_ptr_hack.o
+  CC      coreutils/touch.o
+  CC      miscutils/setserial.o
+  CC      libbb/herror_msg.o
+  CC      networking/hostname.o
+  CC      coreutils/tr.o
+  CC      libbb/human_readable.o
+  CC      miscutils/strings.o
+  CC      networking/ifconfig.o
+  CC      miscutils/time.o
+  CC      coreutils/true.o
+  CC      libbb/in_ether.o
+  CC      networking/ifupdown.o
+  CC      coreutils/truncate.o
+  CC      libbb/inet_cksum.o
+  CC      miscutils/ubirename.o
+  CC      coreutils/tty.o
+  CC      libbb/inet_common.o
+  CC      coreutils/uname.o
+  CC      miscutils/watchdog.o
+  CC      libbb/inode_hash.o
+  CC      coreutils/uniq.o
+  AR      miscutils/lib.a
+  CC      networking/libiproute/ip_parse_common_args.o
+  CC      libbb/isdirectory.o
+  CC      coreutils/unlink.o
+  CC      networking/inetd.o
+  CC      networking/libiproute/ipaddress.o
+  CC      libbb/isqrt.o
+  CC      coreutils/usleep.o
+  CC      libbb/kernel_version.o
+  CC      coreutils/uudecode.o
+  CC      libbb/last_char_is.o
+  CC      coreutils/uuencode.o
+  CC      libbb/lineedit.o
+  CC      networking/libiproute/iplink.o
+  CC      coreutils/wc.o
+  CC      networking/interface.o
+  CC      coreutils/who.o
+  CC      networking/libiproute/ipneigh.o
+  CC      coreutils/whoami.o
+  CC      coreutils/yes.o
+  CC      networking/ip.o
+  CC      networking/libiproute/iproute.o
+  AR      coreutils/lib.a
+  CC      networking/libiproute/iprule.o
+  CC      networking/nameif.o
+  CC      libbb/lineedit_ptr_hack.o
+  CC      libbb/llist.o
+  CC      networking/netstat.o
+  CC      libbb/login.o
+  CC      networking/nslookup.o
+  CC      libbb/loop.o
+  CC      networking/libiproute/iptunnel.o
+  CC      networking/ping.o
+  CC      networking/route.o
+  CC      libbb/make_directory.o
+  CC      networking/ssl_client.o
+  CC      libbb/makedev.o
+  CC      libbb/match_fstype.o
+  CC      networking/libiproute/libnetlink.o
+  CC      networking/libiproute/ll_addr.o
+  CC      networking/telnet.o
+  CC      libbb/messages.o
+  CC      networking/tftp.o
+  CC      libbb/missing_syscalls.o
+  CC      networking/libiproute/ll_map.o
+  CC      libbb/mode_string.o
+  CC      networking/libiproute/ll_proto.o
+  CC      networking/tls.o
+  CC      networking/libiproute/ll_types.o
+  CC      libbb/nuke_str.o
+  CC      networking/udhcp/arpping.o
+  CC      libbb/obscure.o
+  CC      networking/libiproute/rt_names.o
+  CC      networking/udhcp/common.o
+  CC      libbb/parse_config.o
+  CC      networking/libiproute/rtm_map.o
+  CC      networking/tls_aes.o
+  CC      libbb/parse_mode.o
+  CC      networking/udhcp/dhcpc.o
+  CC      networking/libiproute/utils.o
+  CC      libbb/percent_decode.o
+  CC      networking/tls_pstm.o
+  AR      networking/libiproute/lib.a
+  CC      libbb/perror_msg.o
+  CC      networking/udhcp/packet.o
+  CC      libbb/perror_nomsg.o
+  CC      libbb/perror_nomsg_and_die.o
+  CC      libbb/pidfile.o
+  CC      networking/udhcp/signalpipe.o
+  CC      libbb/platform.o
+  CC      networking/tls_pstm_montgomery_reduce.o
+  CC      networking/udhcp/socket.o
+  CC      libbb/print_flags.o
+  AR      networking/udhcp/lib.a
+  CC      libbb/print_numbered_lines.o
+  CC      procps/free.o
+  CC      networking/tls_pstm_mul_comba.o
+  CC      libbb/printable.o
+  CC      procps/fuser.o
+  CC      networking/tls_pstm_sqr_comba.o
+  CC      libbb/printable_string.o
+  CC      libbb/process_escape_sequence.o
+  CC      networking/tls_rsa.o
+  CC      runit/sv.o
+  CC      procps/kill.o
+  CC      libbb/procps.o
+  CC      networking/traceroute.o
+  CC      procps/lsof.o
+  CC      libbb/progress.o
+  CC      procps/pidof.o
+  AR      runit/lib.a
+  CC      shell/ash.o
+  CC      networking/vconfig.o
+  CC      libbb/ptr_to_globals.o
+  CC      procps/ps.o
+  CC      libbb/pw_encrypt.o
+  CC      networking/wget.o
+  CC      procps/sysctl.o
+  CC      libbb/read.o
+  CC      procps/top.o
+  CC      libbb/read_key.o
+procps/top.c: In function ‘display_process_list’:
+procps/top.c:698:31: warning: ‘sprintf’ may write a terminating nul past the end of the destination [-Wformat-overflow=]
+    sprintf(vsz_str_buf, "%6ldm", s->vsz/1024);
+                               ^
+procps/top.c:698:4: note: ‘sprintf’ output between 8 and 9 bytes into a destination of size 8
+    sprintf(vsz_str_buf, "%6ldm", s->vsz/1024);
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  AR      networking/lib.a
+  CC      sysklogd/klogd.o
+  CC      libbb/read_printf.o
+  CC      procps/uptime.o
+  CC      sysklogd/syslogd_and_logger.o
+  CC      libbb/recursive_action.o
+  CC      procps/watch.o
+  CC      libbb/remove_file.o
+  AR      procps/lib.a
+  CC      util-linux/blkdiscard.o
+  AR      sysklogd/lib.a
+  CC      libbb/replace.o
+  CC      util-linux/volume_id/bcache.o
+  CC      util-linux/blkid.o
+  CC      util-linux/volume_id/exfat.o
+  CC      libbb/rtc.o
+  CC      util-linux/chrt.o
+  CC      util-linux/volume_id/ext.o
+  CC      libbb/run_shell.o
+  CC      util-linux/dmesg.o
+  CC      util-linux/volume_id/f2fs.o
+  CC      libbb/safe_gethostname.o
+  CC      util-linux/eject.o
+  CC      util-linux/volume_id/fat.o
+  CC      libbb/safe_poll.o
+  CC      util-linux/fallocate.o
+  CC      libbb/safe_strncpy.o
+  CC      util-linux/volume_id/get_devname.o
+  CC      util-linux/fbset.o
+  CC      libbb/safe_write.o
+  CC      util-linux/volume_id/ubifs.o
+  CC      libbb/securetty.o
+  CC      util-linux/volume_id/util.o
+  CC      util-linux/fdformat.o
+  CC      libbb/setup_environment.o
+  CC      libbb/signals.o
+  CC      util-linux/fdisk.o
+  CC      util-linux/volume_id/volume_id.o
+  CC      libbb/simplify_path.o
+  AR      util-linux/volume_id/lib.a
+  CC      libbb/single_argv.o
+  CC      util-linux/flock.o
+  CC      libbb/skip_whitespace.o
+  CC      libbb/speed_table.o
+  CC      util-linux/freeramdisk.o
+  CC      libbb/str_tolower.o
+  CC      util-linux/fsfreeze.o
+  CC      libbb/strrstr.o
+  CC      libbb/sysconf.o
+  CC      util-linux/fstrim.o
+  CC      libbb/time.o
+  CC      libbb/trim.o
+  CC      util-linux/getopt.o
+  CC      libbb/u_signal_names.o
+  CC      libbb/ubi.o
+  CC      libbb/udp_io.o
+  CC      util-linux/hexdump.o
+  CC      util-linux/hexdump_xxd.o
+  CC      libbb/update_passwd.o
+  CC      libbb/utmp.o
+  CC      util-linux/hwclock.o
+  CC      libbb/uuencode.o
+  CC      libbb/vdprintf.o
+  CC      util-linux/ipcrm.o
+  CC      shell/ash_ptr_hack.o
+  CC      shell/math.o
+  CC      libbb/verror_msg.o
+  CC      shell/random.o
+  CC      util-linux/ipcs.o
+  CC      shell/shell_common.o
+  CC      libbb/vfork_daemon_rexec.o
+  CC      libbb/warn_ignoring_args.o
+  CC      libbb/wfopen.o
+  CC      libbb/wfopen_input.o
+  AR      shell/lib.a
+  CC      libbb/write.o
+  CC      util-linux/last.o
+  CC      libbb/xatonum.o
+  CC      libbb/xconnect.o
+  CC      util-linux/losetup.o
+  CC      util-linux/lspci.o
+  CC      libbb/xfunc_die.o
+  CC      util-linux/lsusb.o
+  CC      util-linux/mdev.o
+  CC      libbb/xfuncs.o
+  CC      util-linux/mesg.o
+  CC      util-linux/mkfs_ext2.o
+  CC      util-linux/mkfs_vfat.o
+  CC      libbb/xfuncs_printf.o
+  CC      util-linux/mkswap.o
+  CC      util-linux/more.o
+  CC      libbb/xgetcwd.o
+  CC      util-linux/mount.o
+  CC      util-linux/mountpoint.o
+  CC      util-linux/nsenter.o
+  CC      libbb/xgethostbyname.o
+  CC      util-linux/pivot_root.o
+  CC      libbb/xreadlink.o
+  CC      util-linux/rdate.o
+  CC      util-linux/readprofile.o
+  CC      libbb/xrealloc_vector.o
+  CC      libbb/xregcomp.o
+  CC      util-linux/renice.o
+  CC      util-linux/setarch.o
+  AR      libbb/lib.a
+  CC      util-linux/setpriv.o
+  CC      util-linux/setsid.o
+  CC      util-linux/swaponoff.o
+  CC      util-linux/switch_root.o
+  CC      util-linux/uevent.o
+  CC      util-linux/umount.o
+  CC      util-linux/unshare.o
+  AR      util-linux/lib.a
+  LINK    busybox_unstripped
+Trying libraries: crypt m
+ Library crypt is not needed, excluding it
+ Library m is not needed, excluding it
+Final link with: <none>
+make[2]: Leaving directory '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/busybox-1.27.1'
+[7m>>> busybox 1.27.1 Installing to target[27m
+PATH="/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/host/bin:/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/host/sbin:/opt/riscv/bin:/home/binh/Downloads/ModelSim-20.1/modelsim_ase/bin:/home/binh/Downloads/vivado-2018.3/SDK/2018.3/bin:/home/binh/Downloads/vivado-2018.3/SDK/2018.3/gnu/microblaze/lin/bin:/home/binh/Downloads/vivado-2018.3/SDK/2018.3/gnu/arm/lin/bin:/home/binh/Downloads/vivado-2018.3/SDK/2018.3/gnu/microblaze/linux_toolchain/lin64_le/bin:/home/binh/Downloads/vivado-2018.3/SDK/2018.3/gnu/aarch32/lin/gcc-arm-linux-gnueabi/bin:/home/binh/Downloads/vivado-2018.3/SDK/2018.3/gnu/aarch32/lin/gcc-arm-none-eabi/bin:/home/binh/Downloads/vivado-2018.3/SDK/2018.3/gnu/aarch64/lin/aarch64-linux/bin:/home/binh/Downloads/vivado-2018.3/SDK/2018.3/gnu/aarch64/lin/aarch64-none/bin:/home/binh/Downloads/vivado-2018.3/SDK/2018.3/gnu/armr5/lin/gcc-arm-none-eabi/bin:/home/binh/Downloads/vivado-2018.3/SDK/2018.3/tps/lnx64/cmake-3.3.2/bin:/home/binh/Downloads/vivado-2018.3/Vivado/2018.3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin" CFLAGS="-D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64  -Os " CFLAGS_busybox="" /usr/bin/make  CC="/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/host/bin/arm-linux-gnueabihf-gcc" ARCH=arm PREFIX="/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target" EXTRA_LDFLAGS="" CROSS_COMPILE="/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/host/bin/arm-linux-gnueabihf-" CONFIG_PREFIX="/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target" SKIP_STRIP=y -C /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/busybox-1.27.1 install
+make[2]: Entering directory '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/busybox-1.27.1'
+  CC      applets/applets.o
+  LD      applets/built-in.o
+  CC      archival/ar.o
+  CC      applets/applets.o
+  CC      console-tools/chvt.o
+  CC      archival/libarchive/common.o
+  LD      applets/built-in.o
+  CC      archival/bbunzip.o
+  CC      console-tools/clear.o
+  CC      archival/libarchive/data_align.o
+  CC      archival/cpio.o
+  CC      console-tools/deallocvt.o
+  CC      archival/libarchive/data_extract_all.o
+  CC      archival/libarchive/data_extract_to_command.o
+  CC      archival/gzip.o
+  CC      console-tools/dumpkmap.o
+  CC      archival/tar.o
+  CC      archival/libarchive/data_extract_to_stdout.o
+  CC      console-tools/loadfont.o
+  CC      archival/libarchive/data_skip.o
+  CC      console-tools/loadkmap.o
+  CC      archival/libarchive/decompress_bunzip2.o
+  CC      archival/unzip.o
+  CC      console-tools/openvt.o
+  CC      console-tools/reset.o
+  CC      console-tools/resize.o
+  CC      archival/libarchive/decompress_gunzip.o
+  CC      archival/libarchive/decompress_unlzma.o
+  AR      archival/lib.a
+  CC      coreutils/basename.o
+  CC      console-tools/setconsole.o
+  CC      coreutils/cat.o
+  CC      console-tools/setkeycodes.o
+  CC      console-tools/setlogcons.o
+  CC      coreutils/libcoreutils/cp_mv_stat.o
+  CC      coreutils/chgrp.o
+  AR      console-tools/lib.a
+  CC      debianutils/pipe_progress.o
+  CC      coreutils/libcoreutils/getopt_mk_fifo_nod.o
+  CC      coreutils/chmod.o
+  CC      debianutils/run_parts.o
+  CC      archival/libarchive/decompress_unxz.o
+  AR      coreutils/libcoreutils/lib.a
+  CC      e2fsprogs/chattr.o
+  CC      coreutils/chown.o
+  CC      debianutils/start_stop_daemon.o
+  CC      coreutils/chroot.o
+  CC      e2fsprogs/e2fs_lib.o
+  CC      coreutils/cksum.o
+  CC      e2fsprogs/fsck.o
+  CC      debianutils/which.o
+  CC      coreutils/cp.o
+  AR      debianutils/lib.a
+  CC      editors/awk.o
+  CC      coreutils/cut.o
+  CC      archival/libarchive/filter_accept_all.o
+  CC      coreutils/date.o
+  CC      e2fsprogs/lsattr.o
+  CC      archival/libarchive/filter_accept_list.o
+  CC      coreutils/dd.o
+  AR      e2fsprogs/lib.a
+  CC      coreutils/df.o
+  CC      archival/libarchive/filter_accept_reject_list.o
+  CC      archival/libarchive/find_list_entry.o
+  CC      coreutils/dirname.o
+  CC      findutils/find.o
+  CC      archival/libarchive/get_header_ar.o
+  CC      coreutils/dos2unix.o
+  CC      coreutils/du.o
+  CC      archival/libarchive/get_header_cpio.o
+  CC      coreutils/echo.o
+  CC      archival/libarchive/get_header_tar.o
+  CC      findutils/grep.o
+  CC      coreutils/env.o
+  CC      archival/libarchive/header_list.o
+  CC      coreutils/expr.o
+  CC      archival/libarchive/header_skip.o
+  CC      editors/cmp.o
+  CC      findutils/xargs.o
+  CC      archival/libarchive/header_verbose_list.o
+  CC      editors/diff.o
+  CC      coreutils/factor.o
+  CC      archival/libarchive/init_handle.o
+  AR      findutils/lib.a
+  CC      init/halt.o
+  CC      coreutils/false.o
+  CC      archival/libarchive/open_transformer.o
+  CC      coreutils/fold.o
+  CC      init/init.o
+  CC      archival/libarchive/seek_by_jump.o
+  CC      archival/libarchive/seek_by_read.o
+  CC      coreutils/head.o
+  CC      archival/libarchive/unpack_ar_archive.o
+  CC      coreutils/hostid.o
+  AR      init/lib.a
+  CC      editors/patch.o
+  CC      archival/libarchive/unsafe_prefix.o
+  CC      libbb/appletlib.o
+  CC      coreutils/id.o
+  AR      archival/libarchive/lib.a
+  CC      libpwdgrp/uidgid_get.o
+  CC      coreutils/install.o
+  AR      libpwdgrp/lib.a
+  CC      loginutils/addgroup.o
+  CC      editors/sed.o
+  CC      libbb/ask_confirmation.o
+loginutils/addgroup.c: In function ‘addgroup_main’:
+loginutils/addgroup.c:151:11: warning: variable ‘opts’ set but not used [-Wunused-but-set-variable]
+  unsigned opts;
+           ^~~~
+  CC      coreutils/link.o
+  CC      loginutils/adduser.o
+  CC      libbb/auto_string.o
+  CC      coreutils/ln.o
+  CC      libbb/bb_askpass.o
+  CC      loginutils/cryptpw.o
+  CC      coreutils/logname.o
+  CC      libbb/bb_bswap_64.o
+  CC      loginutils/deluser.o
+  CC      coreutils/ls.o
+  CC      libbb/bb_cat.o
+  CC      loginutils/getty.o
+  CC      libbb/bb_do_delay.o
+  CC      editors/vi.o
+  CC      libbb/bb_pwd.o
+  CC      loginutils/login.o
+  CC      libbb/bb_qsort.o
+  CC      coreutils/md5_sha1_sum.o
+  CC      libbb/bb_strtonum.o
+  CC      loginutils/passwd.o
+  CC      coreutils/mkdir.o
+  CC      libbb/change_identity.o
+  CC      coreutils/mkfifo.o
+  CC      loginutils/su.o
+  CC      libbb/chomp.o
+  CC      coreutils/mknod.o
+  CC      loginutils/sulogin.o
+  CC      libbb/common_bufsiz.o
+  CC      coreutils/mktemp.o
+  CC      loginutils/vlock.o
+  CC      libbb/compare_string_array.o
+  CC      coreutils/mv.o
+  AR      loginutils/lib.a
+  CC      libbb/concat_path_file.o
+  CC      miscutils/crond.o
+  CC      coreutils/nice.o
+  CC      libbb/concat_subpath_file.o
+  CC      coreutils/nl.o
+  CC      libbb/copy_file.o
+  CC      coreutils/nohup.o
+  CC      miscutils/crontab.o
+  CC      libbb/copyfd.o
+  CC      coreutils/nproc.o
+  CC      miscutils/dc.o
+  CC      coreutils/od.o
+  CC      libbb/correct_password.o
+  AR      editors/lib.a
+  CC      libbb/crc32.o
+  CC      coreutils/paste.o
+  CC      miscutils/devmem.o
+  CC      libbb/default_error_retval.o
+  CC      coreutils/printenv.o
+  CC      miscutils/hdparm.o
+  CC      libbb/device_open.o
+  CC      coreutils/printf.o
+  CC      libbb/dump.o
+  CC      miscutils/i2c_tools.o
+  CC      coreutils/pwd.o
+miscutils/i2c_tools.c: In function ‘list_i2c_busses_and_exit’:
+miscutils/i2c_tools.c:1111:32: warning: ‘%s’ directive output may be truncated writing up to 255 bytes into a region of size 236 [-Wformat-truncation=]
+   snprintf(path, NAME_MAX, "%s/%s/name",
+                                ^~
+miscutils/i2c_tools.c:1111:3: note: ‘snprintf’ output between 25 and 280 bytes into a destination of size 255
+   snprintf(path, NAME_MAX, "%s/%s/name",
+   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     i2cdev_path, de->d_name);
+     ~~~~~~~~~~~~~~~~~~~~~~~~
+miscutils/i2c_tools.c:1116:10: warning: ‘%s’ directive output may be truncated writing up to 255 bytes into a region of size 236 [-Wformat-truncation=]
+      "%s/%s/device/name",
+          ^~
+miscutils/i2c_tools.c:1115:4: note: ‘snprintf’ output between 32 and 287 bytes into a destination of size 255
+    snprintf(path, NAME_MAX,
+    ^~~~~~~~~~~~~~~~~~~~~~~~
+      "%s/%s/device/name",
+      ~~~~~~~~~~~~~~~~~~~~
+      i2cdev_path, de->d_name);
+      ~~~~~~~~~~~~~~~~~~~~~~~~
+miscutils/i2c_tools.c:1124:10: warning: ‘%s’ directive output may be truncated writing up to 255 bytes into a region of size 236 [-Wformat-truncation=]
+      "%s/%s/device/name",
+          ^~
+miscutils/i2c_tools.c:1123:4: note: ‘snprintf’ output between 32 and 287 bytes into a destination of size 255
+    snprintf(path, NAME_MAX,
+    ^~~~~~~~~~~~~~~~~~~~~~~~
+      "%s/%s/device/name",
+      ~~~~~~~~~~~~~~~~~~~~
+      i2cdev_path, de->d_name);
+      ~~~~~~~~~~~~~~~~~~~~~~~~
+miscutils/i2c_tools.c:1136:12: warning: ‘%s’ directive output may be truncated writing up to 255 bytes into a region of size 236 [-Wformat-truncation=]
+        "%s/%s/device/%s/name",
+            ^~
+miscutils/i2c_tools.c:1135:6: note: ‘snprintf’ output between 33 and 543 bytes into a destination of size 255
+      snprintf(path, NAME_MAX,
+      ^~~~~~~~~~~~~~~~~~~~~~~~
+        "%s/%s/device/%s/name",
+        ~~~~~~~~~~~~~~~~~~~~~~~
+        i2cdev_path, de->d_name,
+        ~~~~~~~~~~~~~~~~~~~~~~~~
+        subde->d_name);
+        ~~~~~~~~~~~~~~
+  CC      coreutils/readlink.o
+libbb/dump.c: In function ‘bb_dump_dump’:
+libbb/dump.c:491:17: warning: ‘%03o’ directive writing between 3 and 11 bytes into a region of size 10 [-Wformat-overflow=]
+   sprintf(buf, "%03o", (int) *p);
+                 ^~~~
+libbb/dump.c:491:16: note: directive argument in the range [0, 2147483647]
+   sprintf(buf, "%03o", (int) *p);
+                ^~~~~~
+libbb/dump.c:491:3: note: ‘sprintf’ output between 4 and 12 bytes into a destination of size 10
+   sprintf(buf, "%03o", (int) *p);
+   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  CC      coreutils/realpath.o
+  CC      libbb/endofname.o
+  CC      coreutils/rm.o
+  CC      libbb/executable.o
+  CC      libbb/fclose_nonstdin.o
+  CC      coreutils/rmdir.o
+  CC      libbb/fflush_stdout_and_exit.o
+  CC      miscutils/less.o
+  CC      modutils/insmod.o
+  CC      coreutils/seq.o
+  CC      libbb/fgets_str.o
+  CC      modutils/lsmod.o
+  CC      coreutils/shred.o
+  CC      libbb/find_mount_point.o
+  CC      modutils/modprobe.o
+  CC      coreutils/sleep.o
+  CC      libbb/find_pid_by_name.o
+  CC      coreutils/sort.o
+  CC      libbb/find_root_device.o
+  CC      modutils/modutils.o
+  CC      libbb/full_write.o
+  CC      miscutils/lsscsi.o
+  CC      libbb/get_console.o
+  CC      modutils/rmmod.o
+  CC      coreutils/stty.o
+  CC      miscutils/makedevs.o
+  AR      modutils/lib.a
+  CC      libbb/get_last_path_component.o
+  CC      networking/arp.o
+  CC      miscutils/microcom.o
+  CC      libbb/get_line_from_file.o
+  CC      libbb/get_shell_name.o
+  CC      miscutils/mt.o
+  CC      networking/arping.o
+  CC      coreutils/sync.o
+  CC      libbb/get_volsize.o
+  CC      miscutils/partprobe.o
+  CC      coreutils/tail.o
+  CC      libbb/getopt32.o
+  CC      miscutils/runlevel.o
+  CC      networking/dnsd.o
+  CC      miscutils/rx.o
+  CC      coreutils/tee.o
+  CC      libbb/getpty.o
+  CC      networking/ether-wake.o
+  CC      coreutils/test.o
+  CC      miscutils/setserial.o
+  CC      libbb/hash_md5_sha.o
+  CC      networking/hostname.o
+  CC      miscutils/strings.o
+  CC      networking/ifconfig.o
+  CC      coreutils/test_ptr_hack.o
+  CC      coreutils/touch.o
+  CC      miscutils/time.o
+  CC      coreutils/tr.o
+  CC      libbb/herror_msg.o
+  CC      networking/ifupdown.o
+  CC      libbb/human_readable.o
+  CC      miscutils/ubirename.o
+  CC      coreutils/true.o
+  CC      miscutils/watchdog.o
+  CC      libbb/in_ether.o
+  CC      coreutils/truncate.o
+  AR      miscutils/lib.a
+  CC      libbb/inet_cksum.o
+  CC      networking/libiproute/ip_parse_common_args.o
+  CC      coreutils/tty.o
+  CC      libbb/inet_common.o
+  CC      networking/libiproute/ipaddress.o
+  CC      coreutils/uname.o
+  CC      networking/inetd.o
+  CC      libbb/inode_hash.o
+  CC      coreutils/uniq.o
+  CC      libbb/isdirectory.o
+  CC      coreutils/unlink.o
+  CC      libbb/isqrt.o
+  CC      coreutils/usleep.o
+  CC      networking/libiproute/iplink.o
+  CC      libbb/kernel_version.o
+  CC      coreutils/uudecode.o
+  CC      libbb/last_char_is.o
+  CC      networking/interface.o
+  CC      coreutils/uuencode.o
+  CC      libbb/lineedit.o
+  CC      networking/libiproute/ipneigh.o
+  CC      coreutils/wc.o
+  CC      coreutils/who.o
+  CC      networking/libiproute/iproute.o
+  CC      networking/ip.o
+  CC      coreutils/whoami.o
+  CC      networking/nameif.o
+  CC      coreutils/yes.o
+  AR      coreutils/lib.a
+  CC      networking/udhcp/arpping.o
+  CC      networking/netstat.o
+  CC      networking/udhcp/common.o
+  CC      networking/libiproute/iprule.o
+  CC      networking/nslookup.o
+  CC      libbb/lineedit_ptr_hack.o
+  CC      networking/udhcp/dhcpc.o
+  CC      networking/ping.o
+  CC      libbb/llist.o
+  CC      networking/libiproute/iptunnel.o
+  CC      libbb/login.o
+  CC      networking/route.o
+  CC      libbb/loop.o
+  CC      networking/libiproute/libnetlink.o
+  CC      libbb/make_directory.o
+  CC      networking/udhcp/packet.o
+  CC      networking/ssl_client.o
+  CC      libbb/makedev.o
+  CC      libbb/match_fstype.o
+  CC      networking/libiproute/ll_addr.o
+  CC      networking/telnet.o
+  CC      networking/udhcp/signalpipe.o
+  CC      libbb/messages.o
+  CC      networking/libiproute/ll_map.o
+  CC      networking/udhcp/socket.o
+  CC      libbb/missing_syscalls.o
+  CC      networking/libiproute/ll_proto.o
+  CC      networking/tftp.o
+  CC      libbb/mode_string.o
+  AR      networking/udhcp/lib.a
+  CC      libbb/nuke_str.o
+  CC      libbb/obscure.o
+  CC      networking/libiproute/ll_types.o
+  CC      procps/free.o
+  CC      networking/libiproute/rt_names.o
+  CC      networking/tls.o
+  CC      libbb/parse_config.o
+  CC      procps/fuser.o
+  CC      networking/libiproute/rtm_map.o
+  CC      libbb/parse_mode.o
+  CC      procps/kill.o
+  CC      networking/libiproute/utils.o
+  CC      libbb/percent_decode.o
+  CC      networking/tls_aes.o
+  CC      procps/lsof.o
+  CC      libbb/perror_msg.o
+  AR      networking/libiproute/lib.a
+  CC      runit/sv.o
+  CC      procps/pidof.o
+  CC      libbb/perror_nomsg.o
+  CC      libbb/perror_nomsg_and_die.o
+  CC      networking/tls_pstm.o
+  CC      libbb/pidfile.o
+  CC      procps/ps.o
+  CC      libbb/platform.o
+  AR      runit/lib.a
+  CC      libbb/print_flags.o
+  CC      shell/ash.o
+  CC      procps/sysctl.o
+  CC      libbb/print_numbered_lines.o
+  CC      procps/top.o
+  CC      libbb/printable.o
+  CC      libbb/printable_string.o
+procps/top.c: In function ‘display_process_list’:
+procps/top.c:698:31: warning: ‘sprintf’ may write a terminating nul past the end of the destination [-Wformat-overflow=]
+    sprintf(vsz_str_buf, "%6ldm", s->vsz/1024);
+                               ^
+procps/top.c:698:4: note: ‘sprintf’ output between 8 and 9 bytes into a destination of size 8
+    sprintf(vsz_str_buf, "%6ldm", s->vsz/1024);
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  CC      libbb/process_escape_sequence.o
+  CC      networking/tls_pstm_montgomery_reduce.o
+  CC      procps/uptime.o
+  CC      libbb/procps.o
+  CC      procps/watch.o
+  CC      networking/tls_pstm_mul_comba.o
+  AR      procps/lib.a
+  CC      libbb/progress.o
+  CC      sysklogd/klogd.o
+  CC      networking/tls_pstm_sqr_comba.o
+  CC      sysklogd/syslogd_and_logger.o
+  CC      libbb/ptr_to_globals.o
+  CC      libbb/pw_encrypt.o
+  CC      networking/tls_rsa.o
+  CC      networking/traceroute.o
+  AR      sysklogd/lib.a
+  CC      shell/ash_ptr_hack.o
+  CC      util-linux/blkdiscard.o
+  CC      libbb/read.o
+  CC      networking/vconfig.o
+  CC      util-linux/blkid.o
+  CC      libbb/read_key.o
+  CC      networking/wget.o
+  CC      util-linux/chrt.o
+  CC      libbb/read_printf.o
+  CC      util-linux/dmesg.o
+  CC      libbb/recursive_action.o
+  CC      util-linux/eject.o
+  CC      libbb/remove_file.o
+  CC      util-linux/fallocate.o
+  CC      util-linux/fbset.o
+  AR      networking/lib.a
+  CC      libbb/replace.o
+  CC      util-linux/volume_id/bcache.o
+  CC      libbb/rtc.o
+  CC      util-linux/volume_id/exfat.o
+  CC      util-linux/fdformat.o
+  CC      util-linux/volume_id/ext.o
+  CC      libbb/run_shell.o
+  CC      util-linux/fdisk.o
+  CC      util-linux/volume_id/f2fs.o
+  CC      libbb/safe_gethostname.o
+  CC      util-linux/volume_id/fat.o
+  CC      libbb/safe_poll.o
+  CC      libbb/safe_strncpy.o
+  CC      util-linux/volume_id/get_devname.o
+  CC      libbb/safe_write.o
+  CC      util-linux/volume_id/ubifs.o
+  CC      libbb/securetty.o
+  CC      util-linux/volume_id/util.o
+  CC      libbb/setup_environment.o
+  CC      libbb/signals.o
+  CC      util-linux/volume_id/volume_id.o
+  CC      libbb/simplify_path.o
+  AR      util-linux/volume_id/lib.a
+  CC      libbb/single_argv.o
+  CC      libbb/skip_whitespace.o
+  CC      shell/math.o
+  CC      libbb/speed_table.o
+  CC      util-linux/flock.o
+  CC      libbb/str_tolower.o
+  CC      libbb/strrstr.o
+  CC      util-linux/freeramdisk.o
+  CC      libbb/sysconf.o
+  CC      libbb/time.o
+  CC      util-linux/fsfreeze.o
+  CC      util-linux/fstrim.o
+  CC      shell/random.o
+  CC      util-linux/getopt.o
+  CC      util-linux/hexdump.o
+  CC      libbb/trim.o
+  CC      shell/shell_common.o
+  CC      libbb/u_signal_names.o
+  CC      util-linux/hexdump_xxd.o
+  CC      libbb/ubi.o
+  CC      util-linux/hwclock.o
+  AR      shell/lib.a
+  CC      libbb/udp_io.o
+  CC      util-linux/ipcrm.o
+  CC      libbb/update_passwd.o
+  CC      util-linux/ipcs.o
+  CC      util-linux/last.o
+  CC      libbb/utmp.o
+  CC      libbb/uuencode.o
+  CC      util-linux/losetup.o
+  CC      libbb/vdprintf.o
+  CC      util-linux/lspci.o
+  CC      util-linux/lsusb.o
+  CC      libbb/verror_msg.o
+  CC      util-linux/mdev.o
+  CC      util-linux/mesg.o
+  CC      util-linux/mkfs_ext2.o
+  CC      libbb/vfork_daemon_rexec.o
+  CC      util-linux/mkfs_vfat.o
+  CC      libbb/warn_ignoring_args.o
+  CC      libbb/wfopen.o
+  CC      util-linux/mkswap.o
+  CC      util-linux/more.o
+  CC      util-linux/mount.o
+  CC      libbb/wfopen_input.o
+  CC      util-linux/mountpoint.o
+  CC      libbb/write.o
+  CC      util-linux/nsenter.o
+  CC      util-linux/pivot_root.o
+  CC      libbb/xatonum.o
+  CC      util-linux/rdate.o
+  CC      util-linux/readprofile.o
+  CC      util-linux/renice.o
+  CC      util-linux/setarch.o
+  CC      libbb/xconnect.o
+  CC      util-linux/setpriv.o
+  CC      util-linux/setsid.o
+  CC      util-linux/swaponoff.o
+  CC      util-linux/switch_root.o
+  CC      util-linux/uevent.o
+  CC      util-linux/umount.o
+  CC      libbb/xfunc_die.o
+  CC      libbb/xfuncs.o
+  CC      util-linux/unshare.o
+  CC      libbb/xfuncs_printf.o
+  CC      libbb/xgetcwd.o
+  AR      util-linux/lib.a
+  CC      libbb/xgethostbyname.o
+  CC      libbb/xreadlink.o
+  CC      libbb/xrealloc_vector.o
+  CC      libbb/xregcomp.o
+  AR      libbb/lib.a
+  LINK    busybox_unstripped
+Trying libraries: crypt m
+ Library crypt is not needed, excluding it
+ Library m is not needed, excluding it
+Final link with: <none>
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//bin/ash already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//bin/cat already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//bin/chattr already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//bin/chgrp already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//bin/chmod already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//bin/chown already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//bin/cp already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//bin/cpio already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//bin/date already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//bin/dd already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//bin/df already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//bin/dmesg already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//bin/dnsdomainname already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//bin/dumpkmap already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//bin/echo already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//bin/egrep already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//bin/false already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//bin/fdflush already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//bin/fgrep already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//bin/getopt already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//bin/grep already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//bin/gunzip already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//bin/gzip already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//bin/hostname already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//bin/kill already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//bin/link already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//bin/linux32 already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//bin/linux64 already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//bin/ln already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//bin/login already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//bin/ls already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//bin/lsattr already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//bin/mkdir already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//bin/mknod already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//bin/mktemp already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//bin/more already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//bin/mount already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//bin/mountpoint already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//bin/mt already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//bin/mv already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//bin/netstat already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//bin/nice already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//bin/pidof already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//bin/ping already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//bin/pipe_progress already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//bin/printenv already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//bin/ps already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//bin/pwd already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//bin/rm already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//bin/rmdir already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//bin/run-parts already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//bin/sed already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//bin/setarch already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//bin/setpriv already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//bin/setserial already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//bin/sh already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//bin/sleep already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//bin/stty already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//bin/su already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//bin/sync already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//bin/tar already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//bin/touch already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//bin/true already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//bin/umount already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//bin/uname already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//bin/usleep already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//bin/vi already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//bin/watch already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//bin/zcat already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//linuxrc already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//sbin/arp already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//sbin/blkid already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//sbin/devmem already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//sbin/fdisk already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//sbin/freeramdisk already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//sbin/fsck already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//sbin/fstrim already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//sbin/getty already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//sbin/halt already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//sbin/hdparm already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//sbin/hwclock already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//sbin/ifconfig already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//sbin/ifdown already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//sbin/ifup already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//sbin/init already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//sbin/insmod already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//sbin/ip already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//sbin/ipaddr already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//sbin/iplink already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//sbin/ipneigh already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//sbin/iproute already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//sbin/iprule already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//sbin/iptunnel already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//sbin/klogd already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//sbin/loadkmap already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//sbin/losetup already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//sbin/lsmod already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//sbin/makedevs already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//sbin/mdev already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//sbin/mkdosfs already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//sbin/mke2fs already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//sbin/mkswap already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//sbin/modprobe already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//sbin/nameif already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//sbin/pivot_root already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//sbin/poweroff already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//sbin/reboot already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//sbin/rmmod already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//sbin/route already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//sbin/runlevel already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//sbin/setconsole already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//sbin/start-stop-daemon already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//sbin/sulogin already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//sbin/swapoff already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//sbin/swapon already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//sbin/switch_root already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//sbin/sysctl already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//sbin/syslogd already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//sbin/udhcpc already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//sbin/uevent already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//sbin/vconfig already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//sbin/watchdog already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/[ already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/[[ already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/ar already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/awk already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/basename already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/blkdiscard already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/bunzip2 already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/bzcat already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/chrt already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/chvt already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/cksum already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/clear already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/cmp already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/crontab already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/cut already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/dc already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/deallocvt already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/diff already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/dirname already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/dos2unix already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/du already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/eject already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/env already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/expr already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/factor already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/fallocate already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/find already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/flock already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/fold already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/free already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/fuser already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/head already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/hexdump already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/hostid already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/id already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/install already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/ipcrm already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/ipcs already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/killall already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/last already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/less already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/logger already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/logname already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/lsof already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/lspci already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/lsscsi already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/lsusb already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/lzcat already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/lzma already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/md5sum already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/mesg already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/microcom already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/mkfifo already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/mkpasswd already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/nl already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/nohup already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/nproc already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/nsenter already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/nslookup already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/od already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/openvt already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/passwd already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/paste already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/patch already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/printf already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/readlink already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/realpath already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/renice already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/reset already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/resize already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/rx already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/seq already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/setkeycodes already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/setsid already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/sha1sum already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/sha256sum already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/sha3sum already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/sha512sum already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/shred already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/sort already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/ssl_client already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/strings already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/svc already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/tail already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/tee already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/telnet already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/test already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/tftp already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/time already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/top already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/tr already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/traceroute already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/truncate already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/tty already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/uniq already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/unix2dos already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/unlink already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/unlzma already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/unshare already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/unxz already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/unzip already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/uptime already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/uudecode already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/uuencode already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/vlock already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/w already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/wc already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/wget already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/which already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/who already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/whoami already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/xargs already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/xxd already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/xz already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/xzcat already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/bin/yes already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/sbin/addgroup already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/sbin/adduser already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/sbin/arping already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/sbin/chroot already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/sbin/crond already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/sbin/delgroup already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/sbin/deluser already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/sbin/dnsd already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/sbin/ether-wake already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/sbin/fbset already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/sbin/fdformat already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/sbin/fsfreeze already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/sbin/i2cdetect already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/sbin/i2cdump already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/sbin/i2cget already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/sbin/i2cset already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/sbin/inetd already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/sbin/killall5 already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/sbin/loadfont already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/sbin/partprobe already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/sbin/rdate already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/sbin/readprofile already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/sbin/setlogcons already exists
+  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target//usr/sbin/ubirename already exists
+
+
+--------------------------------------------------
+You will probably need to make your busybox binary
+setuid root to ensure all configured applets will
+work properly.
+--------------------------------------------------
+
+make[2]: Leaving directory '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/busybox-1.27.1'
+/usr/bin/install -D -m 0644 package/busybox/inittab /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target/etc/inittab
+if grep -q CONFIG_UDHCPC=y /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/busybox-1.27.1/.config; then /usr/bin/install -m 0755 -D package/busybox/udhcpc.script /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target/usr/share/udhcpc/default.script; /usr/bin/install -m 0755 -d /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target/usr/share/udhcpc/default.script.d; fi
+if grep -q CONFIG_SYSLOGD=y /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/busybox-1.27.1/.config; then /usr/bin/install -m 0755 -D package/busybox/S01logging /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target/etc/init.d/S01logging; else rm -f /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target/etc/init.d/S01logging; fi
+if grep -q CONFIG_FEATURE_TELNETD_STANDALONE=y /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/busybox-1.27.1/.config; then /usr/bin/install -m 0755 -D package/busybox/S50telnet /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target/etc/init.d/S50telnet ; fi
+[7m>>> host-fakeroot 1.20.2 Building[27m
+PATH="/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/host/bin:/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/host/sbin:/opt/riscv/bin:/home/binh/Downloads/ModelSim-20.1/modelsim_ase/bin:/home/binh/Downloads/vivado-2018.3/SDK/2018.3/bin:/home/binh/Downloads/vivado-2018.3/SDK/2018.3/gnu/microblaze/lin/bin:/home/binh/Downloads/vivado-2018.3/SDK/2018.3/gnu/arm/lin/bin:/home/binh/Downloads/vivado-2018.3/SDK/2018.3/gnu/microblaze/linux_toolchain/lin64_le/bin:/home/binh/Downloads/vivado-2018.3/SDK/2018.3/gnu/aarch32/lin/gcc-arm-linux-gnueabi/bin:/home/binh/Downloads/vivado-2018.3/SDK/2018.3/gnu/aarch32/lin/gcc-arm-none-eabi/bin:/home/binh/Downloads/vivado-2018.3/SDK/2018.3/gnu/aarch64/lin/aarch64-linux/bin:/home/binh/Downloads/vivado-2018.3/SDK/2018.3/gnu/aarch64/lin/aarch64-none/bin:/home/binh/Downloads/vivado-2018.3/SDK/2018.3/gnu/armr5/lin/gcc-arm-none-eabi/bin:/home/binh/Downloads/vivado-2018.3/SDK/2018.3/tps/lnx64/cmake-3.3.2/bin:/home/binh/Downloads/vivado-2018.3/Vivado/2018.3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin" PKG_CONFIG="/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/host/bin/pkg-config" PKG_CONFIG_SYSROOT_DIR="/" PKG_CONFIG_ALLOW_SYSTEM_CFLAGS=1 PKG_CONFIG_ALLOW_SYSTEM_LIBS=1 PKG_CONFIG_LIBDIR="/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/host/lib/pkgconfig:/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/host/share/pkgconfig"  /usr/bin/make   -C /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/host-fakeroot-1.20.2/
+make[2]: Entering directory '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/host-fakeroot-1.20.2'
+/usr/bin/make  all-recursive
+make[3]: Entering directory '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/host-fakeroot-1.20.2'
+Making all in scripts
+make[4]: Entering directory '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/host-fakeroot-1.20.2/scripts'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/host-fakeroot-1.20.2/scripts'
+Making all in doc
+make[4]: Entering directory '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/host-fakeroot-1.20.2/doc'
+Making all in de
+make[5]: Entering directory '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/host-fakeroot-1.20.2/doc/de'
+make[5]: Nothing to be done for 'all'.
+make[5]: Leaving directory '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/host-fakeroot-1.20.2/doc/de'
+Making all in es
+make[5]: Entering directory '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/host-fakeroot-1.20.2/doc/es'
+make[5]: Nothing to be done for 'all'.
+make[5]: Leaving directory '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/host-fakeroot-1.20.2/doc/es'
+Making all in fr
+make[5]: Entering directory '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/host-fakeroot-1.20.2/doc/fr'
+make[5]: Nothing to be done for 'all'.
+make[5]: Leaving directory '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/host-fakeroot-1.20.2/doc/fr'
+Making all in nl
+make[5]: Entering directory '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/host-fakeroot-1.20.2/doc/nl'
+make[5]: Nothing to be done for 'all'.
+make[5]: Leaving directory '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/host-fakeroot-1.20.2/doc/nl'
+Making all in pt
+make[5]: Entering directory '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/host-fakeroot-1.20.2/doc/pt'
+make[5]: Nothing to be done for 'all'.
+make[5]: Leaving directory '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/host-fakeroot-1.20.2/doc/pt'
+Making all in sv
+make[5]: Entering directory '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/host-fakeroot-1.20.2/doc/sv'
+make[5]: Nothing to be done for 'all'.
+make[5]: Leaving directory '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/host-fakeroot-1.20.2/doc/sv'
+make[5]: Entering directory '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/host-fakeroot-1.20.2/doc'
+make[5]: Nothing to be done for 'all-am'.
+make[5]: Leaving directory '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/host-fakeroot-1.20.2/doc'
+make[4]: Leaving directory '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/host-fakeroot-1.20.2/doc'
+Making all in test
+make[4]: Entering directory '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/host-fakeroot-1.20.2/test'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/host-fakeroot-1.20.2/test'
+make[4]: Entering directory '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/host-fakeroot-1.20.2'
+/bin/bash ./libtool  --tag=CC   --mode=compile /usr/bin/gcc -DHAVE_CONFIG_H -I.   -I/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/host/include  -O2 -I/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/host/include -c -o libfakeroot.lo libfakeroot.c
+/bin/bash ./libtool  --tag=CC   --mode=link /usr/bin/gcc  -O2 -I/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/host/include  -L/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/host/lib -Wl,-rpath,/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/host/lib -o faked faked.o libcommunicate.la -ldl 
+libtool: compile:  /usr/bin/gcc -DHAVE_CONFIG_H -I. -I/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/host/include -O2 -I/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/host/include -c libfakeroot.c  -fPIC -DPIC -o .libs/libfakeroot.o
+libtool: link: /usr/bin/gcc -O2 -I/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/host/include -Wl,-rpath -Wl,/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/host/lib -o faked faked.o  -L/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/host/lib ./.libs/libcommunicate.a -ldl
+libfakeroot.c: In function 'fts_read':
+libfakeroot.c:1974:22: warning: passing argument 1 of 'send_get_stat64' from incompatible pointer type [-Wincompatible-pointer-types]
+ 1974 |     SEND_GET_STAT64(r->fts_statp, _STAT_VER);
+      |                     ~^~~~~~~~~~~
+      |                      |
+      |                      struct stat *
+libfakeroot.c:104:46: note: in definition of macro 'SEND_GET_STAT64'
+  104 | #define SEND_GET_STAT64(a,b) send_get_stat64(a)
+      |                                              ^
+In file included from libfakeroot.c:75:
+communicate.h:209:44: note: expected 'struct stat64 *' but argument is of type 'struct stat *'
+  209 | extern void send_get_stat64(struct stat64 *buf);
+      |                             ~~~~~~~~~~~~~~~^~~
+libfakeroot.c: In function 'fts_children':
+libfakeroot.c:1997:24: warning: passing argument 1 of 'send_get_stat64' from incompatible pointer type [-Wincompatible-pointer-types]
+ 1997 |       SEND_GET_STAT64(r->fts_statp, _STAT_VER);
+      |                       ~^~~~~~~~~~~
+      |                        |
+      |                        struct stat *
+libfakeroot.c:104:46: note: in definition of macro 'SEND_GET_STAT64'
+  104 | #define SEND_GET_STAT64(a,b) send_get_stat64(a)
+      |                                              ^
+In file included from libfakeroot.c:75:
+communicate.h:209:44: note: expected 'struct stat64 *' but argument is of type 'struct stat *'
+  209 | extern void send_get_stat64(struct stat64 *buf);
+      |                             ~~~~~~~~~~~~~~~^~~
+/bin/bash ./libtool  --tag=CC   --mode=link /usr/bin/gcc  -O2 -I/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/host/include -release 0 -L/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/host/lib -Wl,-rpath,/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/host/lib -o libfakeroot.la -rpath /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/host/lib libfakeroot.lo libcommunicate.la  -ldl 
+libtool: link: /usr/bin/gcc -shared  -fPIC -DPIC  .libs/libfakeroot.o  -Wl,--whole-archive ./.libs/libcommunicate.a -Wl,--no-whole-archive  -L/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/host/lib -ldl  -O2 -Wl,-rpath -Wl,/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/host/lib   -Wl,-soname -Wl,libfakeroot-0.so -o .libs/libfakeroot-0.so
+libtool: link: (cd ".libs" && rm -f "libfakeroot.so" && ln -s "libfakeroot-0.so" "libfakeroot.so")
+libtool: link: ( cd ".libs" && rm -f "libfakeroot.la" && ln -s "../libfakeroot.la" "libfakeroot.la" )
+make[4]: Leaving directory '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/host-fakeroot-1.20.2'
+make[3]: Leaving directory '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/host-fakeroot-1.20.2'
+make[2]: Leaving directory '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/host-fakeroot-1.20.2'
+[7m>>> host-fakeroot 1.20.2 Installing to host directory[27m
+PATH="/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/host/bin:/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/host/sbin:/opt/riscv/bin:/home/binh/Downloads/ModelSim-20.1/modelsim_ase/bin:/home/binh/Downloads/vivado-2018.3/SDK/2018.3/bin:/home/binh/Downloads/vivado-2018.3/SDK/2018.3/gnu/microblaze/lin/bin:/home/binh/Downloads/vivado-2018.3/SDK/2018.3/gnu/arm/lin/bin:/home/binh/Downloads/vivado-2018.3/SDK/2018.3/gnu/microblaze/linux_toolchain/lin64_le/bin:/home/binh/Downloads/vivado-2018.3/SDK/2018.3/gnu/aarch32/lin/gcc-arm-linux-gnueabi/bin:/home/binh/Downloads/vivado-2018.3/SDK/2018.3/gnu/aarch32/lin/gcc-arm-none-eabi/bin:/home/binh/Downloads/vivado-2018.3/SDK/2018.3/gnu/aarch64/lin/aarch64-linux/bin:/home/binh/Downloads/vivado-2018.3/SDK/2018.3/gnu/aarch64/lin/aarch64-none/bin:/home/binh/Downloads/vivado-2018.3/SDK/2018.3/gnu/armr5/lin/gcc-arm-none-eabi/bin:/home/binh/Downloads/vivado-2018.3/SDK/2018.3/tps/lnx64/cmake-3.3.2/bin:/home/binh/Downloads/vivado-2018.3/Vivado/2018.3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin" PKG_CONFIG="/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/host/bin/pkg-config" PKG_CONFIG_SYSROOT_DIR="/" PKG_CONFIG_ALLOW_SYSTEM_CFLAGS=1 PKG_CONFIG_ALLOW_SYSTEM_LIBS=1 PKG_CONFIG_LIBDIR="/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/host/lib/pkgconfig:/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/host/share/pkgconfig"  /usr/bin/make  install -C /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/host-fakeroot-1.20.2/
+make[2]: Entering directory '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/host-fakeroot-1.20.2'
+Making install in scripts
+make[3]: Entering directory '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/host-fakeroot-1.20.2/scripts'
+make[4]: Entering directory '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/host-fakeroot-1.20.2/scripts'
+make[4]: Nothing to be done for 'install-data-am'.
+ /usr/bin/mkdir -p '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/host/bin'
+ /usr/bin/install -c fakeroot '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/host/bin'
+make[4]: Leaving directory '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/host-fakeroot-1.20.2/scripts'
+make[3]: Leaving directory '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/host-fakeroot-1.20.2/scripts'
+Making install in doc
+make[3]: Entering directory '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/host-fakeroot-1.20.2/doc'
+Making install in de
+make[4]: Entering directory '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/host-fakeroot-1.20.2/doc/de'
+make[5]: Entering directory '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/host-fakeroot-1.20.2/doc/de'
+make[5]: Nothing to be done for 'install-exec-am'.
+ /usr/bin/mkdir -p '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/host/share/man/de/man1'
+ /usr/bin/install -c -m 644 faked.1 fakeroot.1 '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/host/share/man/de/man1'
+make[5]: Leaving directory '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/host-fakeroot-1.20.2/doc/de'
+make[4]: Leaving directory '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/host-fakeroot-1.20.2/doc/de'
+Making install in es
+make[4]: Entering directory '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/host-fakeroot-1.20.2/doc/es'
+make[5]: Entering directory '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/host-fakeroot-1.20.2/doc/es'
+make[5]: Nothing to be done for 'install-exec-am'.
+ /usr/bin/mkdir -p '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/host/share/man/es/man1'
+ /usr/bin/install -c -m 644 faked.1 fakeroot.1 '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/host/share/man/es/man1'
+make[5]: Leaving directory '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/host-fakeroot-1.20.2/doc/es'
+make[4]: Leaving directory '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/host-fakeroot-1.20.2/doc/es'
+Making install in fr
+make[4]: Entering directory '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/host-fakeroot-1.20.2/doc/fr'
+make[5]: Entering directory '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/host-fakeroot-1.20.2/doc/fr'
+make[5]: Nothing to be done for 'install-exec-am'.
+ /usr/bin/mkdir -p '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/host/share/man/fr/man1'
+ /usr/bin/install -c -m 644 fakeroot.1 faked.1 '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/host/share/man/fr/man1'
+make[5]: Leaving directory '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/host-fakeroot-1.20.2/doc/fr'
+make[4]: Leaving directory '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/host-fakeroot-1.20.2/doc/fr'
+Making install in nl
+make[4]: Entering directory '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/host-fakeroot-1.20.2/doc/nl'
+make[5]: Entering directory '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/host-fakeroot-1.20.2/doc/nl'
+make[5]: Nothing to be done for 'install-exec-am'.
+ /usr/bin/mkdir -p '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/host/share/man/nl/man1'
+ /usr/bin/install -c -m 644 fakeroot.1 faked.1 '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/host/share/man/nl/man1'
+make[5]: Leaving directory '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/host-fakeroot-1.20.2/doc/nl'
+make[4]: Leaving directory '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/host-fakeroot-1.20.2/doc/nl'
+Making install in pt
+make[4]: Entering directory '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/host-fakeroot-1.20.2/doc/pt'
+make[5]: Entering directory '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/host-fakeroot-1.20.2/doc/pt'
+make[5]: Nothing to be done for 'install-exec-am'.
+ /usr/bin/mkdir -p '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/host/share/man/pt/man1'
+ /usr/bin/install -c -m 644 fakeroot.1 faked.1 '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/host/share/man/pt/man1'
+make[5]: Leaving directory '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/host-fakeroot-1.20.2/doc/pt'
+make[4]: Leaving directory '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/host-fakeroot-1.20.2/doc/pt'
+Making install in sv
+make[4]: Entering directory '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/host-fakeroot-1.20.2/doc/sv'
+make[5]: Entering directory '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/host-fakeroot-1.20.2/doc/sv'
+make[5]: Nothing to be done for 'install-exec-am'.
+ /usr/bin/mkdir -p '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/host/share/man/sv/man1'
+ /usr/bin/install -c -m 644 faked.1 fakeroot.1 '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/host/share/man/sv/man1'
+make[5]: Leaving directory '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/host-fakeroot-1.20.2/doc/sv'
+make[4]: Leaving directory '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/host-fakeroot-1.20.2/doc/sv'
+make[4]: Entering directory '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/host-fakeroot-1.20.2/doc'
+make[5]: Entering directory '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/host-fakeroot-1.20.2/doc'
+make[5]: Nothing to be done for 'install-exec-am'.
+ /usr/bin/mkdir -p '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/host/share/man/man1'
+ /usr/bin/install -c -m 644 faked.1 fakeroot.1 '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/host/share/man/man1'
+make[5]: Leaving directory '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/host-fakeroot-1.20.2/doc'
+make[4]: Leaving directory '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/host-fakeroot-1.20.2/doc'
+make[3]: Leaving directory '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/host-fakeroot-1.20.2/doc'
+Making install in test
+make[3]: Entering directory '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/host-fakeroot-1.20.2/test'
+make[4]: Entering directory '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/host-fakeroot-1.20.2/test'
+make[4]: Nothing to be done for 'install-exec-am'.
+make[4]: Nothing to be done for 'install-data-am'.
+make[4]: Leaving directory '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/host-fakeroot-1.20.2/test'
+make[3]: Leaving directory '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/host-fakeroot-1.20.2/test'
+make[3]: Entering directory '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/host-fakeroot-1.20.2'
+make[4]: Entering directory '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/host-fakeroot-1.20.2'
+make[4]: Nothing to be done for 'install-data-am'.
+ /usr/bin/mkdir -p '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/host/lib'
+ /bin/bash ./libtool   --mode=install /usr/bin/install -c   libfakeroot.la '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/host/lib'
+libtool: install: /usr/bin/install -c .libs/libfakeroot-0.so /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/host/lib/libfakeroot-0.so
+libtool: install: (cd /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/host/lib && { ln -s -f libfakeroot-0.so libfakeroot.so || { rm -f libfakeroot.so && ln -s libfakeroot-0.so libfakeroot.so; }; })
+libtool: install: /usr/bin/install -c .libs/libfakeroot.lai /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/host/lib/libfakeroot.la
+libtool: finish: PATH="/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/host/bin:/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/host/sbin:/opt/riscv/bin:/home/binh/Downloads/ModelSim-20.1/modelsim_ase/bin:/home/binh/Downloads/vivado-2018.3/SDK/2018.3/bin:/home/binh/Downloads/vivado-2018.3/SDK/2018.3/gnu/microblaze/lin/bin:/home/binh/Downloads/vivado-2018.3/SDK/2018.3/gnu/arm/lin/bin:/home/binh/Downloads/vivado-2018.3/SDK/2018.3/gnu/microblaze/linux_toolchain/lin64_le/bin:/home/binh/Downloads/vivado-2018.3/SDK/2018.3/gnu/aarch32/lin/gcc-arm-linux-gnueabi/bin:/home/binh/Downloads/vivado-2018.3/SDK/2018.3/gnu/aarch32/lin/gcc-arm-none-eabi/bin:/home/binh/Downloads/vivado-2018.3/SDK/2018.3/gnu/aarch64/lin/aarch64-linux/bin:/home/binh/Downloads/vivado-2018.3/SDK/2018.3/gnu/aarch64/lin/aarch64-none/bin:/home/binh/Downloads/vivado-2018.3/SDK/2018.3/gnu/armr5/lin/gcc-arm-none-eabi/bin:/home/binh/Downloads/vivado-2018.3/SDK/2018.3/tps/lnx64/cmake-3.3.2/bin:/home/binh/Downloads/vivado-2018.3/Vivado/2018.3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/sbin" ldconfig -n /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/host/lib
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/host/lib
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the `-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the `LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the `LD_RUN_PATH' environment variable
+     during linking
+   - use the `-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to `/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+ /usr/bin/mkdir -p '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/host/bin'
+  /bin/bash ./libtool   --mode=install /usr/bin/install -c faked '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/host/bin'
+libtool: install: /usr/bin/install -c faked /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/host/bin/faked
+make[4]: Leaving directory '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/host-fakeroot-1.20.2'
+make[3]: Leaving directory '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/host-fakeroot-1.20.2'
+make[2]: Leaving directory '/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/host-fakeroot-1.20.2'
+[7m>>> host-makedevs  Extracting[27m
+[7m>>> host-makedevs  Patching[27m
+[7m>>> host-makedevs  Configuring[27m
+[7m>>> host-makedevs  Building[27m
+/usr/bin/gcc -O2 -I/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/host/include package/makedevs/makedevs.c -o /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/host-makedevs/makedevs -L/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/host/lib -Wl,-rpath,/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/host/lib
+[7m>>> host-makedevs  Installing to host directory[27m
+/usr/bin/install -D -m 755 /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/host-makedevs/makedevs /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/host/bin/makedevs
+[7m>>> host-mkpasswd  Extracting[27m
+[7m>>> host-mkpasswd  Patching[27m
+[7m>>> host-mkpasswd  Configuring[27m
+[7m>>> host-mkpasswd  Building[27m
+/usr/bin/gcc -O2 -I/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/host/include -L/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/host/lib -Wl,-rpath,/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/host/lib package/mkpasswd/mkpasswd.c package/mkpasswd/utils.c -o /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/host-mkpasswd/mkpasswd -lcrypt
+In file included from /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:33,
+                 from /usr/include/stdio.h:27,
+                 from package/mkpasswd/mkpasswd.c:24:
+/usr/include/features.h:194:3: warning: #warning "_BSD_SOURCE and _SVID_SOURCE are deprecated, use _DEFAULT_SOURCE" [-Wcpp]
+  194 | # warning "_BSD_SOURCE and _SVID_SOURCE are deprecated, use _DEFAULT_SOURCE"
+      |   ^~~~~~~
+[7m>>> host-mkpasswd  Installing to host directory[27m
+/usr/bin/install -D -m 755 /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/host-mkpasswd/mkpasswd /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/host/bin/mkpasswd
+[7m>>>   Finalizing target directory[27m
+/usr/bin/sed -i -e '/# GENERIC_SERIAL$/s~^.*#~console::respawn:/sbin/getty -L  console 0 vt100 #~' /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target/etc/inittab
+/usr/bin/sed -i -e '/^#.*-o remount,rw \/$/s~^#\+~~' /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target/etc/inittab
+mkdir -p /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target/etc
+echo "buildroot" > /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target/etc/hostname
+/usr/bin/sed -i -e '$a \127.0.1.1\tbuildroot' -e '/^127.0.1.1/d' /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target/etc/hosts
+mkdir -p /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target/etc
+echo "Welcome to Buildroot" > /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target/etc/issue
+/usr/bin/sed -i -e s,^root:[^:]*:,root::, /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target/etc/shadow
+rm -rf /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target/usr/include /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target/usr/share/aclocal \
+	/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target/usr/lib/pkgconfig /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target/usr/share/pkgconfig \
+	/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target/usr/lib/cmake /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target/usr/share/cmake
+find /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target/usr/{lib,share}/ -name '*.cmake' -print0 | xargs -0 rm -f
+find /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target/lib/ /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target/usr/lib/ /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target/usr/libexec/ \
+	\( -name '*.a' -o -name '*.la' \) -print0 | xargs -0 rm -f
+rm -rf /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target/usr/share/gdb
+rm -rf /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target/usr/share/bash-completion
+rm -rf /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target/usr/share/zsh
+rm -rf /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target/usr/man /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target/usr/share/man
+rm -rf /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target/usr/info /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target/usr/share/info
+rm -rf /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target/usr/doc /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target/usr/share/doc
+rm -rf /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target/usr/share/gtk-doc
+rmdir /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target/usr/share 2>/dev/null || true
+find /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target -type f \( -perm /111 -o -name '*.so*' \) -not \( -name 'libpthread*.so*' -o -name 'ld-*.so*' -o -name '*.ko' \) -print0 | xargs -0 /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/host/bin/arm-linux-gnueabihf-strip --remove-section=.comment --remove-section=.note 2>/dev/null || true
+find /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target/lib/ -type f -name 'libpthread*.so*' | \
+	xargs -r /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/host/bin/arm-linux-gnueabihf-strip --remove-section=.comment --remove-section=.note --strip-debug
+find /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target/lib/ -type f -name 'ld-*.so*' | \
+	xargs -r /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/host/bin/arm-linux-gnueabihf-strip --remove-section=.comment --remove-section=.note --strip-debug
+test -f /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target/etc/ld.so.conf && \
+	{ echo "ERROR: we shouldn't have a /etc/ld.so.conf file"; exit 1; } || true
+test -d /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target/etc/ld.so.conf.d && \
+	{ echo "ERROR: we shouldn't have a /etc/ld.so.conf.d directory"; exit 1; } || true
+mkdir -p /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target/etc
+( \
+	echo "NAME=Buildroot"; \
+	echo "VERSION=2017.08-00002-g206a8bf65c"; \
+	echo "ID=buildroot"; \
+	echo "VERSION_ID=2017.08"; \
+	echo "PRETTY_NAME=\"Buildroot 2017.08\"" \
+) >  /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target/etc/os-release
+[7m>>>   Sanitizing RPATH in target tree[27m
+/home/binh/work/pulpino-binh/fpga/sw/buildroot/support/scripts/fix-rpath target
+[7m>>>   Executing post-build script ../buildroot-post-build.sh[27m
+[7m>>>   Generating root filesystem image rootfs.tar[27m
+rm -f /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/_fakeroot.fs
+rm -f /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target/THIS_IS_NOT_YOUR_ROOT_FILESYSTEM
+rm -f /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/_users_table.txt
+echo '#!/bin/sh' > /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/_fakeroot.fs
+echo "set -e" >> /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/_fakeroot.fs
+echo "chown -h -R 0:0 /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target" >> /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/_fakeroot.fs
+printf '   	sshd -1 sshd -1 * - - - SSH drop priv user\n\n' >> /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/_users_table.txt
+PATH="/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/host/bin:/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/host/sbin:/opt/riscv/bin:/home/binh/Downloads/ModelSim-20.1/modelsim_ase/bin:/home/binh/Downloads/vivado-2018.3/SDK/2018.3/bin:/home/binh/Downloads/vivado-2018.3/SDK/2018.3/gnu/microblaze/lin/bin:/home/binh/Downloads/vivado-2018.3/SDK/2018.3/gnu/arm/lin/bin:/home/binh/Downloads/vivado-2018.3/SDK/2018.3/gnu/microblaze/linux_toolchain/lin64_le/bin:/home/binh/Downloads/vivado-2018.3/SDK/2018.3/gnu/aarch32/lin/gcc-arm-linux-gnueabi/bin:/home/binh/Downloads/vivado-2018.3/SDK/2018.3/gnu/aarch32/lin/gcc-arm-none-eabi/bin:/home/binh/Downloads/vivado-2018.3/SDK/2018.3/gnu/aarch64/lin/aarch64-linux/bin:/home/binh/Downloads/vivado-2018.3/SDK/2018.3/gnu/aarch64/lin/aarch64-none/bin:/home/binh/Downloads/vivado-2018.3/SDK/2018.3/gnu/armr5/lin/gcc-arm-none-eabi/bin:/home/binh/Downloads/vivado-2018.3/SDK/2018.3/tps/lnx64/cmake-3.3.2/bin:/home/binh/Downloads/vivado-2018.3/Vivado/2018.3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin" /home/binh/work/pulpino-binh/fpga/sw/buildroot/support/scripts/mkusers /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/_users_table.txt /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target >> /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/_fakeroot.fs
+cat system/device_table.txt > /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/_device_table.txt
+printf '   	/bin/busybox                     f 4755 0  0 - - - - -\n /dev/console c 622 0 0 5 1 - - -\n\n' >> /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/_device_table.txt
+echo "/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/host/bin/makedevs -d /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/_device_table.txt /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target" >> /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/_fakeroot.fs
+printf '   	(cd /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target; find -print0 | LC_ALL=C sort -z | tar  -cf /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/images/rootfs.tar --null --no-recursion -T - --numeric-owner)\n' >> /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/_fakeroot.fs
+chmod a+x /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/_fakeroot.fs
+PATH="/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/host/bin:/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/host/sbin:/opt/riscv/bin:/home/binh/Downloads/ModelSim-20.1/modelsim_ase/bin:/home/binh/Downloads/vivado-2018.3/SDK/2018.3/bin:/home/binh/Downloads/vivado-2018.3/SDK/2018.3/gnu/microblaze/lin/bin:/home/binh/Downloads/vivado-2018.3/SDK/2018.3/gnu/arm/lin/bin:/home/binh/Downloads/vivado-2018.3/SDK/2018.3/gnu/microblaze/linux_toolchain/lin64_le/bin:/home/binh/Downloads/vivado-2018.3/SDK/2018.3/gnu/aarch32/lin/gcc-arm-linux-gnueabi/bin:/home/binh/Downloads/vivado-2018.3/SDK/2018.3/gnu/aarch32/lin/gcc-arm-none-eabi/bin:/home/binh/Downloads/vivado-2018.3/SDK/2018.3/gnu/aarch64/lin/aarch64-linux/bin:/home/binh/Downloads/vivado-2018.3/SDK/2018.3/gnu/aarch64/lin/aarch64-none/bin:/home/binh/Downloads/vivado-2018.3/SDK/2018.3/gnu/armr5/lin/gcc-arm-none-eabi/bin:/home/binh/Downloads/vivado-2018.3/SDK/2018.3/tps/lnx64/cmake-3.3.2/bin:/home/binh/Downloads/vivado-2018.3/Vivado/2018.3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin" /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/host/bin/fakeroot -- /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/_fakeroot.fs
+rootdir=/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target
+table='/home/binh/work/pulpino-binh/fpga/sw/buildroot/output/build/_device_table.txt'
+/usr/bin/install -m 0644 support/misc/target-dir-warning.txt /home/binh/work/pulpino-binh/fpga/sw/buildroot/output/target/THIS_IS_NOT_YOUR_ROOT_FILESYSTEM
+make[1]: Leaving directory '/home/binh/work/pulpino-binh/fpga/sw/buildroot'
+cp buildroot/output/images/rootfs.tar sd_image/rootfs.tar

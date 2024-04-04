@@ -1,0 +1,41 @@
+echo "Initial PATH=$PATH"
+
+echo
+
+if echo $PATH | grep -q "Vivado"; then
+    echo "Vivado already in PATH"
+else
+    echo "Add Vivado-2018.3 to PATH"
+    source /home/binh/Downloads/vivado-2018.3/Vivado/2018.3/settings64.sh
+#    source /home/binh/Downloads/vivado-2023.1/Vivado/2023.1/settings64.sh
+#    export PATH=/home/binh/Downloads/vivado-2023.1/Vitis/2023.1/gnu/aarch32/lin/gcc-arm-linux-gnueabi/x86_64-petalinux-linux/usr/bin/arm-xilinx-linux-gnueabi:$PATH
+    echo "Current PATH=$PATH"
+fi
+
+echo
+
+if echo $PATH | grep -q "ModelSim"; then
+    echo "ModelSim already in PATH"
+else
+    echo "Add ModelSim to PATH"
+    export PATH=/home/binh/Downloads/ModelSim-20.1/modelsim_ase/bin:$PATH
+    echo "Current PATH=$PATH"
+fi
+
+echo
+
+#if echo $PATH | grep -q "ri5cy_gnu_toolchain"; then
+#    echo "ri5cy_gnu_toolchain already in PATH"
+#else
+#    echo "Add ri5cy_gnu_toolchain to PATH"
+#    export PATH=/home/binh/ri5cy_gnu_toolchain/install/bin:$PATH
+#    echo "Current PATH=$PATH"
+#fi
+
+if echo $PATH | grep -q "riscv"; then
+    echo "toolchain already in PATH"
+else
+    echo "Add toolchain to PATH"
+    export PATH=/opt/riscv/bin:$PATH
+    echo "Current PATH=$PATH"
+fi

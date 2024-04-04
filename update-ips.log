@@ -1,0 +1,137 @@
+From https://github.com/pulp-platform/IPApproX
+ * branch            verilator-pulpino -> FETCH_HEAD
+Already on 'pulpinov1'
+Your branch is up to date with 'origin/pulpinov1'.
+Already up to date.
+Already on 'pulpinov1'
+Your branch is up to date with 'origin/pulpinov1'.
+Already up to date.
+Already on 'pulpinov1'
+Your branch is up to date with 'origin/pulpinov1'.
+Already up to date.
+Already on 'pulpinov1'
+Your branch is up to date with 'origin/pulpinov1'.
+Already up to date.
+Already on 'pulpinov1'
+Your branch is up to date with 'origin/pulpinov1'.
+Already up to date.
+Already on 'pulpinov1'
+Your branch is up to date with 'origin/pulpinov1'.
+Already up to date.
+Already on 'pulpinov1'
+Your branch is up to date with 'origin/pulpinov1'.
+Already up to date.
+Already on 'pulpinov1'
+Your branch is up to date with 'origin/pulpinov1'.
+Already up to date.
+Already on 'pulpinov1'
+Your branch is up to date with 'origin/pulpinov1'.
+Already up to date.
+Already on 'pulpinov1'
+Your branch is up to date with 'origin/pulpinov1'.
+Already up to date.
+Already on 'pulpinov1'
+Your branch is up to date with 'origin/pulpinov1'.
+Already up to date.
+Already on 'pulpinov1'
+Your branch is up to date with 'origin/pulpinov1'.
+Already up to date.
+Already on 'pulpinov1'
+Your branch is up to date with 'origin/pulpinov1'.
+Already up to date.
+Already on 'pulpinov1'
+Your branch is up to date with 'origin/pulpinov1'.
+Already up to date.
+Already on 'pulpinov1'
+Your branch is up to date with 'origin/pulpinov1'.
+Already up to date.
+Already on 'pulpinov1'
+Your branch is up to date with 'origin/pulpinov1'.
+Already up to date.
+Already on 'pulpinov1'
+Your branch is up to date with 'origin/pulpinov1'.
+Already up to date.
+Already on 'pulpinov1'
+Your branch is up to date with 'origin/pulpinov1'.
+Already up to date.
+Already on 'pulpinov1'
+Your branch is up to date with 'origin/pulpinov1'.
+Already up to date.
+Already on 'pulpinov1'
+M	riscv_core.sv
+M	riscv_cs_registers.sv
+M	riscv_ex_stage.sv
+Your branch is up to date with 'origin/pulpinov1'.
+Already up to date.
+Already on 'pulpinov1'
+Your branch is up to date with 'origin/pulpinov1'.
+Already up to date.
+Already on 'pulpinov1'
+M	hdl/fpu_v0.1/fpexc.sv
+M	hdl/fpu_v0.1/fpu.sv
+M	hdl/fpu_v0.1/fpu_add.sv
+M	hdl/fpu_v0.1/fpu_core.sv
+M	hdl/fpu_v0.1/fpu_ftoi.sv
+M	hdl/fpu_v0.1/fpu_itof.sv
+M	hdl/fpu_v0.1/fpu_mult.sv
+M	hdl/fpu_v0.1/fpu_norm.sv
+M	hdl/fpu_v0.1/fpu_private.sv
+M	hdl/fpu_v0.1/fpu_shared.sv
+M	hdl/fpu_v0.1/riscv_fpu.sv
+Your branch is up to date with 'origin/pulpinov1'.
+Already up to date.
+Already on 'verilator-pulpino'
+M	IPDatabase.py
+M	SubIPConfig.py
+Your branch is up to date with 'origin/verilator-pulpino'.
+[92mGenerated new scripts for IPs![0m
+Using remote git server https://github.com, remote is https://github.com/stefanct
+[92m
+Updating ip 'apb_node'...[0m
+[92m
+Updating ip 'apb_event_unit'...[0m
+[92m
+Updating ip 'apb_fll_if'...[0m
+[92m
+Updating ip 'apb_gpio'...[0m
+[92m
+Updating ip 'apb_i2c'...[0m
+[92m
+Updating ip 'apb_pulpino'...[0m
+[92m
+Updating ip 'apb_spi_master'...[0m
+[92m
+Updating ip 'apb_timer'...[0m
+[92m
+Updating ip 'apb_uart'...[0m
+[92m
+Updating ip 'apb_uart_sv'...[0m
+[92m
+Updating ip 'apb2per'...[0m
+[92m
+Updating ip 'axi2apb'...[0m
+[92m
+Updating ip 'axi_mem_if_DP'...[0m
+[92m
+Updating ip 'axi_node'...[0m
+[92m
+Updating ip 'axi_slice'...[0m
+[92m
+Updating ip 'axi_slice_dc'...[0m
+[92m
+Updating ip 'axi_spi_master'...[0m
+[92m
+Updating ip 'axi_spi_slave'...[0m
+[92m
+Updating ip 'core2axi'...[0m
+[92m
+Updating ip 'riscv'...[0m
+[92m
+Updating ip 'zero-riscy'...[0m
+[92m
+Updating ip 'fpu'...[0m
+
+
+
+[93mSUMMARY[0m
+[92mIPs updated successfully![0m

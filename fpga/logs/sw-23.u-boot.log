@@ -1,0 +1,62 @@
+git clone https://github.com/Xilinx/u-boot-xlnx.git
+Cloning into 'u-boot-xlnx'...
+cd u-boot-xlnx && git checkout tags/xilinx-v2015.1
+Note: switching to 'tags/xilinx-v2015.1'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 3ee55f7a9e zynq: slcr: Disable all level shifters
+cd u-boot-xlnx && patch -p1 < ../u-boot-xlnx-def-env.patch
+patching file include/configs/zynq-common.h
+cd u-boot-xlnx && make CROSS_COMPILE=arm-xilinx-linux-gnueabi- zynq_zed_config
+make[1]: Entering directory '/home/binh/work/pulpino-binh/fpga/sw-23/u-boot-xlnx'
+  HOSTCC  scripts/basic/fixdep
+  HOSTCC  scripts/kconfig/conf.o
+  SHIPPED scripts/kconfig/zconf.tab.c
+  SHIPPED scripts/kconfig/zconf.lex.c
+  SHIPPED scripts/kconfig/zconf.hash.c
+  HOSTCC  scripts/kconfig/zconf.tab.o
+  HOSTLD  scripts/kconfig/conf
+#
+# configuration written to .config
+#
+#
+# configuration written to spl/.config
+#
+make[1]: Leaving directory '/home/binh/work/pulpino-binh/fpga/sw-23/u-boot-xlnx'
+cp ./u-boot.config ./u-boot-xlnx/.config
+cd u-boot-xlnx && make CROSS_COMPILE=arm-xilinx-linux-gnueabi-
+make[1]: Entering directory '/home/binh/work/pulpino-binh/fpga/sw-23/u-boot-xlnx'
+scripts/kconfig/conf --silentoldconfig Kconfig
+scripts/kconfig/conf --silentoldconfig Kconfig
+  CHK     include/config.h
+  UPD     include/config.h
+  GEN     include/autoconf.mk
+In file included from include/linux/compiler.h:54,
+                 from include/linux/byteorder/little_endian.h:12,
+                 from ./arch/arm/include/asm/byteorder.h:29,
+                 from include/compiler.h:125,
+                 from include/image.h:19,
+                 from ./include/common.h:82:
+include/linux/compiler-gcc.h:114:1: fatal error: linux/compiler-gcc12.h: No such file or directory
+  114 | #include gcc_header(__GNUC__)
+      | ^~~~~
+compilation terminated.
+make[3]: *** [scripts/Makefile.autoconf:64: include/autoconf.mk] Error 1
+make[2]: *** [Makefile:470: silentoldconfig] Error 1
+make[1]: *** No rule to make target 'include/config/auto.conf', needed by 'include/config/uboot.release'.  Stop.
+make[1]: Leaving directory '/home/binh/work/pulpino-binh/fpga/sw-23/u-boot-xlnx'
+make: *** [Makefile:56: u-boot-xlnx/u-boot] Error 2
