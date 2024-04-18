@@ -61,7 +61,15 @@ module xilinx_mem_8192x32 (
   addra,
   dina,
   douta,
-  rsta_busy
+  clkb,
+  rstb,
+  enb,
+  web,
+  addrb,
+  dinb,
+  doutb,
+  rsta_busy,
+  rstb_busy
 );
 
 (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_PORTA CLK" *)
@@ -79,7 +87,23 @@ input wire [31 : 0] dina;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME BRAM_PORTA, MEM_SIZE 8192, MEM_WIDTH 32, MEM_ECC NONE, MASTER_TYPE OTHER, READ_LATENCY 1" *)
 (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_PORTA DOUT" *)
 output wire [31 : 0] douta;
+(* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_PORTB CLK" *)
+input wire clkb;
+(* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_PORTB RST" *)
+input wire rstb;
+(* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_PORTB EN" *)
+input wire enb;
+(* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_PORTB WE" *)
+input wire [3 : 0] web;
+(* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_PORTB ADDR" *)
+input wire [12 : 0] addrb;
+(* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_PORTB DIN" *)
+input wire [31 : 0] dinb;
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME BRAM_PORTB, MEM_SIZE 8192, MEM_WIDTH 32, MEM_ECC NONE, MASTER_TYPE OTHER, READ_LATENCY 1" *)
+(* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_PORTB DOUT" *)
+output wire [31 : 0] doutb;
 output wire rsta_busy;
+output wire rstb_busy;
 
   blk_mem_gen_v8_4_2 #(
     .C_FAMILY("zynq"),
@@ -93,7 +117,7 @@ output wire rsta_busy;
     .C_CTRL_ECC_ALGO("NONE"),
     .C_HAS_AXI_ID(0),
     .C_AXI_ID_WIDTH(4),
-    .C_MEM_TYPE(0),
+    .C_MEM_TYPE(2),
     .C_BYTE_SIZE(8),
     .C_ALGORITHM(1),
     .C_PRIM_TYPE(1),
@@ -116,11 +140,11 @@ output wire rsta_busy;
     .C_WRITE_DEPTH_A(8192),
     .C_READ_DEPTH_A(8192),
     .C_ADDRA_WIDTH(13),
-    .C_HAS_RSTB(0),
+    .C_HAS_RSTB(1),
     .C_RST_PRIORITY_B("CE"),
     .C_RSTRAM_B(0),
     .C_INITB_VAL("0"),
-    .C_HAS_ENB(0),
+    .C_HAS_ENB(1),
     .C_HAS_REGCEB(0),
     .C_USE_BYTE_WEB(1),
     .C_WEB_WIDTH(4),
@@ -156,7 +180,7 @@ output wire rsta_busy;
     .C_DISABLE_WARN_BHV_RANGE(0),
     .C_COUNT_36K_BRAM("8"),
     .C_COUNT_18K_BRAM("0"),
-    .C_EST_POWER_SUMMARY("Estimated Power for IP     :     10.194 mW")
+    .C_EST_POWER_SUMMARY("Estimated Power for IP     :     20.388 mW")
   ) inst (
     .clka(clka),
     .rsta(rsta),
@@ -166,14 +190,14 @@ output wire rsta_busy;
     .addra(addra),
     .dina(dina),
     .douta(douta),
-    .clkb(1'D0),
-    .rstb(1'D0),
-    .enb(1'D0),
+    .clkb(clkb),
+    .rstb(rstb),
+    .enb(enb),
     .regceb(1'D0),
-    .web(4'B0),
-    .addrb(13'B0),
-    .dinb(32'B0),
-    .doutb(),
+    .web(web),
+    .addrb(addrb),
+    .dinb(dinb),
+    .doutb(doutb),
     .injectsbiterr(1'D0),
     .injectdbiterr(1'D0),
     .eccpipece(1'D0),
@@ -184,7 +208,7 @@ output wire rsta_busy;
     .deepsleep(1'D0),
     .shutdown(1'D0),
     .rsta_busy(rsta_busy),
-    .rstb_busy(),
+    .rstb_busy(rstb_busy),
     .s_aclk(1'H0),
     .s_aresetn(1'D0),
     .s_axi_awid(4'B0),

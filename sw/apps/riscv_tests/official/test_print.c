@@ -16,12 +16,16 @@
 unsigned int g_errors = 0;
 
 void print_okay(const int testnr, const char *testsuite) {
-  printf("Test suite OK: %s\n", testsuite);
+    set_gpio_pin_value(15, 1);
+    set_gpio_pin_value(14, 0);
+//  printf("Test suite OK: %s\n", testsuite);
 }
 
 void print_fail(const int testnr, const char *testsuite) {
   g_errors++;
-  printf("Test FAIL: %d (suite %s)\n", testnr, testsuite);
+    set_gpio_pin_value(14, 1);
+    set_gpio_pin_value(15, 0);
+//  printf("Test FAIL: %d (suite %s)\n", testnr, testsuite);
 }
 
 

@@ -7168,6 +7168,318 @@ led_demo.vsimc.spi.pl/fast:
 .PHONY : led_demo.vsimc.spi.pl/fast
 
 #=============================================================================
+# Target rules for targets named led_btest
+
+# Build rule for target.
+led_btest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 led_btest
+.PHONY : led_btest
+
+# fast build rule for target.
+led_btest/fast:
+	$(MAKE) -f apps/binh/led_btest/CMakeFiles/led_btest.dir/build.make apps/binh/led_btest/CMakeFiles/led_btest.dir/build
+.PHONY : led_btest/fast
+
+#=============================================================================
+# Target rules for targets named led_btest.annotate
+
+# Build rule for target.
+led_btest.annotate: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 led_btest.annotate
+.PHONY : led_btest.annotate
+
+# fast build rule for target.
+led_btest.annotate/fast:
+	$(MAKE) -f apps/binh/led_btest/CMakeFiles/led_btest.annotate.dir/build.make apps/binh/led_btest/CMakeFiles/led_btest.annotate.dir/build
+.PHONY : led_btest.annotate/fast
+
+#=============================================================================
+# Target rules for targets named led_btest.bin.cmd
+
+# Build rule for target.
+led_btest.bin.cmd: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 led_btest.bin.cmd
+.PHONY : led_btest.bin.cmd
+
+# fast build rule for target.
+led_btest.bin.cmd/fast:
+	$(MAKE) -f apps/binh/led_btest/CMakeFiles/led_btest.bin.cmd.dir/build.make apps/binh/led_btest/CMakeFiles/led_btest.bin.cmd.dir/build
+.PHONY : led_btest.bin.cmd/fast
+
+#=============================================================================
+# Target rules for targets named led_btest.elf
+
+# Build rule for target.
+led_btest.elf: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 led_btest.elf
+.PHONY : led_btest.elf
+
+# fast build rule for target.
+led_btest.elf/fast:
+	$(MAKE) -f apps/binh/led_btest/CMakeFiles/led_btest.elf.dir/build.make apps/binh/led_btest/CMakeFiles/led_btest.elf.dir/build
+.PHONY : led_btest.elf/fast
+
+#=============================================================================
+# Target rules for targets named led_btest.fpga
+
+# Build rule for target.
+led_btest.fpga: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 led_btest.fpga
+.PHONY : led_btest.fpga
+
+# fast build rule for target.
+led_btest.fpga/fast:
+	$(MAKE) -f apps/binh/led_btest/CMakeFiles/led_btest.fpga.dir/build.make apps/binh/led_btest/CMakeFiles/led_btest.fpga.dir/build
+.PHONY : led_btest.fpga/fast
+
+#=============================================================================
+# Target rules for targets named led_btest.kcg
+
+# Build rule for target.
+led_btest.kcg: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 led_btest.kcg
+.PHONY : led_btest.kcg
+
+# fast build rule for target.
+led_btest.kcg/fast:
+	$(MAKE) -f apps/binh/led_btest/CMakeFiles/led_btest.kcg.dir/build.make apps/binh/led_btest/CMakeFiles/led_btest.kcg.dir/build
+.PHONY : led_btest.kcg/fast
+
+#=============================================================================
+# Target rules for targets named led_btest.links
+
+# Build rule for target.
+led_btest.links: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 led_btest.links
+.PHONY : led_btest.links
+
+# fast build rule for target.
+led_btest.links/fast:
+	$(MAKE) -f apps/binh/led_btest/CMakeFiles/led_btest.links.dir/build.make apps/binh/led_btest/CMakeFiles/led_btest.links.dir/build
+.PHONY : led_btest.links/fast
+
+#=============================================================================
+# Target rules for targets named led_btest.power
+
+# Build rule for target.
+led_btest.power: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 led_btest.power
+.PHONY : led_btest.power
+
+# fast build rule for target.
+led_btest.power/fast:
+	$(MAKE) -f apps/binh/led_btest/CMakeFiles/led_btest.power.dir/build.make apps/binh/led_btest/CMakeFiles/led_btest.power.dir/build
+.PHONY : led_btest.power/fast
+
+#=============================================================================
+# Target rules for targets named led_btest.powerc
+
+# Build rule for target.
+led_btest.powerc: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 led_btest.powerc
+.PHONY : led_btest.powerc
+
+# fast build rule for target.
+led_btest.powerc/fast:
+	$(MAKE) -f apps/binh/led_btest/CMakeFiles/led_btest.powerc.dir/build.make apps/binh/led_btest/CMakeFiles/led_btest.powerc.dir/build
+.PHONY : led_btest.powerc/fast
+
+#=============================================================================
+# Target rules for targets named led_btest.read
+
+# Build rule for target.
+led_btest.read: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 led_btest.read
+.PHONY : led_btest.read
+
+# fast build rule for target.
+led_btest.read/fast:
+	$(MAKE) -f apps/binh/led_btest/CMakeFiles/led_btest.read.dir/build.make apps/binh/led_btest/CMakeFiles/led_btest.read.dir/build
+.PHONY : led_btest.read/fast
+
+#=============================================================================
+# Target rules for targets named led_btest.s19.cmd
+
+# Build rule for target.
+led_btest.s19.cmd: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 led_btest.s19.cmd
+.PHONY : led_btest.s19.cmd
+
+# fast build rule for target.
+led_btest.s19.cmd/fast:
+	$(MAKE) -f apps/binh/led_btest/CMakeFiles/led_btest.s19.cmd.dir/build.make apps/binh/led_btest/CMakeFiles/led_btest.s19.cmd.dir/build
+.PHONY : led_btest.s19.cmd/fast
+
+#=============================================================================
+# Target rules for targets named led_btest.sc.pl
+
+# Build rule for target.
+led_btest.sc.pl: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 led_btest.sc.pl
+.PHONY : led_btest.sc.pl
+
+# fast build rule for target.
+led_btest.sc.pl/fast:
+	$(MAKE) -f apps/binh/led_btest/CMakeFiles/led_btest.sc.pl.dir/build.make apps/binh/led_btest/CMakeFiles/led_btest.sc.pl.dir/build
+.PHONY : led_btest.sc.pl/fast
+
+#=============================================================================
+# Target rules for targets named led_btest.sc.ps
+
+# Build rule for target.
+led_btest.sc.ps: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 led_btest.sc.ps
+.PHONY : led_btest.sc.ps
+
+# fast build rule for target.
+led_btest.sc.ps/fast:
+	$(MAKE) -f apps/binh/led_btest/CMakeFiles/led_btest.sc.ps.dir/build.make apps/binh/led_btest/CMakeFiles/led_btest.sc.ps.dir/build
+.PHONY : led_btest.sc.ps/fast
+
+#=============================================================================
+# Target rules for targets named led_btest.slm.cmd
+
+# Build rule for target.
+led_btest.slm.cmd: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 led_btest.slm.cmd
+.PHONY : led_btest.slm.cmd
+
+# fast build rule for target.
+led_btest.slm.cmd/fast:
+	$(MAKE) -f apps/binh/led_btest/CMakeFiles/led_btest.slm.cmd.dir/build.make apps/binh/led_btest/CMakeFiles/led_btest.slm.cmd.dir/build
+.PHONY : led_btest.slm.cmd/fast
+
+#=============================================================================
+# Target rules for targets named led_btest.stim.txt
+
+# Build rule for target.
+led_btest.stim.txt: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 led_btest.stim.txt
+.PHONY : led_btest.stim.txt
+
+# fast build rule for target.
+led_btest.stim.txt/fast:
+	$(MAKE) -f apps/binh/led_btest/CMakeFiles/led_btest.stim.txt.dir/build.make apps/binh/led_btest/CMakeFiles/led_btest.stim.txt.dir/build
+.PHONY : led_btest.stim.txt/fast
+
+#=============================================================================
+# Target rules for targets named led_btest.vsim
+
+# Build rule for target.
+led_btest.vsim: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 led_btest.vsim
+.PHONY : led_btest.vsim
+
+# fast build rule for target.
+led_btest.vsim/fast:
+	$(MAKE) -f apps/binh/led_btest/CMakeFiles/led_btest.vsim.dir/build.make apps/binh/led_btest/CMakeFiles/led_btest.vsim.dir/build
+.PHONY : led_btest.vsim/fast
+
+#=============================================================================
+# Target rules for targets named led_btest.vsim.boot
+
+# Build rule for target.
+led_btest.vsim.boot: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 led_btest.vsim.boot
+.PHONY : led_btest.vsim.boot
+
+# fast build rule for target.
+led_btest.vsim.boot/fast:
+	$(MAKE) -f apps/binh/led_btest/CMakeFiles/led_btest.vsim.boot.dir/build.make apps/binh/led_btest/CMakeFiles/led_btest.vsim.boot.dir/build
+.PHONY : led_btest.vsim.boot/fast
+
+#=============================================================================
+# Target rules for targets named led_btest.vsim.boot.pl
+
+# Build rule for target.
+led_btest.vsim.boot.pl: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 led_btest.vsim.boot.pl
+.PHONY : led_btest.vsim.boot.pl
+
+# fast build rule for target.
+led_btest.vsim.boot.pl/fast:
+	$(MAKE) -f apps/binh/led_btest/CMakeFiles/led_btest.vsim.boot.pl.dir/build.make apps/binh/led_btest/CMakeFiles/led_btest.vsim.boot.pl.dir/build
+.PHONY : led_btest.vsim.boot.pl/fast
+
+#=============================================================================
+# Target rules for targets named led_btest.vsim.boot.ps
+
+# Build rule for target.
+led_btest.vsim.boot.ps: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 led_btest.vsim.boot.ps
+.PHONY : led_btest.vsim.boot.ps
+
+# fast build rule for target.
+led_btest.vsim.boot.ps/fast:
+	$(MAKE) -f apps/binh/led_btest/CMakeFiles/led_btest.vsim.boot.ps.dir/build.make apps/binh/led_btest/CMakeFiles/led_btest.vsim.boot.ps.dir/build
+.PHONY : led_btest.vsim.boot.ps/fast
+
+#=============================================================================
+# Target rules for targets named led_btest.vsim.spi
+
+# Build rule for target.
+led_btest.vsim.spi: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 led_btest.vsim.spi
+.PHONY : led_btest.vsim.spi
+
+# fast build rule for target.
+led_btest.vsim.spi/fast:
+	$(MAKE) -f apps/binh/led_btest/CMakeFiles/led_btest.vsim.spi.dir/build.make apps/binh/led_btest/CMakeFiles/led_btest.vsim.spi.dir/build
+.PHONY : led_btest.vsim.spi/fast
+
+#=============================================================================
+# Target rules for targets named led_btest.vsim.spi.pl
+
+# Build rule for target.
+led_btest.vsim.spi.pl: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 led_btest.vsim.spi.pl
+.PHONY : led_btest.vsim.spi.pl
+
+# fast build rule for target.
+led_btest.vsim.spi.pl/fast:
+	$(MAKE) -f apps/binh/led_btest/CMakeFiles/led_btest.vsim.spi.pl.dir/build.make apps/binh/led_btest/CMakeFiles/led_btest.vsim.spi.pl.dir/build
+.PHONY : led_btest.vsim.spi.pl/fast
+
+#=============================================================================
+# Target rules for targets named led_btest.vsim.spi.ps
+
+# Build rule for target.
+led_btest.vsim.spi.ps: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 led_btest.vsim.spi.ps
+.PHONY : led_btest.vsim.spi.ps
+
+# fast build rule for target.
+led_btest.vsim.spi.ps/fast:
+	$(MAKE) -f apps/binh/led_btest/CMakeFiles/led_btest.vsim.spi.ps.dir/build.make apps/binh/led_btest/CMakeFiles/led_btest.vsim.spi.ps.dir/build
+.PHONY : led_btest.vsim.spi.ps/fast
+
+#=============================================================================
+# Target rules for targets named led_btest.vsimc
+
+# Build rule for target.
+led_btest.vsimc: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 led_btest.vsimc
+.PHONY : led_btest.vsimc
+
+# fast build rule for target.
+led_btest.vsimc/fast:
+	$(MAKE) -f apps/binh/led_btest/CMakeFiles/led_btest.vsimc.dir/build.make apps/binh/led_btest/CMakeFiles/led_btest.vsimc.dir/build
+.PHONY : led_btest.vsimc/fast
+
+#=============================================================================
+# Target rules for targets named led_btest.vsimc.spi.pl
+
+# Build rule for target.
+led_btest.vsimc.spi.pl: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 led_btest.vsimc.spi.pl
+.PHONY : led_btest.vsimc.spi.pl
+
+# fast build rule for target.
+led_btest.vsimc.spi.pl/fast:
+	$(MAKE) -f apps/binh/led_btest/CMakeFiles/led_btest.vsimc.spi.pl.dir/build.make apps/binh/led_btest/CMakeFiles/led_btest.vsimc.spi.pl.dir/build
+.PHONY : led_btest.vsimc.spi.pl/fast
+
+#=============================================================================
 # Target rules for targets named rv_basic
 
 # Build rule for target.
@@ -19610,6 +19922,30 @@ help:
 	@echo "... led_demo.power"
 	@echo "... led_demo.powerc"
 	@echo "... led_demo.vsim.boot.ps"
+	@echo "... led_btest.kcg"
+	@echo "... led_btest.elf"
+	@echo "... led_btest.vsim.spi.ps"
+	@echo "... led_btest.stim.txt"
+	@echo "... led_btest.vsim.boot.ps"
+	@echo "... led_btest.fpga"
+	@echo "... led_btest.annotate"
+	@echo "... led_btest.bin.cmd"
+	@echo "... led_btest.slm.cmd"
+	@echo "... led_btest"
+	@echo "... led_btest.vsim.boot"
+	@echo "... led_btest.sc.ps"
+	@echo "... led_btest.read"
+	@echo "... led_btest.vsimc"
+	@echo "... led_btest.links"
+	@echo "... led_btest.vsim.spi.pl"
+	@echo "... led_btest.s19.cmd"
+	@echo "... led_btest.powerc"
+	@echo "... led_btest.vsim.spi"
+	@echo "... led_btest.vsim"
+	@echo "... led_btest.sc.pl"
+	@echo "... led_btest.vsimc.spi.pl"
+	@echo "... led_btest.vsim.boot.pl"
+	@echo "... led_btest.power"
 	@echo "... rv_basic.kcg"
 	@echo "... rv_basic"
 	@echo "... rv_basic.elf"

@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
-| Date         : Wed Feb 28 13:36:24 2024
-| Host         : binh-GF63 running 64-bit Ubuntu 22.04.3 LTS
+| Date         : Wed Apr 17 05:50:48 2024
+| Host         : binh-GF63 running 64-bit Ubuntu 22.04.4 LTS
 | Command      : report_timing -nworst 1 -delay_type max -sort_by group -file reports/synth_timing.rpt
 | Design       : pulpemu_top
 | Device       : 7z020-clg484
@@ -180,7 +180,7 @@ Slack (MET) :             17.790ns  (required time - arrival time)
                          BUFG (Prop_bufg_I_O)         0.091   201.066 r  clk_rst_gen_i/clk_manager_i/inst/CLK_CORE_DRP_I/clk_inst/clkout1_buf/O
                          net (fo=12, unplaced)        0.439   201.505    pulpino_wrap_i/clk
                          BUFG (Prop_bufg_I_O)         0.091   201.596 r  pulpino_wrap_i/clk_IBUF_BUFG_inst/O
-                         net (fo=9002, unplaced)      0.439   202.035    pulpino_wrap_i/pulpino_i/peripherals_i/apb_gpio_i/clk_IBUF_BUFG
+                         net (fo=9018, unplaced)      0.439   202.035    pulpino_wrap_i/pulpino_i/peripherals_i/apb_gpio_i/clk_IBUF_BUFG
                          FDCE                                         r  pulpino_wrap_i/pulpino_i/peripherals_i/apb_gpio_i/r_gpio_sync0_reg[21]/C
                          clock pessimism              0.050   202.085    
                          clock uncertainty           -1.552   200.534    

@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
-| Date         : Wed Feb 28 13:39:59 2024
-| Host         : binh-GF63 running 64-bit Ubuntu 22.04.3 LTS
+| Date         : Wed Apr 17 05:54:19 2024
+| Host         : binh-GF63 running 64-bit Ubuntu 22.04.4 LTS
 | Command      : report_utilization -hierarchical -hierarchical_depth 1 -file reports/pulpemu_utilization_hier.rpt
 | Design       : pulpemu_top
 | Device       : 7z020clg484-1
@@ -21,11 +21,11 @@ Table of Contents
 +------------------+-------------+------------+------------+---------+------+-------+--------+--------+--------------+
 |     Instance     |    Module   | Total LUTs | Logic LUTs | LUTRAMs | SRLs |  FFs  | RAMB36 | RAMB18 | DSP48 Blocks |
 +------------------+-------------+------------+------------+---------+------+-------+--------+--------+--------------+
-| pulpemu_top      |       (top) |      15422 |      15380 |       0 |   42 | 12096 |     16 |      0 |            8 |
+| pulpemu_top      |       (top) |      15404 |      15360 |       0 |   44 | 12104 |     16 |      0 |            8 |
 |   (pulpemu_top)  |       (top) |          0 |          0 |       0 |    0 |    12 |      0 |      0 |            0 |
-|   clk_rst_gen_i  | clk_rst_gen |       1178 |       1178 |       0 |    0 |  1489 |      0 |      0 |            0 |
+|   clk_rst_gen_i  | clk_rst_gen |       1179 |       1179 |       0 |    0 |  1489 |      0 |      0 |            0 |
 |   ps7_wrapper_i  | ps7_wrapper |        915 |        875 |       0 |   40 |  1345 |      0 |      0 |            0 |
-|   pulpino_wrap_i |     pulpino |      13329 |      13327 |       0 |    2 |  9250 |     16 |      0 |            8 |
+|   pulpino_wrap_i |     pulpino |      13310 |      13306 |       0 |    4 |  9258 |     16 |      0 |            8 |
 +------------------+-------------+------------+------------+---------+------+-------+--------+--------+--------------+
 * Note: The sum of lower-level cells may be larger than their parent cells total, due to cross-hierarchy LUT combining
 

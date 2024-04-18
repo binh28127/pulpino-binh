@@ -37,7 +37,15 @@ module sp_ram_wrap
   .addra(addr_i[ADDR_WIDTH-1:2]),          // input wire [12 : 0] addra
   .dina(wdata_i),            // input wire [31 : 0] dina
   .douta(rdata_o),          // output wire [31 : 0] douta
-  .rsta_busy()  // output wire rsta_busy
+  .rsta_busy(),  // output wire rsta_busy
+  .clkb(clk),            // input wire clka
+  .rstb(1'b0),            // input wire rsta
+  .enb(1'b0),              // input wire ena
+  .web(4'b0),              // input wire [3 : 0] wea
+  .addrb(13'b0),          // input wire [12 : 0] addra
+  .dinb(31'b0),            // input wire [31 : 0] dina
+  .doutb(),          // output wire [31 : 0] douta
+  .rstb_busy()  // output wire rsta_busy
   );
 
   // TODO: we should kill synthesis when the ram size is larger than what we

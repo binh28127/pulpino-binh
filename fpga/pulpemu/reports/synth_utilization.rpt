@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
-| Date         : Wed Feb 28 13:36:25 2024
-| Host         : binh-GF63 running 64-bit Ubuntu 22.04.3 LTS
+| Date         : Wed Apr 17 05:50:49 2024
+| Host         : binh-GF63 running 64-bit Ubuntu 22.04.4 LTS
 | Command      : report_utilization -file reports/synth_utilization.rpt
 | Design       : pulpemu_top
 | Device       : 7z020clg484-1
@@ -30,13 +30,13 @@ Table of Contents
 +----------------------------+-------+-------+-----------+-------+
 |          Site Type         |  Used | Fixed | Available | Util% |
 +----------------------------+-------+-------+-----------+-------+
-| Slice LUTs*                | 16053 |     0 |     53200 | 30.17 |
-|   LUT as Logic             | 16004 |     0 |     53200 | 30.08 |
-|   LUT as Memory            |    49 |     0 |     17400 |  0.28 |
+| Slice LUTs*                | 16099 |     0 |     53200 | 30.26 |
+|   LUT as Logic             | 16048 |     0 |     53200 | 30.17 |
+|   LUT as Memory            |    51 |     0 |     17400 |  0.29 |
 |     LUT as Distributed RAM |     0 |     0 |           |       |
-|     LUT as Shift Register  |    49 |     0 |           |       |
-| Slice Registers            | 12900 |     0 |    106400 | 12.12 |
-|   Register as Flip Flop    | 12900 |     0 |    106400 | 12.12 |
+|     LUT as Shift Register  |    51 |     0 |           |       |
+| Slice Registers            | 12914 |     0 |    106400 | 12.14 |
+|   Register as Flip Flop    | 12914 |     0 |    106400 | 12.14 |
 |   Register as Latch        |     0 |     0 |    106400 |  0.00 |
 | F7 Muxes                   |  1008 |     0 |     26600 |  3.79 |
 | F8 Muxes                   |   137 |     0 |     13300 |  1.03 |
@@ -59,7 +59,7 @@ Table of Contents
 | 209   |          Yes |           - |          Set |
 | 9663  |          Yes |           - |        Reset |
 | 173   |          Yes |         Set |            - |
-| 2855  |          Yes |       Reset |            - |
+| 2869  |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -153,10 +153,10 @@ Table of Contents
 | FDCE       | 9663 |         Flop & Latch |
 | LUT6       | 6856 |                  LUT |
 | LUT5       | 4266 |                  LUT |
-| LUT2       | 2872 |                  LUT |
-| FDRE       | 2855 |         Flop & Latch |
-| LUT3       | 2401 |                  LUT |
-| LUT4       | 2147 |                  LUT |
+| LUT2       | 2876 |                  LUT |
+| FDRE       | 2869 |         Flop & Latch |
+| LUT3       | 2471 |                  LUT |
+| LUT4       | 2149 |                  LUT |
 | MUXF7      | 1008 |                MuxFx |
 | CARRY4     |  913 |           CarryLogic |
 | LUT1       |  357 |                  LUT |
@@ -167,7 +167,7 @@ Table of Contents
 | SRLC32E    |   36 |   Distributed Memory |
 | IBUF       |   19 |                   IO |
 | RAMB36E1   |   16 |         Block Memory |
-| SRL16E     |   13 |   Distributed Memory |
+| SRL16E     |   15 |   Distributed Memory |
 | OBUF       |   13 |                   IO |
 | DSP48E1    |    8 |     Block Arithmetic |
 | BUFG       |    6 |                Clock |
