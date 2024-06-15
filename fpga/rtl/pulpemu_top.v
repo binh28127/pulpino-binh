@@ -9,6 +9,15 @@
 // specific language governing permissions and limitations under the License.
 
 module pulpemu_top(
+  // binh add second port
+//  BRAM_PORTA_0_addr,
+//  BRAM_PORTA_0_clk,
+//  BRAM_PORTA_0_din,
+//  BRAM_PORTA_0_dout,
+//  BRAM_PORTA_0_en,
+//  BRAM_PORTA_0_rst,
+//  BRAM_PORTA_0_we,
+  
   DDR_addr,
   DDR_ba,
   DDR_cas_n,
@@ -46,6 +55,15 @@ module pulpemu_top(
   ext_tdo_o
   );
 
+  // binh add second port
+//  output [31:0]BRAM_PORTA_0_addr;
+//  output BRAM_PORTA_0_clk;
+//  output [31:0]BRAM_PORTA_0_din;
+//  input [31:0]BRAM_PORTA_0_dout;
+//  output BRAM_PORTA_0_en;
+//  output BRAM_PORTA_0_rst;
+//  output [3:0]BRAM_PORTA_0_we;
+  
   inout  [14:0] DDR_addr;
   inout  [2:0]  DDR_ba;
   inout         DDR_cas_n;
@@ -109,6 +127,7 @@ module pulpemu_top(
 
   wire        ps7_clk;
   wire        ps7_rst_n;
+  wire        ps7_rst_pulp_n;
   wire        ps7_rst_clking_n;
 
   wire        ref_clk_i;               // input
@@ -257,6 +276,16 @@ module pulpemu_top(
 
   // Zynq Processing System
   ps7_wrapper ps7_wrapper_i (
+  
+    // binh add second port
+//    .BRAM_PORTA_0_addr(BRAM_PORTA_0_addr),
+//    .BRAM_PORTA_0_clk(BRAM_PORTA_0_clk),
+//    .BRAM_PORTA_0_din(BRAM_PORTA_0_din),
+//    .BRAM_PORTA_0_dout(BRAM_PORTA_0_dout),
+//    .BRAM_PORTA_0_en(BRAM_PORTA_0_en),
+//    .BRAM_PORTA_0_rst(BRAM_PORTA_0_rst),
+//    .BRAM_PORTA_0_we(BRAM_PORTA_0_we),
+    
     .DDR_addr           ( DDR_addr           ),
     .DDR_ba             ( DDR_ba             ),
     .DDR_cas_n          ( DDR_cas_n          ),
@@ -304,8 +333,8 @@ module pulpemu_top(
     .ps7_clk            ( ps7_clk            ),
     .ps7_rst_n          ( ps7_rst_n          ),
 
-    .UART_0_rxd         ( uart_tx            ),
-    .UART_0_txd         ( uart_rx            ),
+//    .UART_0_rxd         ( uart_tx            ),
+//    .UART_0_txd         ( uart_rx            ),
 
     .gpio_io_i          ( gpio_out           ),
     .gpio_io_o          ( gpio_in_ps7        ),
@@ -352,6 +381,16 @@ module pulpemu_top(
 
   // PULPino SoC
   pulpino  pulpino_wrap_i (
+  
+    // binh add second port
+//    .BRAM_PORTA_0_addr(BRAM_PORTA_0_addr),
+//    .BRAM_PORTA_0_clk(BRAM_PORTA_0_clk),
+//    .BRAM_PORTA_0_din(BRAM_PORTA_0_din),
+//    .BRAM_PORTA_0_dout(BRAM_PORTA_0_dout),
+//    .BRAM_PORTA_0_en(BRAM_PORTA_0_en),
+//    .BRAM_PORTA_0_rst(BRAM_PORTA_0_rst),
+//    .BRAM_PORTA_0_we(BRAM_PORTA_0_we),
+        
     .clk               ( s_clk_pulpino  ),
     .rst_n             ( s_rstn_pulpino ),
 

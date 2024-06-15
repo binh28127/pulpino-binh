@@ -1,0 +1,48 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:36:41 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Wed May  1 00:32:21 2024
+# Process ID: 149942
+# Current directory: /home/binh/work/pulpino-binh/fpga/ips
+# Command line: vivado
+# Log file: /home/binh/work/pulpino-binh/fpga/ips/vivado.log
+# Journal file: /home/binh/work/pulpino-binh/fpga/ips/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.xpr
+open_bd_design {/home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/bd/design_1/design_1.bd}
+update_compile_order -fileset sources_1
+delete_bd_objs [get_bd_intf_nets axi_protocol_converter_1_M_AXI] [get_bd_intf_nets processing_system7_0_M_AXI_GP0] [get_bd_cells axi_protocol_converter_1]
+delete_bd_objs [get_bd_intf_nets axi_protocol_converter_0_M_AXI] [get_bd_intf_nets axi_crossbar_0_M00_AXI] [get_bd_cells axi_protocol_converter_0]
+delete_bd_objs [get_bd_intf_nets axi_crossbar_0_M03_AXI] [get_bd_intf_nets axi_protocol_converter_4_M_AXI] [get_bd_cells axi_protocol_converter_4]
+delete_bd_objs [get_bd_intf_nets axi_crossbar_0_M01_AXI] [get_bd_intf_nets axi_crossbar_0_M02_AXI] [get_bd_intf_nets axi_crossbar_0_M04_AXI] [get_bd_cells axi_crossbar_0]
+delete_bd_objs [get_bd_intf_nets axi_protocol_converter_3_M_AXI] [get_bd_cells axi_protocol_converter_3]
+delete_bd_objs [get_bd_intf_nets axi_protocol_converter_2_M_AXI] [get_bd_cells axi_protocol_converter_2]
+startgroup
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {/processing_system7_0/FCLK_CLK0 (50 MHz)} Clk_slave {Auto} Clk_xbar {Auto} Master {/processing_system7_0/M_AXI_GP0} Slave {/clking_axi} intc_ip {Auto} master_apm {0}}  [get_bd_intf_ports clking_axi]
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {/processing_system7_0/FCLK_CLK0 (50 MHz)} Clk_slave {/processing_system7_0/FCLK_CLK0 (50 MHz)} Clk_xbar {/processing_system7_0/FCLK_CLK0 (50 MHz)} Master {/processing_system7_0/M_AXI_GP0} Slave {/axi_bram_ctrl_0/S_AXI} intc_ip {Auto} master_apm {0}}  [get_bd_intf_pins axi_bram_ctrl_0/S_AXI]
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {/processing_system7_0/FCLK_CLK0 (50 MHz)} Clk_slave {/processing_system7_0/FCLK_CLK0 (50 MHz)} Clk_xbar {/processing_system7_0/FCLK_CLK0 (50 MHz)} Master {/processing_system7_0/M_AXI_GP0} Slave {/axi_gpio_emu/S_AXI} intc_ip {New AXI Interconnect} master_apm {0}}  [get_bd_intf_pins axi_gpio_emu/S_AXI]
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {/processing_system7_0/FCLK_CLK0 (50 MHz)} Clk_slave {/processing_system7_0/FCLK_CLK0 (50 MHz)} Clk_xbar {/processing_system7_0/FCLK_CLK0 (50 MHz)} Master {/processing_system7_0/M_AXI_GP0} Slave {/axi_jtag_emu/S_AXI} intc_ip {New AXI Interconnect} master_apm {0}}  [get_bd_intf_pins axi_jtag_emu/S_AXI]
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {/processing_system7_0/FCLK_CLK0 (50 MHz)} Clk_slave {/processing_system7_0/FCLK_CLK0 (50 MHz)} Clk_xbar {/processing_system7_0/FCLK_CLK0 (50 MHz)} Master {/processing_system7_0/M_AXI_GP0} Slave {/axi_pulp_control/S_AXI} intc_ip {New AXI Interconnect} master_apm {0}}  [get_bd_intf_pins axi_pulp_control/S_AXI]
+endgroup
+regenerate_bd_layout
+delete_bd_objs [get_bd_cells rst_ps7_0_100M]
+delete_bd_objs [get_bd_nets rst_ps7_0_100M_peripheral_aresetn] [get_bd_intf_nets axi_smc_M04_AXI] [get_bd_intf_nets axi_smc_M03_AXI] [get_bd_intf_nets processing_system7_0_M_AXI_GP0] [get_bd_intf_nets axi_smc_M00_AXI] [get_bd_intf_nets axi_smc_M02_AXI] [get_bd_intf_nets axi_smc_M01_AXI] [get_bd_cells axi_smc]
+delete_bd_objs [get_bd_nets processing_system7_0_FCLK_RESET0_N]
+delete_bd_objs [get_bd_nets processing_system7_0_FCLK_CLK0]
+startgroup
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {Auto} Clk_slave {Auto} Clk_xbar {Auto} Master {/processing_system7_0/M_AXI_GP0} Slave {/clking_axi} intc_ip {Auto} master_apm {0}}  [get_bd_intf_ports clking_axi]
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {Auto} Clk_slave {Auto} Clk_xbar {Auto} Master {/processing_system7_0/M_AXI_GP0} Slave {/axi_bram_ctrl_0/S_AXI} intc_ip {Auto} master_apm {0}}  [get_bd_intf_pins axi_bram_ctrl_0/S_AXI]
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {Auto} Clk_slave {Auto} Clk_xbar {Auto} Master {/processing_system7_0/M_AXI_GP0} Slave {/axi_gpio_emu/S_AXI} intc_ip {New AXI Interconnect} master_apm {0}}  [get_bd_intf_pins axi_gpio_emu/S_AXI]
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {Auto} Clk_slave {Auto} Clk_xbar {Auto} Master {/processing_system7_0/M_AXI_GP0} Slave {/axi_jtag_emu/S_AXI} intc_ip {New AXI Interconnect} master_apm {0}}  [get_bd_intf_pins axi_jtag_emu/S_AXI]
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {Auto} Clk_slave {Auto} Clk_xbar {Auto} Master {/processing_system7_0/M_AXI_GP0} Slave {/axi_pulp_control/S_AXI} intc_ip {New AXI Interconnect} master_apm {0}}  [get_bd_intf_pins axi_pulp_control/S_AXI]
+endgroup
+regenerate_bd_layout
+connect_bd_net [get_bd_ports ps7_rst_n] [get_bd_pins rst_ps7_0_50M/peripheral_aresetn]
+connect_bd_net [get_bd_ports ps7_clk] [get_bd_pins processing_system7_0/FCLK_CLK0]
+validate_bd_design
+regenerate_bd_layout
+regenerate_bd_layout
+validate_bd_design -force
+close_project

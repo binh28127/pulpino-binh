@@ -1,6 +1,6 @@
 # source tcl_files/run.tcl
 # vsim -quiet tb -dpicpppath /usr/bin/gcc -L pulpino_lib -L adv_dbg_if_lib -L apb_node_lib -L apb_event_unit_lib -L apb_fll_if_lib -L apb_gpio_lib -L apb_i2c_lib -L apb_pulpino_lib -L apb_spi_master_lib -L apb_timer_lib -L apb_uart_lib -L apb_uart_sv_lib -L apb2per_lib -L axi2apb_lib -L axi_mem_if_DP_lib -L axi_node_lib -L axi_slice_lib -L axi_slice_dc_lib -L axi_spi_master_lib -L axi_spi_slave_lib -L core2axi_lib -L riscv_lib -L zero_riscy_lib -L fpu_lib "+nowarnTRAN" "+nowarnTSCALE" "+nowarnTFMPC" "+MEMLOAD=PRELOAD" -t ps -voptargs="+acc -suppress 2103" -GTEST="" -gRISCY_RV32F=0 -gZERO_RV32E=0 -gZERO_RV32M=0 -gUSE_ZERO_RISCY=0 
-# Start time: 00:08:40 on Apr 19,2024
+# Start time: 07:46:01 on Apr 19,2024
 # ** Error: (vsim-3033) Instantiation of 'xilinx_mem_8192x32' failed. The design unit was not found.
 #    Time: 0 ps  Iteration: 0  Instance: /tb/top_i/core_region_i/instr_mem/sp_ram_wrap_i File: /home/binh/work/pulpino-binh/vsim/..//rtl/sp_ram_wrap.sv Line: 31
 #         Searched libraries:
@@ -58,6 +58,48 @@
 #             /home/binh/work/pulpino-binh/vsim/modelsim_libs/fpu_lib
 #             /home/binh/work/pulpino-binh/vsim/work
 # Error loading design
-# End time: 00:08:40 on Apr 19,2024, Elapsed time: 0:00:00
+# End time: 07:46:01 on Apr 19,2024, Elapsed time: 0:00:00
 # Errors: 2, Warnings: 0
 # 
+vsim work.tb
+# vsim work.tb 
+# Start time: 07:52:51 on Apr 19,2024
+# Loading /tmp/binh@binh-GF63_dpi_168013/linuxaloem_gcc-7.4.0/export_tramp.so
+# Loading sv_std.std
+# Loading work.tb_sv_unit
+# Loading work.tb
+# Loading work.jtag_i
+# Loading work.uart_bus
+# Loading work.spi_slave
+# Loading work.i2c_buf
+# Loading work.pkg_i2c_model
+# Loading work.i2c_eeprom_model
+# Loading work.i2c_model_phy
+# ** Error (suppressible): (vsim-3009) [TSCALE] - Module 'i2c_model_phy' does not have a timeunit/timeprecision specification in effect, but other modules do.
+#    Time: 0 ps  Iteration: 0  Instance: /tb/i2c_eeprom_model_i/i_i2c_model_phy File: /home/binh/work/pulpino-binh/vsim/..//tb/i2c_eeprom_model.sv
+# ** Error: (vsim-3033) Instantiation of 'pulpino_top' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /tb File: /home/binh/work/pulpino-binh/vsim/..//tb/tb.sv Line: 129
+#         Searched libraries:
+#             /home/binh/work/pulpino-binh/vsim/work
+# Error loading design
+# End time: 07:52:52 on Apr 19,2024, Elapsed time: 0:00:01
+# Errors: 2, Warnings: 0
+vsim work.i2c_buf
+# vsim work.i2c_buf 
+# Start time: 07:53:07 on Apr 19,2024
+# Loading /tmp/binh@binh-GF63_dpi_168047/linuxaloem_gcc-7.4.0/export_tramp.so
+# Loading sv_std.std
+# Loading work.i2c_buf
+# Loading /tmp/binh@binh-GF63_dpi_168047/linuxaloem_gcc-7.4.0/vsim_auto_compile.so
+add wave -position insertpoint  \
+sim:/i2c_buf/scl_io \
+sim:/i2c_buf/sda_io \
+sim:/i2c_buf/scl_pad_i \
+sim:/i2c_buf/scl_pad_o \
+sim:/i2c_buf/scl_padoen_o \
+sim:/i2c_buf/sda_pad_i \
+sim:/i2c_buf/sda_pad_o \
+sim:/i2c_buf/sda_padoen_o
+run -all
+# End time: 07:53:48 on Apr 19,2024, Elapsed time: 0:00:41
+# Errors: 0, Warnings: 0

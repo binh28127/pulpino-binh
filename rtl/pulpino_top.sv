@@ -93,6 +93,15 @@ module pulpino_top
     // PULPino specific pad config
     output logic [31:0] [5:0] pad_cfg_o,
     output logic       [31:0] pad_mux_o
+
+    // binh add second port
+//    output logic [31:0]BRAM_PORTA_0_addr,
+//    output logic BRAM_PORTA_0_clk,
+//    output logic [31:0]BRAM_PORTA_0_din,
+//    input logic [31:0]BRAM_PORTA_0_dout,
+//    output logic BRAM_PORTA_0_en,
+//    output logic BRAM_PORTA_0_rst,
+//    output logic [3:0]BRAM_PORTA_0_we
   );
 
   logic        clk_int;
@@ -200,6 +209,15 @@ module pulpino_top
     .tms_i          ( tms_i             ),
     .tdi_i          ( tdi_i             ),
     .tdo_o          ( tdo_o             )
+
+    // binh add second port
+//    .BRAM_PORTA_0_addr(BRAM_PORTA_0_addr),
+//    .BRAM_PORTA_0_clk(BRAM_PORTA_0_clk),
+//    .BRAM_PORTA_0_din(BRAM_PORTA_0_din),
+//    .BRAM_PORTA_0_dout(BRAM_PORTA_0_dout),
+//    .BRAM_PORTA_0_en(BRAM_PORTA_0_en),
+//    .BRAM_PORTA_0_rst(BRAM_PORTA_0_rst),
+//    .BRAM_PORTA_0_we(BRAM_PORTA_0_we)
   );
 
   //----------------------------------------------------------------------------//

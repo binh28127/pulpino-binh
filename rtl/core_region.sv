@@ -51,6 +51,15 @@ module core_region
     input  logic        tms_i,
     input  logic        tdi_i,
     output logic        tdo_o
+
+    // binh add second port
+//    output logic [31:0]BRAM_PORTA_0_addr,
+//    output logic BRAM_PORTA_0_clk,
+//    output logic [31:0]BRAM_PORTA_0_din,
+//    input logic [31:0]BRAM_PORTA_0_dout,
+//    output logic BRAM_PORTA_0_en,
+//    output logic BRAM_PORTA_0_rst,
+//    output logic [3:0]BRAM_PORTA_0_we
   );
 
   localparam INSTR_ADDR_WIDTH = $clog2(INSTR_RAM_SIZE)+1; // to make space for the boot rom
@@ -489,7 +498,17 @@ module core_region
     .we_i         ( data_mem_we    ),
     .be_i         ( data_mem_be    ),
     .bypass_en_i  ( testmode_i     )
+    
+    // binh add second port
+//    .clkb(BRAM_PORTA_0_clk),
+//    .rstb(BRAM_PORTA_0_rst),
+//    .enb(BRAM_PORTA_0_en),
+//    .addrb(BRAM_PORTA_0_addr),
+//    .dinb(BRAM_PORTA_0_din),
+//    .doutb(BRAM_PORTA_0_dout),
+//    .web(BRAM_PORTA_0_we)
   );
+
 
   axi_mem_if_SP_wrap
   #(

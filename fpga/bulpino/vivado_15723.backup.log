@@ -1,0 +1,28 @@
+#-----------------------------------------------------------
+# Vivado v2023.1 (64-bit)
+# SW Build 3865809 on Sun May  7 15:04:56 MDT 2023
+# IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
+# SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
+# Start of session at: Thu Jun  6 01:49:38 2024
+# Process ID: 15723
+# Current directory: /home/binh/work/pulpino-binh/fpga/bulpino
+# Command line: vivado -mode batch -source ./scripts/init_project.tcl
+# Log file: /home/binh/work/pulpino-binh/fpga/bulpino/vivado.log
+# Journal file: /home/binh/work/pulpino-binh/fpga/bulpino/vivado.jou
+# Running On: binh-GF63, OS: Linux, CPU Frequency: 2000.542 MHz, CPU Physical cores: 6, Host memory: 16571 MB
+#-----------------------------------------------------------
+source ./scripts/init_project.tcl
+# source ./scripts/project_setup.tcl
+## set XILINX_PART     "xc7z020clg484-1"
+## set XILINX_BOARD    "avnet.com:zedboard:part0:1.4"
+## set CPU             "8"
+## set PROJECT_DIR     "."
+## set RTL_PATH        "./rtl"
+## set IPS_PATH        "./ips"
+## set SEARCH_PATH     ". $RTL_PATH $IPS_PATH"
+## set PROJECT_NAME    "pulpino"
+# create_project ${PROJECT_NAME} ./${PROJECT_NAME} -part ${XILINX_PART}
+# set_property board_part ${XILINX_BOARD} [current_project]
+# set_property platform.extensible true [current_project]
+# close_project
+INFO: [Common 17-206] Exiting Vivado at Thu Jun  6 01:49:45 2024...

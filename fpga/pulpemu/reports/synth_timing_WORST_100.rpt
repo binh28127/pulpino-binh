@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
-| Date         : Wed Apr 17 05:50:48 2024
+| Date         : Sat Jun  8 06:00:21 2024
 | Host         : binh-GF63 running 64-bit Ubuntu 22.04.4 LTS
 | Command      : report_timing -max_paths 100 -nworst 100 -delay_type max -sort_by slack -file reports/synth_timing_WORST_100.rpt
 | Design       : pulpemu_top

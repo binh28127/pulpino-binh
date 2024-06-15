@@ -64,7 +64,26 @@ module pulpino(
   tms_i,
   tdi_i,
   tdo_o
+
+  // binh add second port
+//  BRAM_PORTA_0_addr,
+//  BRAM_PORTA_0_clk,
+//  BRAM_PORTA_0_din,
+//  BRAM_PORTA_0_dout,
+//  BRAM_PORTA_0_en,
+//  BRAM_PORTA_0_rst,
+//  BRAM_PORTA_0_we
+
   );
+
+  // binh add second port
+//  output [31:0]BRAM_PORTA_0_addr;
+//  output BRAM_PORTA_0_clk;
+//  output [31:0]BRAM_PORTA_0_din;
+//  input [31:0]BRAM_PORTA_0_dout;
+//  output BRAM_PORTA_0_en;
+//  output BRAM_PORTA_0_rst;
+//  output [3:0]BRAM_PORTA_0_we;
 
   // Clock and Reset
   input         clk;
@@ -203,6 +222,16 @@ module pulpino(
 
     .pad_cfg_o         (                   ),
     .pad_mux_o         (                   )
+
+    // binh add second port
+//    .BRAM_PORTA_0_addr(BRAM_PORTA_0_addr),
+//    .BRAM_PORTA_0_clk(BRAM_PORTA_0_clk),
+//    .BRAM_PORTA_0_din(BRAM_PORTA_0_din),
+//    .BRAM_PORTA_0_dout(BRAM_PORTA_0_dout),
+//    .BRAM_PORTA_0_en(BRAM_PORTA_0_en),
+//    .BRAM_PORTA_0_rst(BRAM_PORTA_0_rst),
+//    .BRAM_PORTA_0_we(BRAM_PORTA_0_we)
+
   );
 
 endmodule

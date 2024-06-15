@@ -1,0 +1,682 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:36:41 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Wed May  1 10:10:29 2024
+# Process ID: 490052
+# Current directory: /home/binh/work/pulpino-binh/fpga/ips
+# Command line: vivado
+# Log file: /home/binh/work/pulpino-binh/fpga/ips/vivado.log
+# Journal file: /home/binh/work/pulpino-binh/fpga/ips/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/binh/Downloads/vivado-2018.3/Vivado/2018.3/data/ip'.
+open_bd_design {/home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/bd/design_1/design_1.bd}
+Adding cell -- xilinx.com:ip:blk_mem_gen:8.4 - blk_mem_gen_0
+Adding cell -- xilinx.com:ip:axi_bram_ctrl:4.1 - axi_bram_ctrl_0
+Adding cell -- xilinx.com:ip:axi_crossbar:2.1 - axi_crossbar_0
+Adding cell -- xilinx.com:ip:axi_gpio:2.0 - axi_gpio_emu
+Adding cell -- xilinx.com:ip:axi_gpio:2.0 - axi_jtag_emu
+Adding cell -- xilinx.com:ip:axi_protocol_converter:2.1 - axi_protocol_converter_0
+Adding cell -- xilinx.com:ip:axi_protocol_converter:2.1 - axi_protocol_converter_1
+Adding cell -- xilinx.com:ip:axi_protocol_converter:2.1 - axi_protocol_converter_2
+Adding cell -- xilinx.com:ip:axi_protocol_converter:2.1 - axi_protocol_converter_3
+Adding cell -- xilinx.com:ip:axi_protocol_converter:2.1 - axi_protocol_converter_4
+Adding cell -- xilinx.com:ip:axi_gpio:2.0 - axi_pulp_control
+Adding cell -- xilinx.com:ip:processing_system7:5.5 - processing_system7_0
+Adding cell -- xilinx.com:ip:xlconstant:1.1 - xlconstant_0
+Adding cell -- xilinx.com:ip:proc_sys_reset:5.0 - rst_ps7_0_100M
+Successfully read diagram <design_1> from BD file </home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/bd/design_1/design_1.bd>
+update_compile_order -fileset sources_1
+delete_bd_objs [get_bd_intf_nets processing_system7_0_M_AXI_GP0] [get_bd_intf_nets axi_protocol_converter_1_M_AXI] [get_bd_cells axi_protocol_converter_1]
+delete_bd_objs [get_bd_intf_nets axi_crossbar_0_M00_AXI] [get_bd_intf_nets axi_crossbar_0_M04_AXI] [get_bd_intf_nets axi_crossbar_0_M02_AXI] [get_bd_intf_nets axi_crossbar_0_M01_AXI] [get_bd_intf_nets axi_crossbar_0_M03_AXI] [get_bd_cells axi_crossbar_0]
+delete_bd_objs [get_bd_nets rst_ps7_0_100M_peripheral_aresetn] [get_bd_cells rst_ps7_0_100M]
+delete_bd_objs [get_bd_intf_nets axi_protocol_converter_0_M_AXI] [get_bd_cells axi_protocol_converter_0]
+delete_bd_objs [get_bd_intf_nets axi_protocol_converter_4_M_AXI] [get_bd_cells axi_protocol_converter_4]
+delete_bd_objs [get_bd_intf_nets axi_protocol_converter_3_M_AXI] [get_bd_cells axi_protocol_converter_3]
+delete_bd_objs [get_bd_intf_nets axi_protocol_converter_2_M_AXI] [get_bd_cells axi_protocol_converter_2]
+delete_bd_objs [get_bd_nets processing_system7_0_FCLK_RESET0_N]
+delete_bd_objs [get_bd_nets processing_system7_0_FCLK_CLK0]
+startgroup
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {Auto} Clk_slave {Auto} Clk_xbar {Auto} Master {/processing_system7_0/M_AXI_GP0} Slave {/clking_axi} intc_ip {Auto} master_apm {0}}  [get_bd_intf_ports clking_axi]
+INFO: [Ipptcl 7-1463] No Compatible Board Interface found. Board Tab not created in customize GUI
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {Auto} Clk_slave {Auto} Clk_xbar {Auto} Master {/processing_system7_0/M_AXI_GP0} Slave {/axi_bram_ctrl_0/S_AXI} intc_ip {Auto} master_apm {0}}  [get_bd_intf_pins axi_bram_ctrl_0/S_AXI]
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {Auto} Clk_slave {Auto} Clk_xbar {Auto} Master {/processing_system7_0/M_AXI_GP0} Slave {/axi_gpio_emu/S_AXI} intc_ip {New AXI Interconnect} master_apm {0}}  [get_bd_intf_pins axi_gpio_emu/S_AXI]
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {Auto} Clk_slave {Auto} Clk_xbar {Auto} Master {/processing_system7_0/M_AXI_GP0} Slave {/axi_jtag_emu/S_AXI} intc_ip {New AXI Interconnect} master_apm {0}}  [get_bd_intf_pins axi_jtag_emu/S_AXI]
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {Auto} Clk_slave {Auto} Clk_xbar {Auto} Master {/processing_system7_0/M_AXI_GP0} Slave {/axi_pulp_control/S_AXI} intc_ip {New AXI Interconnect} master_apm {0}}  [get_bd_intf_pins axi_pulp_control/S_AXI]
+endgroup
+regenerate_bd_layout
+connect_bd_net [get_bd_ports ps7_clk] [get_bd_pins processing_system7_0/FCLK_CLK0]
+connect_bd_net [get_bd_ports ps7_rst_n] [get_bd_pins rst_ps7_0_50M/peripheral_aresetn]
+WARNING: [IP_Flow 19-465] param 'READ_LATENCY' already exists. Ignoring.
+save_bd_design
+Wrote  : </home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/bd/design_1/design_1.bd> 
+Wrote  : </home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+validate_bd_design
+INFO: [Device 21-403] Loading part xc7z020clg484-1
+WARNING: [#UNDEF] When using EMIO pins for SPI_0 tie SSIN High in the PL bitstream
+CRITICAL WARNING: [xilinx.com:ip:smartconnect:1.0-1] design_1_axi_smc_0: The device(s) attached to /M00_AXI do not share a common clock source with this smartconnect instance.   Re-customize this AXI SmartConnect instance to add a new clock pin and connect it to the same clock source of the IP attached to /M00_AXI to prevent futher clock DRC violations.
+INFO: [Ipptcl 7-1463] No Compatible Board Interface found. Board Tab not created in customize GUI
+WARNING: [#UNDEF] When using EMIO pins for SPI_0 tie SSIN High in the PL bitstream
+WARNING: [BD 41-2180] Resetting the memory initialization file of </blk_mem_gen_0> to default.
+validate_bd_design: Time (s): cpu = 00:00:09 ; elapsed = 00:00:08 . Memory (MB): peak = 6944.516 ; gain = 78.215 ; free physical = 4646 ; free virtual = 39709
+add_files -fileset constrs_1 -norecurse /home/binh/work/pulpino-binh/fpga/pulpemu/tcl/Zedboard-Master.xdc
+validate_bd_design -force
+WARNING: [#UNDEF] When using EMIO pins for SPI_0 tie SSIN High in the PL bitstream
+CRITICAL WARNING: [xilinx.com:ip:smartconnect:1.0-1] design_1_axi_smc_0: The device(s) attached to /M00_AXI do not share a common clock source with this smartconnect instance.   Re-customize this AXI SmartConnect instance to add a new clock pin and connect it to the same clock source of the IP attached to /M00_AXI to prevent futher clock DRC violations.
+INFO: [Ipptcl 7-1463] No Compatible Board Interface found. Board Tab not created in customize GUI
+WARNING: [#UNDEF] When using EMIO pins for SPI_0 tie SSIN High in the PL bitstream
+WARNING: [BD 41-2180] Resetting the memory initialization file of </blk_mem_gen_0> to default.
+save_bd_design
+Wrote  : </home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/bd/design_1/design_1.bd> 
+Wrote  : </home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+make_wrapper -files [get_files /home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/bd/design_1/design_1.bd] -top
+INFO: [BD 41-1662] The design 'design_1.bd' is already validated. Therefore parameter propagation will not be re-run.
+WARNING: [BD 41-2180] Resetting the memory initialization file of </blk_mem_gen_0> to default.
+Wrote  : </home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/blk_mem_gen_0/addrb'(32) to net 'axi_bram_ctrl_0_BRAM_PORTA_ADDR'(13) - Only lower order bits will be connected.
+VHDL Output written to : /home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/bd/design_1/synth/design_1.v
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/blk_mem_gen_0/addrb'(32) to net 'axi_bram_ctrl_0_BRAM_PORTA_ADDR'(13) - Only lower order bits will be connected.
+VHDL Output written to : /home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/bd/design_1/sim/design_1.v
+VHDL Output written to : /home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
+add_files -norecurse /home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+INFO: [BD 41-1662] The design 'design_1.bd' is already validated. Therefore parameter propagation will not be re-run.
+WARNING: [BD 41-2180] Resetting the memory initialization file of </blk_mem_gen_0> to default.
+Wrote  : </home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/blk_mem_gen_0/addrb'(32) to net 'axi_bram_ctrl_0_BRAM_PORTA_ADDR'(13) - Only lower order bits will be connected.
+VHDL Output written to : /home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/bd/design_1/synth/design_1.v
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/blk_mem_gen_0/addrb'(32) to net 'axi_bram_ctrl_0_BRAM_PORTA_ADDR'(13) - Only lower order bits will be connected.
+VHDL Output written to : /home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/bd/design_1/sim/design_1.v
+VHDL Output written to : /home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
+INFO: [BD 41-1029] Generation completed for the IP Integrator block blk_mem_gen_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_bram_ctrl_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_gpio_emu .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_jtag_emu .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_pulp_control .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconstant_0 .
+Exporting to file /home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/hw_handoff/design_1_axi_smc_0.hwh
+Generated Block Design Tcl file /home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/hw_handoff/design_1_axi_smc_0_bd.tcl
+Generated Hardware Definition File /home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/synth/design_1_axi_smc_0.hwdef
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_smc .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_ps7_0_50M .
+Exporting to file /home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/bd/design_1/hw_handoff/design_1.hwh
+Generated Block Design Tcl file /home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/bd/design_1/hw_handoff/design_1_bd.tcl
+Generated Hardware Definition File /home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/bd/design_1/synth/design_1.hwdef
+[Wed May  1 10:17:24 2024] Launched design_1_processing_system7_0_1_synth_1, design_1_axi_pulp_control_0_synth_1, design_1_blk_mem_gen_0_0_synth_1, design_1_axi_gpio_emu_0_synth_1, design_1_axi_jtag_emu_0_synth_1, design_1_axi_bram_ctrl_0_0_synth_1, design_1_axi_smc_0_synth_1, design_1_rst_ps7_0_50M_0_synth_1, synth_1...
+Run output will be captured here:
+design_1_processing_system7_0_1_synth_1: /home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.runs/design_1_processing_system7_0_1_synth_1/runme.log
+design_1_axi_pulp_control_0_synth_1: /home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.runs/design_1_axi_pulp_control_0_synth_1/runme.log
+design_1_blk_mem_gen_0_0_synth_1: /home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.runs/design_1_blk_mem_gen_0_0_synth_1/runme.log
+design_1_axi_gpio_emu_0_synth_1: /home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.runs/design_1_axi_gpio_emu_0_synth_1/runme.log
+design_1_axi_jtag_emu_0_synth_1: /home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.runs/design_1_axi_jtag_emu_0_synth_1/runme.log
+design_1_axi_bram_ctrl_0_0_synth_1: /home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.runs/design_1_axi_bram_ctrl_0_0_synth_1/runme.log
+design_1_axi_smc_0_synth_1: /home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.runs/design_1_axi_smc_0_synth_1/runme.log
+design_1_rst_ps7_0_50M_0_synth_1: /home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.runs/design_1_rst_ps7_0_50M_0_synth_1/runme.log
+synth_1: /home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.runs/synth_1/runme.log
+[Wed May  1 10:17:24 2024] Launched impl_1...
+Run output will be captured here: /home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:21 ; elapsed = 00:00:18 . Memory (MB): peak = 7455.074 ; gain = 272.234 ; free physical = 4312 ; free virtual = 39467
+delete_bd_objs [get_bd_nets SPI0_SCLK_I_1] [get_bd_ports SPI0_SCLK_I]
+delete_bd_objs [get_bd_nets SPI0_MOSI_I_1] [get_bd_ports SPI0_MOSI_I]
+delete_bd_objs [get_bd_nets SPI0_MISO_I_1] [get_bd_ports SPI0_MISO_I]
+delete_bd_objs [get_bd_nets SPI0_SS_I_1] [get_bd_ports SPI0_SS_I]
+delete_bd_objs [get_bd_nets gpio_io_i_2] [get_bd_ports gpio_io_i]
+undo
+INFO: [Common 17-17] undo 'delete_bd_objs [get_bd_nets gpio_io_i_2] [get_bd_ports gpio_io_i]'
+undo
+INFO: [Common 17-17] undo 'delete_bd_objs [get_bd_nets SPI0_SS_I_1] [get_bd_ports SPI0_SS_I]'
+undo
+INFO: [Common 17-17] undo 'delete_bd_objs [get_bd_nets SPI0_MISO_I_1] [get_bd_ports SPI0_MISO_I]'
+undo
+INFO: [Common 17-17] undo 'delete_bd_objs [get_bd_nets SPI0_MOSI_I_1] [get_bd_ports SPI0_MOSI_I]'
+undo
+INFO: [Common 17-17] undo 'delete_bd_objs [get_bd_nets SPI0_SCLK_I_1] [get_bd_ports SPI0_SCLK_I]'
+redo
+INFO: [Common 17-16] redo 'delete_bd_objs [get_bd_nets SPI0_SCLK_I_1] [get_bd_ports SPI0_SCLK_I]'
+undo
+INFO: [Common 17-17] undo 'delete_bd_objs [get_bd_nets SPI0_SCLK_I_1] [get_bd_ports SPI0_SCLK_I]'
+close [ open /home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/new/io_top.v w ]
+add_files /home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/new/io_top.v
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files /home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/new/io_top.v] -no_script -reset -force -quiet
+remove_files  /home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/new/io_top.v
+file delete -force /home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/new/io_top.v
+close [ open /home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/new/pulpino.v w ]
+add_files /home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/new/pulpino.v
+update_compile_order -fileset sources_1
+create_bd_cell -type module -reference pulpino pulpino_0
+INFO: [IP_Flow 19-5107] Inferred bus interface 'ps7_rst_n' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'ps7_clk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 'ps7_rst_n': Added interface parameter 'POLARITY' with value 'ACTIVE_LOW'.
+INFO: [IP_Flow 19-4728] Bus Interface 'ps7_clk': Added interface parameter 'ASSOCIATED_RESET' with value 'ps7_rst_n'.
+WARNING: [IP_Flow 19-3153] Bus Interface 'ps7_clk': ASSOCIATED_BUSIF bus parameter is missing.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+delete_bd_objs [get_bd_ports ps7_clk]
+connect_bd_net [get_bd_pins pulpino_0/ps7_clk] [get_bd_pins processing_system7_0/FCLK_CLK0]
+ipx::open_ipxact_file /home/binh/Downloads/vivado-2018.3/Vivado/2018.3/data/ip/interfaces/uart_v1_0/uart.xml
+ipx::unload_abstraction_definition /home/binh/Downloads/vivado-2018.3/Vivado/2018.3/data/ip/interfaces/uart_v1_0/uart_rtl.xml
+ipx::unload_bus_definition /home/binh/Downloads/vivado-2018.3/Vivado/2018.3/data/ip/interfaces/uart_v1_0/uart.xml
+delete_bd_objs [get_bd_intf_nets processing_system7_0_UART_0] [get_bd_intf_ports UART_0]
+connect_bd_net [get_bd_pins processing_system7_0/UART0_TX] [get_bd_pins pulpino_0/UART_0_txd]
+WARNING: [BD 41-1306] The connection to interface pin /processing_system7_0/UART0_TX is being overridden by the user. This pin will not be connected as a part of interface connection UART_0
+connect_bd_net [get_bd_pins processing_system7_0/UART0_RX] [get_bd_pins pulpino_0/UART_0_rxd]
+WARNING: [BD 41-1306] The connection to interface pin /processing_system7_0/UART0_RX is being overridden by the user. This pin will not be connected as a part of interface connection UART_0
+delete_bd_objs [get_bd_nets axi_pulp_control_gpio_io_o] [get_bd_ports fetch_enable]
+undo
+INFO: [Common 17-17] undo 'delete_bd_objs [get_bd_nets axi_pulp_control_gpio_io_o] [get_bd_ports fetch_enable]'
+delete_bd_objs [get_bd_nets axi_pulp_control_gpio_io_o] [get_bd_ports fetch_enable]
+connect_bd_net [get_bd_pins axi_pulp_control/gpio_io_o] [get_bd_pins pulpino_0/fetch_enable]
+WARNING: [BD 41-1306] The connection to interface pin /axi_pulp_control/gpio_io_o is being overridden by the user. This pin will not be connected as a part of interface connection GPIO
+delete_bd_objs [get_bd_nets axi_gpio_emu_gpio_io_o] [get_bd_ports gpio_io_o]
+connect_bd_net [get_bd_pins axi_gpio_emu/gpio_io_o] [get_bd_pins pulpino_0/gpio_io_o]
+WARNING: [BD 41-1306] The connection to interface pin /axi_gpio_emu/gpio_io_o is being overridden by the user. This pin will not be connected as a part of interface connection GPIO
+delete_bd_objs [get_bd_nets gpio_io_i_2] [get_bd_ports gpio_io_i]
+connect_bd_net [get_bd_pins axi_gpio_emu/gpio_io_i] [get_bd_pins pulpino_0/gpio_io_i]
+WARNING: [BD 41-1306] The connection to interface pin /axi_gpio_emu/gpio_io_i is being overridden by the user. This pin will not be connected as a part of interface connection GPIO
+delete_bd_objs [get_bd_nets axi_jtag_emu_gpio_io_o] [get_bd_ports jtag_emu_o]
+undo
+INFO: [Common 17-17] undo 'delete_bd_objs [get_bd_nets axi_jtag_emu_gpio_io_o] [get_bd_ports jtag_emu_o]'
+redo
+INFO: [Common 17-16] redo 'delete_bd_objs [get_bd_nets axi_jtag_emu_gpio_io_o] [get_bd_ports jtag_emu_o]'
+connect_bd_net [get_bd_pins axi_jtag_emu/gpio_io_o] [get_bd_pins pulpino_0/jtag_emu_o]
+WARNING: [BD 41-1306] The connection to interface pin /axi_jtag_emu/gpio_io_o is being overridden by the user. This pin will not be connected as a part of interface connection GPIO
+delete_bd_objs [get_bd_ports ps7_rst_n]
+connect_bd_net [get_bd_pins pulpino_0/ps7_rst_n] [get_bd_pins rst_ps7_0_50M/peripheral_aresetn]
+delete_bd_objs [get_bd_nets processing_system7_0_SPI0_MOSI_O] [get_bd_ports SPI0_MOSI_O]
+undo
+INFO: [Common 17-17] undo 'delete_bd_objs [get_bd_nets processing_system7_0_SPI0_MOSI_O] [get_bd_ports SPI0_MOSI_O]'
+redo
+INFO: [Common 17-16] redo 'delete_bd_objs [get_bd_nets processing_system7_0_SPI0_MOSI_O] [get_bd_ports SPI0_MOSI_O]'
+undo
+INFO: [Common 17-17] undo 'delete_bd_objs [get_bd_nets processing_system7_0_SPI0_MOSI_O] [get_bd_ports SPI0_MOSI_O]'
+connect_bd_net [get_bd_pins processing_system7_0/SPI0_MOSI_O] [get_bd_pins pulpino_0/spi_mosi_o]
+delete_bd_objs [get_bd_ports SPI0_MOSI_O]
+update_module_reference design_1_pulpino_0_0
+INFO: [IP_Flow 19-5107] Inferred bus interface 'ps7_rst_n' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'ps7_clk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 'ps7_rst_n': Added interface parameter 'POLARITY' with value 'ACTIVE_LOW'.
+INFO: [IP_Flow 19-4728] Bus Interface 'ps7_clk': Added interface parameter 'ASSOCIATED_RESET' with value 'ps7_rst_n'.
+WARNING: [IP_Flow 19-3153] Bus Interface 'ps7_clk': ASSOCIATED_BUSIF bus parameter is missing.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+Upgrading '/home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/bd/design_1/design_1.bd'
+INFO: [IP_Flow 19-1972] Upgraded design_1_pulpino_0_0 from pulpino_v1_0 1.0 to pulpino_v1_0 1.0
+WARNING: [IP_Flow 19-4700] Upgrade has removed port 'spi_cs_i'
+WARNING: [IP_Flow 19-4700] Upgrade has removed port 'spi_cs_o'
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'spi_ss_i'
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'spi_ss_o'
+WARNING: [IP_Flow 19-3298] Detected external port differences while upgrading 'design_1_pulpino_0_0'. These changes may impact your design.
+CRITICAL WARNING: [Coretcl 2-1280] The upgrade of 'design_1_pulpino_0_0' has identified issues that may require user intervention. Please verify that the instance is correctly configured, and review any upgrade messages.
+Wrote  : </home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/bd/design_1/design_1.bd> 
+Wrote  : </home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+update_compile_order -fileset sources_1
+connect_bd_net [get_bd_pins processing_system7_0/SPI0_SS_O] [get_bd_pins pulpino_0/spi_ss_o]
+delete_bd_objs [get_bd_ports SPI0_SS_O]
+delete_bd_objs [get_bd_nets SPI0_SS_I_1]
+undo
+INFO: [Common 17-17] undo 'delete_bd_objs [get_bd_nets SPI0_SS_I_1]'
+delete_bd_objs [get_bd_nets SPI0_SS_I_1] [get_bd_ports SPI0_SS_I]
+connect_bd_net [get_bd_pins processing_system7_0/SPI0_SS_I] [get_bd_pins pulpino_0/spi_ss_i]
+WARNING: [BD 41-1306] The connection to interface pin /processing_system7_0/SPI0_SS_I is being overridden by the user. This pin will not be connected as a part of interface connection SPI_0
+delete_bd_objs [get_bd_nets SPI0_MOSI_I_1] [get_bd_ports SPI0_MOSI_I]
+undo
+INFO: [Common 17-17] undo 'delete_bd_objs [get_bd_nets SPI0_MOSI_I_1] [get_bd_ports SPI0_MOSI_I]'
+delete_bd_objs [get_bd_nets SPI0_MOSI_I_1] [get_bd_ports SPI0_MOSI_I]
+connect_bd_net [get_bd_pins processing_system7_0/SPI0_MOSI_I] [get_bd_pins pulpino_0/spi_mosi_i]
+WARNING: [BD 41-1306] The connection to interface pin /processing_system7_0/SPI0_MOSI_I is being overridden by the user. This pin will not be connected as a part of interface connection SPI_0
+delete_bd_objs [get_bd_nets SPI0_MISO_I_1] [get_bd_ports SPI0_MISO_I]
+connect_bd_net [get_bd_pins processing_system7_0/SPI0_MISO_I] [get_bd_pins pulpino_0/spi_miso_i]
+WARNING: [BD 41-1306] The connection to interface pin /processing_system7_0/SPI0_MISO_I is being overridden by the user. This pin will not be connected as a part of interface connection SPI_0
+update_module_reference design_1_pulpino_0_0
+INFO: [IP_Flow 19-5107] Inferred bus interface 'clking_axi' of definition 'xilinx.com:interface:aximm:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'ps7_rst_n' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'ps7_clk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 'ps7_rst_n': Added interface parameter 'POLARITY' with value 'ACTIVE_LOW'.
+INFO: [IP_Flow 19-4728] Bus Interface 'ps7_clk': Added interface parameter 'ASSOCIATED_RESET' with value 'ps7_rst_n'.
+ERROR: [IP_Flow 19-734] Port 'clking_axi_awaddr': Port type 'spi_ss_i' is not recognized. Only std_logic and std_logic_vector types are allowed for ports. See the documentation for more details.
+ERROR: [IP_Flow 19-734] Port 'clking_axi_awprot': Port type 'spi_ss_i' is not recognized. Only std_logic and std_logic_vector types are allowed for ports. See the documentation for more details.
+ERROR: [IP_Flow 19-734] Port 'clking_axi_awvalid': Port type 'spi_ss_i' is not recognized. Only std_logic and std_logic_vector types are allowed for ports. See the documentation for more details.
+ERROR: [IP_Flow 19-734] Port 'clking_axi_awready': Port type 'spi_ss_i' is not recognized. Only std_logic and std_logic_vector types are allowed for ports. See the documentation for more details.
+ERROR: [IP_Flow 19-734] Port 'clking_axi_wdata': Port type 'spi_ss_i' is not recognized. Only std_logic and std_logic_vector types are allowed for ports. See the documentation for more details.
+ERROR: [IP_Flow 19-734] Port 'clking_axi_wstrb': Port type 'spi_ss_i' is not recognized. Only std_logic and std_logic_vector types are allowed for ports. See the documentation for more details.
+ERROR: [IP_Flow 19-734] Port 'clking_axi_wvalid': Port type 'spi_ss_i' is not recognized. Only std_logic and std_logic_vector types are allowed for ports. See the documentation for more details.
+ERROR: [IP_Flow 19-734] Port 'clking_axi_wready': Port type 'spi_ss_i' is not recognized. Only std_logic and std_logic_vector types are allowed for ports. See the documentation for more details.
+ERROR: [IP_Flow 19-734] Port 'clking_axi_bresp': Port type 'spi_ss_i' is not recognized. Only std_logic and std_logic_vector types are allowed for ports. See the documentation for more details.
+ERROR: [IP_Flow 19-734] Port 'clking_axi_bvalid': Port type 'spi_ss_i' is not recognized. Only std_logic and std_logic_vector types are allowed for ports. See the documentation for more details.
+ERROR: [IP_Flow 19-734] Port 'clking_axi_bready': Port type 'spi_ss_i' is not recognized. Only std_logic and std_logic_vector types are allowed for ports. See the documentation for more details.
+ERROR: [IP_Flow 19-734] Port 'clking_axi_araddr': Port type 'spi_ss_i' is not recognized. Only std_logic and std_logic_vector types are allowed for ports. See the documentation for more details.
+ERROR: [IP_Flow 19-734] Port 'clking_axi_arprot': Port type 'spi_ss_i' is not recognized. Only std_logic and std_logic_vector types are allowed for ports. See the documentation for more details.
+ERROR: [IP_Flow 19-734] Port 'clking_axi_arvalid': Port type 'spi_ss_i' is not recognized. Only std_logic and std_logic_vector types are allowed for ports. See the documentation for more details.
+ERROR: [IP_Flow 19-734] Port 'clking_axi_arready': Port type 'spi_ss_i' is not recognized. Only std_logic and std_logic_vector types are allowed for ports. See the documentation for more details.
+ERROR: [IP_Flow 19-734] Port 'clking_axi_rdata': Port type 'spi_ss_i' is not recognized. Only std_logic and std_logic_vector types are allowed for ports. See the documentation for more details.
+ERROR: [IP_Flow 19-734] Port 'clking_axi_rresp': Port type 'spi_ss_i' is not recognized. Only std_logic and std_logic_vector types are allowed for ports. See the documentation for more details.
+ERROR: [IP_Flow 19-734] Port 'clking_axi_rvalid': Port type 'spi_ss_i' is not recognized. Only std_logic and std_logic_vector types are allowed for ports. See the documentation for more details.
+ERROR: [IP_Flow 19-734] Port 'clking_axi_rready': Port type 'spi_ss_i' is not recognized. Only std_logic and std_logic_vector types are allowed for ports. See the documentation for more details.
+WARNING: [IP_Flow 19-3480] master: Portmap direction mismatched between component port 'clking_axi_awready' and definition port 'AWREADY'.
+WARNING: [IP_Flow 19-3480] master: Portmap direction mismatched between component port 'clking_axi_wready' and definition port 'WREADY'.
+WARNING: [IP_Flow 19-3480] master: Portmap direction mismatched between component port 'clking_axi_bresp' and definition port 'BRESP'.
+WARNING: [IP_Flow 19-3480] master: Portmap direction mismatched between component port 'clking_axi_bvalid' and definition port 'BVALID'.
+WARNING: [IP_Flow 19-3480] master: Portmap direction mismatched between component port 'clking_axi_arready' and definition port 'ARREADY'.
+WARNING: [IP_Flow 19-3480] master: Portmap direction mismatched between component port 'clking_axi_rdata' and definition port 'RDATA'.
+WARNING: [IP_Flow 19-3480] master: Portmap direction mismatched between component port 'clking_axi_rresp' and definition port 'RRESP'.
+WARNING: [IP_Flow 19-3480] master: Portmap direction mismatched between component port 'clking_axi_rvalid' and definition port 'RVALID'.
+WARNING: [IP_Flow 19-3158] Bus Interface 'clking_axi': FREQ_HZ bus parameter missing from AXI interface when interface is not associated to a clock.
+WARNING: [IP_Flow 19-3153] Bus Interface 'ps7_clk': ASSOCIATED_BUSIF bus parameter is missing.
+ERROR: [IP_Flow 19-4668] Failed to infer definition from module 'pulpino'.
+ERROR: [Common 17-39] 'update_module_reference' failed due to earlier errors.
+update_module_reference design_1_pulpino_0_0
+INFO: [IP_Flow 19-5107] Inferred bus interface 'clking_axi' of definition 'xilinx.com:interface:aximm:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'ps7_rst_n' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'ps7_clk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 'ps7_rst_n': Added interface parameter 'POLARITY' with value 'ACTIVE_LOW'.
+INFO: [IP_Flow 19-4728] Bus Interface 'ps7_clk': Added interface parameter 'ASSOCIATED_RESET' with value 'ps7_rst_n'.
+WARNING: [IP_Flow 19-3480] master: Portmap direction mismatched between component port 'clking_axi_awready' and definition port 'AWREADY'.
+WARNING: [IP_Flow 19-3480] master: Portmap direction mismatched between component port 'clking_axi_wready' and definition port 'WREADY'.
+WARNING: [IP_Flow 19-3480] master: Portmap direction mismatched between component port 'clking_axi_bresp' and definition port 'BRESP'.
+WARNING: [IP_Flow 19-3480] master: Portmap direction mismatched between component port 'clking_axi_bvalid' and definition port 'BVALID'.
+WARNING: [IP_Flow 19-3480] master: Portmap direction mismatched between component port 'clking_axi_arready' and definition port 'ARREADY'.
+WARNING: [IP_Flow 19-3480] master: Portmap direction mismatched between component port 'clking_axi_rdata' and definition port 'RDATA'.
+WARNING: [IP_Flow 19-3480] master: Portmap direction mismatched between component port 'clking_axi_rresp' and definition port 'RRESP'.
+WARNING: [IP_Flow 19-3480] master: Portmap direction mismatched between component port 'clking_axi_rvalid' and definition port 'RVALID'.
+WARNING: [IP_Flow 19-3158] Bus Interface 'clking_axi': FREQ_HZ bus parameter missing from AXI interface when interface is not associated to a clock.
+WARNING: [IP_Flow 19-3153] Bus Interface 'ps7_clk': ASSOCIATED_BUSIF bus parameter is missing.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+Upgrading '/home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/bd/design_1/design_1.bd'
+INFO: [IP_Flow 19-1972] Upgraded design_1_pulpino_0_0 from pulpino_v1_0 1.0 to pulpino_v1_0 1.0
+WARNING: [IP_Flow 19-4697] Upgrade has added interface 'clking_axi' (xilinx.com:interface:aximm:1.0)
+WARNING: [IP_Flow 19-3670] Detected external interface differences while upgrading 'design_1_pulpino_0_0'.
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'clking_axi_araddr'
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'clking_axi_arprot'
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'clking_axi_arready'
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'clking_axi_arvalid'
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'clking_axi_awaddr'
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'clking_axi_awprot'
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'clking_axi_awready'
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'clking_axi_awvalid'
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'clking_axi_bready'
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'clking_axi_bresp'
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'clking_axi_bvalid'
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'clking_axi_rdata'
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'clking_axi_rready'
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'clking_axi_rresp'
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'clking_axi_rvalid'
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'clking_axi_wdata'
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'clking_axi_wready'
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'clking_axi_wstrb'
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'clking_axi_wvalid'
+WARNING: [IP_Flow 19-3298] Detected external port differences while upgrading 'design_1_pulpino_0_0'. These changes may impact your design.
+CRITICAL WARNING: [Coretcl 2-1280] The upgrade of 'design_1_pulpino_0_0' has identified issues that may require user intervention. Please verify that the instance is correctly configured, and review any upgrade messages.
+Wrote  : </home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/bd/design_1/design_1.bd> 
+Wrote  : </home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+update_module_reference design_1_pulpino_0_0
+INFO: [IP_Flow 19-5107] Inferred bus interface 'clking_axi' of definition 'xilinx.com:interface:aximm:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'ps7_rst_n' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'ps7_clk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 'ps7_rst_n': Added interface parameter 'POLARITY' with value 'ACTIVE_LOW'.
+INFO: [IP_Flow 19-4728] Bus Interface 'ps7_clk': Added interface parameter 'ASSOCIATED_RESET' with value 'ps7_rst_n'.
+WARNING: [IP_Flow 19-3480] master: Portmap direction mismatched between component port 'clking_axi_awready' and definition port 'AWREADY'.
+WARNING: [IP_Flow 19-3480] master: Portmap direction mismatched between component port 'clking_axi_wready' and definition port 'WREADY'.
+WARNING: [IP_Flow 19-3480] master: Portmap direction mismatched between component port 'clking_axi_bresp' and definition port 'BRESP'.
+WARNING: [IP_Flow 19-3480] master: Portmap direction mismatched between component port 'clking_axi_bvalid' and definition port 'BVALID'.
+WARNING: [IP_Flow 19-3480] master: Portmap direction mismatched between component port 'clking_axi_arready' and definition port 'ARREADY'.
+WARNING: [IP_Flow 19-3480] master: Portmap direction mismatched between component port 'clking_axi_rdata' and definition port 'RDATA'.
+WARNING: [IP_Flow 19-3480] master: Portmap direction mismatched between component port 'clking_axi_rresp' and definition port 'RRESP'.
+WARNING: [IP_Flow 19-3480] master: Portmap direction mismatched between component port 'clking_axi_rvalid' and definition port 'RVALID'.
+WARNING: [IP_Flow 19-3158] Bus Interface 'clking_axi': FREQ_HZ bus parameter missing from AXI interface when interface is not associated to a clock.
+WARNING: [IP_Flow 19-3153] Bus Interface 'ps7_clk': ASSOCIATED_BUSIF bus parameter is missing.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+Upgrading '/home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/bd/design_1/design_1.bd'
+INFO: [IP_Flow 19-1972] Upgraded design_1_pulpino_0_0 from pulpino_v1_0 1.0 to pulpino_v1_0 1.0
+WARNING: [IP_Flow 19-4700] Upgrade has removed port 'UART_0_rxd'
+WARNING: [IP_Flow 19-4700] Upgrade has removed port 'UART_0_txd'
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'uart_rx'
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'uart_tx'
+WARNING: [IP_Flow 19-3298] Detected external port differences while upgrading 'design_1_pulpino_0_0'. These changes may impact your design.
+CRITICAL WARNING: [BD 41-1167] The pin 'UART_0_rxd' is not found on the upgraded version of the cell '/pulpino_0'. Its connection to the net 'pulpino_0_UART_0_rxd' has been removed.
+CRITICAL WARNING: [BD 41-1167] The pin 'UART_0_txd' is not found on the upgraded version of the cell '/pulpino_0'. Its connection to the net 'processing_system7_0_UART0_TX' has been removed.
+CRITICAL WARNING: [Coretcl 2-1280] The upgrade of 'design_1_pulpino_0_0' has identified issues that may require user intervention. Please verify that the instance is correctly configured, and review any upgrade messages.
+WARNING: [BD 41-597] NET <pulpino_0_UART_0_rxd> has no source
+Wrote  : </home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/bd/design_1/design_1.bd> 
+Wrote  : </home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+delete_bd_objs [get_bd_nets processing_system7_0_UART0_TX]
+delete_bd_objs [get_bd_nets pulpino_0_UART_0_rxd]
+undo
+INFO: [Common 17-17] undo 'delete_bd_objs [get_bd_nets pulpino_0_UART_0_rxd]'
+undo
+INFO: [Common 17-17] undo 'delete_bd_objs [get_bd_nets processing_system7_0_UART0_TX]'
+delete_bd_objs [get_bd_intf_nets axi_smc_M00_AXI] [get_bd_intf_ports clking_axi]
+update_module_reference design_1_pulpino_0_0
+INFO: [IP_Flow 19-5107] Inferred bus interface 'clking_axi' of definition 'xilinx.com:interface:aximm:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'ps7_rst_n' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'ps7_clk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 'ps7_rst_n': Added interface parameter 'POLARITY' with value 'ACTIVE_LOW'.
+INFO: [IP_Flow 19-4728] Bus Interface 'ps7_clk': Added interface parameter 'ASSOCIATED_RESET' with value 'ps7_rst_n'.
+WARNING: [IP_Flow 19-3480] master: Portmap direction mismatched between component port 'clking_axi_awready' and definition port 'AWREADY'.
+WARNING: [IP_Flow 19-3480] master: Portmap direction mismatched between component port 'clking_axi_wready' and definition port 'WREADY'.
+WARNING: [IP_Flow 19-3480] master: Portmap direction mismatched between component port 'clking_axi_bresp' and definition port 'BRESP'.
+WARNING: [IP_Flow 19-3480] master: Portmap direction mismatched between component port 'clking_axi_bvalid' and definition port 'BVALID'.
+WARNING: [IP_Flow 19-3480] master: Portmap direction mismatched between component port 'clking_axi_arready' and definition port 'ARREADY'.
+WARNING: [IP_Flow 19-3480] master: Portmap direction mismatched between component port 'clking_axi_rdata' and definition port 'RDATA'.
+WARNING: [IP_Flow 19-3480] master: Portmap direction mismatched between component port 'clking_axi_rresp' and definition port 'RRESP'.
+WARNING: [IP_Flow 19-3480] master: Portmap direction mismatched between component port 'clking_axi_rvalid' and definition port 'RVALID'.
+WARNING: [IP_Flow 19-3158] Bus Interface 'clking_axi': FREQ_HZ bus parameter missing from AXI interface when interface is not associated to a clock.
+WARNING: [IP_Flow 19-3153] Bus Interface 'ps7_clk': ASSOCIATED_BUSIF bus parameter is missing.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+Upgrading '/home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/bd/design_1/design_1.bd'
+INFO: [IP_Flow 19-1972] Upgraded design_1_pulpino_0_0 from pulpino_v1_0 1.0 to pulpino_v1_0 1.0
+WARNING: [IP_Flow 19-4700] Upgrade has removed port 'uart_rx'
+WARNING: [IP_Flow 19-4700] Upgrade has removed port 'uart_tx'
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'UART_0_rxd'
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'UART_0_txd'
+WARNING: [IP_Flow 19-3298] Detected external port differences while upgrading 'design_1_pulpino_0_0'. These changes may impact your design.
+CRITICAL WARNING: [Coretcl 2-1280] The upgrade of 'design_1_pulpino_0_0' has identified issues that may require user intervention. Please verify that the instance is correctly configured, and review any upgrade messages.
+WARNING: [BD 41-597] NET <pulpino_0_UART_0_rxd> has no source
+Wrote  : </home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/bd/design_1/design_1.bd> 
+Wrote  : </home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+connect_bd_net [get_bd_pins processing_system7_0/UART0_TX] [get_bd_pins pulpino_0/UART_0_txd]
+connect_bd_net [get_bd_pins pulpino_0/UART_0_rxd] [get_bd_pins processing_system7_0/UART0_RX]
+update_module_reference design_1_pulpino_0_0
+INFO: [IP_Flow 19-5107] Inferred bus interface 'clking_axi' of definition 'xilinx.com:interface:aximm:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'ps7_rst_n' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'ps7_clk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 'ps7_rst_n': Added interface parameter 'POLARITY' with value 'ACTIVE_LOW'.
+INFO: [IP_Flow 19-4728] Bus Interface 'ps7_clk': Added interface parameter 'ASSOCIATED_RESET' with value 'ps7_rst_n'.
+WARNING: [IP_Flow 19-3158] Bus Interface 'clking_axi': FREQ_HZ bus parameter missing from AXI interface when interface is not associated to a clock.
+WARNING: [IP_Flow 19-3153] Bus Interface 'ps7_clk': ASSOCIATED_BUSIF bus parameter is missing.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+Upgrading '/home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/bd/design_1/design_1.bd'
+INFO: [IP_Flow 19-1972] Upgraded design_1_pulpino_0_0 from pulpino_v1_0 1.0 to pulpino_v1_0 1.0
+WARNING: [IP_Flow 19-4704] Upgraded port 'clking_axi_araddr' in differs from original direction out
+WARNING: [IP_Flow 19-4704] Upgraded port 'clking_axi_arprot' in differs from original direction out
+WARNING: [IP_Flow 19-4704] Upgraded port 'clking_axi_arvalid' in differs from original direction out
+WARNING: [IP_Flow 19-4704] Upgraded port 'clking_axi_awaddr' in differs from original direction out
+WARNING: [IP_Flow 19-4704] Upgraded port 'clking_axi_awprot' in differs from original direction out
+WARNING: [IP_Flow 19-4704] Upgraded port 'clking_axi_awvalid' in differs from original direction out
+WARNING: [IP_Flow 19-4704] Upgraded port 'clking_axi_bready' in differs from original direction out
+WARNING: [IP_Flow 19-4706] Upgraded port 'clking_axi_bresp' width 2 differs from original width 1
+WARNING: [IP_Flow 19-4706] Upgraded port 'clking_axi_rdata' width 32 differs from original width 1
+WARNING: [IP_Flow 19-4704] Upgraded port 'clking_axi_rready' in differs from original direction out
+WARNING: [IP_Flow 19-4706] Upgraded port 'clking_axi_rresp' width 2 differs from original width 1
+WARNING: [IP_Flow 19-4704] Upgraded port 'clking_axi_wdata' in differs from original direction out
+WARNING: [IP_Flow 19-4704] Upgraded port 'clking_axi_wstrb' in differs from original direction out
+WARNING: [IP_Flow 19-4704] Upgraded port 'clking_axi_wvalid' in differs from original direction out
+WARNING: [IP_Flow 19-3298] Detected external port differences while upgrading 'design_1_pulpino_0_0'. These changes may impact your design.
+CRITICAL WARNING: [Coretcl 2-1280] The upgrade of 'design_1_pulpino_0_0' has identified issues that may require user intervention. Please verify that the instance is correctly configured, and review any upgrade messages.
+Wrote  : </home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/bd/design_1/design_1.bd> 
+Wrote  : </home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+connect_bd_intf_net [get_bd_intf_pins pulpino_0/clking_axi] [get_bd_intf_pins axi_smc/M00_AXI]
+delete_bd_objs [get_bd_nets gpio_io_i_1] [get_bd_ports jtag_emu_i]
+connect_bd_net [get_bd_pins axi_jtag_emu/gpio_io_i] [get_bd_pins pulpino_0/jtag_emu_i]
+WARNING: [BD 41-1306] The connection to interface pin /axi_jtag_emu/gpio_io_i is being overridden by the user. This pin will not be connected as a part of interface connection GPIO
+delete_bd_objs [get_bd_nets SPI0_SCLK_I_1] [get_bd_ports SPI0_SCLK_I]
+connect_bd_net [get_bd_pins processing_system7_0/SPI0_SCLK_I] [get_bd_pins pulpino_0/spi_sck_i]
+WARNING: [BD 41-1306] The connection to interface pin /processing_system7_0/SPI0_SCLK_I is being overridden by the user. This pin will not be connected as a part of interface connection SPI_0
+delete_bd_objs [get_bd_nets processing_system7_0_SPI0_SCLK_O] [get_bd_ports SPI0_SCLK_O]
+connect_bd_net [get_bd_pins processing_system7_0/SPI0_SCLK_O] [get_bd_pins pulpino_0/spi_sck_o]
+WARNING: [BD 41-1306] The connection to interface pin /processing_system7_0/SPI0_SCLK_O is being overridden by the user. This pin will not be connected as a part of interface connection SPI_0
+regenerate_bd_layout
+validate_bd_design
+CRITICAL WARNING: [BD 41-1356] Address block </pulpino_0/clking_axi/reg0> is not mapped into </processing_system7_0/Data>. Please use Address Editor to either map or exclude it.
+CRITICAL WARNING: [BD 41-967] AXI interface pin /pulpino_0/clking_axi is not associated to any clock pin. It may not work correctly.
+WARNING: [#UNDEF] When using EMIO pins for SPI_0 tie SSIN High in the PL bitstream
+CRITICAL WARNING: [xilinx.com:ip:smartconnect:1.0-1] design_1_axi_smc_0: The device(s) attached to /M00_AXI do not share a common clock source with this smartconnect instance.   Re-customize this AXI SmartConnect instance to add a new clock pin and connect it to the same clock source of the IP attached to /M00_AXI to prevent futher clock DRC violations.
+INFO: [Ipptcl 7-1463] No Compatible Board Interface found. Board Tab not created in customize GUI
+WARNING: [#UNDEF] When using EMIO pins for SPI_0 tie SSIN High in the PL bitstream
+WARNING: [BD 41-2180] Resetting the memory initialization file of </blk_mem_gen_0> to default.
+CRITICAL WARNING: [BD 41-1356] Address block </pulpino_0/clking_axi/reg0> is not mapped into </processing_system7_0/Data>. Please use Address Editor to either map or exclude it.
+ERROR: [BD 41-237] Bus Interface property FREQ_HZ does not match between /pulpino_0/clking_axi(100000000) and /axi_smc/M00_AXI(50000000)
+WARNING: [BD 41-927] Following properties on pin /pulpino_0/ps7_clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_processing_system7_0_1_FCLK_CLK0 
+validate_bd_design: Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 8089.145 ; gain = 0.000 ; free physical = 4037 ; free virtual = 39300
+ERROR: [Common 17-39] 'validate_bd_design' failed due to earlier errors.
+update_module_reference design_1_pulpino_0_0
+INFO: [IP_Flow 19-5107] Inferred bus interface 'clking_axi' of definition 'xilinx.com:interface:aximm:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'clking_axi_aresetn' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'ps7_rst_n' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'clking_axi_aclk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'ps7_clk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 'clking_axi_aresetn': Added interface parameter 'POLARITY' with value 'ACTIVE_LOW'.
+INFO: [IP_Flow 19-4728] Bus Interface 'ps7_rst_n': Added interface parameter 'POLARITY' with value 'ACTIVE_LOW'.
+INFO: [IP_Flow 19-4728] Bus Interface 'clking_axi_aclk': Added interface parameter 'ASSOCIATED_BUSIF' with value 'clking_axi'.
+INFO: [IP_Flow 19-4728] Bus Interface 'clking_axi_aclk': Added interface parameter 'ASSOCIATED_RESET' with value 'clking_axi_aresetn'.
+INFO: [IP_Flow 19-4728] Bus Interface 'ps7_clk': Added interface parameter 'ASSOCIATED_RESET' with value 'ps7_rst_n'.
+WARNING: [IP_Flow 19-3153] Bus Interface 'ps7_clk': ASSOCIATED_BUSIF bus parameter is missing.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+Upgrading '/home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/bd/design_1/design_1.bd'
+INFO: [IP_Flow 19-1972] Upgraded design_1_pulpino_0_0 from pulpino_v1_0 1.0 to pulpino_v1_0 1.0
+WARNING: [IP_Flow 19-4697] Upgrade has added interface 'clking_axi_aclk' (xilinx.com:signal:clock:1.0)
+WARNING: [IP_Flow 19-4697] Upgrade has added interface 'clking_axi_aresetn' (xilinx.com:signal:reset:1.0)
+WARNING: [IP_Flow 19-3670] Detected external interface differences while upgrading 'design_1_pulpino_0_0'.
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'clking_axi_aclk'
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'clking_axi_aresetn'
+WARNING: [IP_Flow 19-3298] Detected external port differences while upgrading 'design_1_pulpino_0_0'. These changes may impact your design.
+CRITICAL WARNING: [Coretcl 2-1280] The upgrade of 'design_1_pulpino_0_0' has identified issues that may require user intervention. Please verify that the instance is correctly configured, and review any upgrade messages.
+Wrote  : </home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/bd/design_1/design_1.bd> 
+Wrote  : </home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+regenerate_bd_layout
+regenerate_bd_layout
+validate_bd_design
+ERROR: [BD 41-758] The following clock pins are not connected to a valid clock source: 
+/pulpino_0/clking_axi_aclk
+
+ERROR: [Common 17-39] 'validate_bd_design' failed due to earlier errors.
+connect_bd_net [get_bd_pins pulpino_0/clking_axi_aclk] [get_bd_pins processing_system7_0/FCLK_CLK0]
+connect_bd_net [get_bd_pins pulpino_0/clking_axi_aresetn] [get_bd_pins rst_ps7_0_50M/peripheral_aresetn]
+regenerate_bd_layout
+validate_bd_design
+CRITICAL WARNING: [BD 41-1356] Address block </pulpino_0/clking_axi/reg0> is not mapped into </processing_system7_0/Data>. Please use Address Editor to either map or exclude it.
+WARNING: [#UNDEF] When using EMIO pins for SPI_0 tie SSIN High in the PL bitstream
+INFO: [Ipptcl 7-1463] No Compatible Board Interface found. Board Tab not created in customize GUI
+WARNING: [#UNDEF] When using EMIO pins for SPI_0 tie SSIN High in the PL bitstream
+WARNING: [BD 41-2180] Resetting the memory initialization file of </blk_mem_gen_0> to default.
+CRITICAL WARNING: [BD 41-1356] Address block </pulpino_0/clking_axi/reg0> is not mapped into </processing_system7_0/Data>. Please use Address Editor to either map or exclude it.
+WARNING: [BD 41-927] Following properties on pin /pulpino_0/ps7_clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_processing_system7_0_1_FCLK_CLK0 
+WARNING: [BD 41-927] Following properties on pin /pulpino_0/clking_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_processing_system7_0_1_FCLK_CLK0 
+validate_bd_design: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 8129.164 ; gain = 0.000 ; free physical = 4013 ; free virtual = 39286
+validate_bd_design -force
+CRITICAL WARNING: [BD 41-1356] Address block </pulpino_0/clking_axi/reg0> is not mapped into </processing_system7_0/Data>. Please use Address Editor to either map or exclude it.
+WARNING: [#UNDEF] When using EMIO pins for SPI_0 tie SSIN High in the PL bitstream
+INFO: [Ipptcl 7-1463] No Compatible Board Interface found. Board Tab not created in customize GUI
+WARNING: [#UNDEF] When using EMIO pins for SPI_0 tie SSIN High in the PL bitstream
+WARNING: [BD 41-2180] Resetting the memory initialization file of </blk_mem_gen_0> to default.
+CRITICAL WARNING: [BD 41-1356] Address block </pulpino_0/clking_axi/reg0> is not mapped into </processing_system7_0/Data>. Please use Address Editor to either map or exclude it.
+WARNING: [BD 41-927] Following properties on pin /pulpino_0/ps7_clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_processing_system7_0_1_FCLK_CLK0 
+WARNING: [BD 41-927] Following properties on pin /pulpino_0/clking_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_processing_system7_0_1_FCLK_CLK0 
+validate_bd_design: Time (s): cpu = 00:00:08 ; elapsed = 00:00:06 . Memory (MB): peak = 8129.164 ; gain = 0.000 ; free physical = 4008 ; free virtual = 39276
+assign_bd_address
+</pulpino_0/clking_axi/reg0> is being mapped into </processing_system7_0/Data> at <0x43C00000 [ 64K ]>
+set_property offset 0x51010000 [get_bd_addr_segs {processing_system7_0/Data/SEG_pulpino_0_reg0}]
+validate_bd_design
+WARNING: [#UNDEF] When using EMIO pins for SPI_0 tie SSIN High in the PL bitstream
+INFO: [Ipptcl 7-1463] No Compatible Board Interface found. Board Tab not created in customize GUI
+WARNING: [#UNDEF] When using EMIO pins for SPI_0 tie SSIN High in the PL bitstream
+WARNING: [BD 41-2180] Resetting the memory initialization file of </blk_mem_gen_0> to default.
+WARNING: [BD 41-927] Following properties on pin /pulpino_0/ps7_clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_processing_system7_0_1_FCLK_CLK0 
+WARNING: [BD 41-927] Following properties on pin /pulpino_0/clking_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_processing_system7_0_1_FCLK_CLK0 
+validate_bd_design: Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 8129.164 ; gain = 0.000 ; free physical = 4435 ; free virtual = 39792
+export_ip_user_files -of_objects  [get_files /home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v] -no_script -reset -force -quiet
+remove_files  /home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
+file delete -force /home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+make_wrapper -files [get_files /home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/bd/design_1/design_1.bd] -top
+INFO: [BD 41-1662] The design 'design_1.bd' is already validated. Therefore parameter propagation will not be re-run.
+WARNING: [BD 41-2180] Resetting the memory initialization file of </blk_mem_gen_0> to default.
+Wrote  : </home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/bd/design_1/design_1.bd> 
+Wrote  : </home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/blk_mem_gen_0/addrb'(32) to net 'axi_bram_ctrl_0_BRAM_PORTA_ADDR'(13) - Only lower order bits will be connected.
+VHDL Output written to : /home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/bd/design_1/synth/design_1.v
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/blk_mem_gen_0/addrb'(32) to net 'axi_bram_ctrl_0_BRAM_PORTA_ADDR'(13) - Only lower order bits will be connected.
+VHDL Output written to : /home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/bd/design_1/sim/design_1.v
+VHDL Output written to : /home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
+add_files -norecurse /home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files /home/binh/work/pulpino-binh/fpga/pulpemu/tcl/Zedboard-Master.xdc] -no_script -reset -force -quiet
+remove_files  -fileset constrs_1 /home/binh/work/pulpino-binh/fpga/pulpemu/tcl/Zedboard-Master.xdc
+add_files -fileset constrs_1 -norecurse /home/binh/work/pulpino-binh/fpga/ips/bram_control/Zedboard-Master.xdc
+reset_run synth_1
+reset_run design_1_axi_smc_0_synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+INFO: [BD 41-1662] The design 'design_1.bd' is already validated. Therefore parameter propagation will not be re-run.
+WARNING: [BD 41-2180] Resetting the memory initialization file of </blk_mem_gen_0> to default.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/blk_mem_gen_0/addrb'(32) to net 'axi_bram_ctrl_0_BRAM_PORTA_ADDR'(13) - Only lower order bits will be connected.
+VHDL Output written to : /home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/bd/design_1/synth/design_1.v
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/blk_mem_gen_0/addrb'(32) to net 'axi_bram_ctrl_0_BRAM_PORTA_ADDR'(13) - Only lower order bits will be connected.
+VHDL Output written to : /home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/bd/design_1/sim/design_1.v
+VHDL Output written to : /home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
+INFO: [BD 41-1029] Generation completed for the IP Integrator block blk_mem_gen_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_bram_ctrl_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_gpio_emu .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_jtag_emu .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_pulp_control .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconstant_0 .
+Exporting to file /home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/hw_handoff/design_1_axi_smc_0.hwh
+Generated Block Design Tcl file /home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/hw_handoff/design_1_axi_smc_0_bd.tcl
+Generated Hardware Definition File /home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/synth/design_1_axi_smc_0.hwdef
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_smc .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_ps7_0_50M .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block pulpino_0 .
+Exporting to file /home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/bd/design_1/hw_handoff/design_1.hwh
+Generated Block Design Tcl file /home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/bd/design_1/hw_handoff/design_1_bd.tcl
+Generated Hardware Definition File /home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/bd/design_1/synth/design_1.hwdef
+[Wed May  1 11:41:27 2024] Launched design_1_axi_smc_0_synth_1, design_1_pulpino_0_0_synth_1, synth_1...
+Run output will be captured here:
+design_1_axi_smc_0_synth_1: /home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.runs/design_1_axi_smc_0_synth_1/runme.log
+design_1_pulpino_0_0_synth_1: /home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.runs/design_1_pulpino_0_0_synth_1/runme.log
+synth_1: /home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.runs/synth_1/runme.log
+[Wed May  1 11:41:27 2024] Launched impl_1...
+Run output will be captured here: /home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:12 ; elapsed = 00:00:11 . Memory (MB): peak = 8279.609 ; gain = 1.070 ; free physical = 4450 ; free virtual = 39747
+delete_bd_objs [get_bd_intf_nets axi_smc_M00_AXI]
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {/processing_system7_0/FCLK_CLK0 (50 MHz)} Clk_slave {/processing_system7_0/FCLK_CLK0 (50 MHz)} Clk_xbar {/processing_system7_0/FCLK_CLK0 (50 MHz)} Master {/processing_system7_0/M_AXI_GP0} Slave {/pulpino_0/clking_axi} intc_ip {/axi_smc} master_apm {0}}  [get_bd_intf_pins pulpino_0/clking_axi]
+regenerate_bd_layout
+validate_bd_design
+WARNING: [#UNDEF] When using EMIO pins for SPI_0 tie SSIN High in the PL bitstream
+INFO: [Ipptcl 7-1463] No Compatible Board Interface found. Board Tab not created in customize GUI
+WARNING: [#UNDEF] When using EMIO pins for SPI_0 tie SSIN High in the PL bitstream
+WARNING: [BD 41-2180] Resetting the memory initialization file of </blk_mem_gen_0> to default.
+WARNING: [BD 41-927] Following properties on pin /pulpino_0/ps7_clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_processing_system7_0_1_FCLK_CLK0 
+WARNING: [BD 41-927] Following properties on pin /pulpino_0/clking_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_processing_system7_0_1_FCLK_CLK0 
+validate_bd_design: Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 8459.418 ; gain = 0.000 ; free physical = 4643 ; free virtual = 39982
+save_bd_design
+Wrote  : </home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/bd/design_1/design_1.bd> 
+Wrote  : </home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+INFO: [BD 41-1662] The design 'design_1.bd' is already validated. Therefore parameter propagation will not be re-run.
+WARNING: [BD 41-2180] Resetting the memory initialization file of </blk_mem_gen_0> to default.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/blk_mem_gen_0/addrb'(32) to net 'axi_bram_ctrl_0_BRAM_PORTA_ADDR'(13) - Only lower order bits will be connected.
+VHDL Output written to : /home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/bd/design_1/synth/design_1.v
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/blk_mem_gen_0/addrb'(32) to net 'axi_bram_ctrl_0_BRAM_PORTA_ADDR'(13) - Only lower order bits will be connected.
+VHDL Output written to : /home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/bd/design_1/sim/design_1.v
+VHDL Output written to : /home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
+INFO: [BD 41-1029] Generation completed for the IP Integrator block blk_mem_gen_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_bram_ctrl_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_gpio_emu .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_jtag_emu .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_pulp_control .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconstant_0 .
+Exporting to file /home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/hw_handoff/design_1_axi_smc_0.hwh
+Generated Block Design Tcl file /home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/hw_handoff/design_1_axi_smc_0_bd.tcl
+Generated Hardware Definition File /home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/synth/design_1_axi_smc_0.hwdef
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_smc .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_ps7_0_50M .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block pulpino_0 .
+Exporting to file /home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/bd/design_1/hw_handoff/design_1.hwh
+Generated Block Design Tcl file /home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/bd/design_1/hw_handoff/design_1_bd.tcl
+Generated Hardware Definition File /home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/bd/design_1/synth/design_1.hwdef
+[Wed May  1 11:48:11 2024] Launched synth_1...
+Run output will be captured here: /home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.runs/synth_1/runme.log
+[Wed May  1 11:48:11 2024] Launched impl_1...
+Run output will be captured here: /home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:10 ; elapsed = 00:00:09 . Memory (MB): peak = 8467.422 ; gain = 0.000 ; free physical = 4200 ; free virtual = 39608
+update_module_reference design_1_pulpino_0_0
+INFO: [IP_Flow 19-5107] Inferred bus interface 'clking_axi' of definition 'xilinx.com:interface:aximm:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'clking_axi_aresetn' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'ps7_rst_n' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'clking_axi_aclk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'ps7_clk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 'clking_axi_aresetn': Added interface parameter 'POLARITY' with value 'ACTIVE_LOW'.
+INFO: [IP_Flow 19-4728] Bus Interface 'ps7_rst_n': Added interface parameter 'POLARITY' with value 'ACTIVE_LOW'.
+INFO: [IP_Flow 19-4728] Bus Interface 'clking_axi_aclk': Added interface parameter 'ASSOCIATED_BUSIF' with value 'clking_axi'.
+INFO: [IP_Flow 19-4728] Bus Interface 'clking_axi_aclk': Added interface parameter 'ASSOCIATED_RESET' with value 'clking_axi_aresetn'.
+INFO: [IP_Flow 19-4728] Bus Interface 'ps7_clk': Added interface parameter 'ASSOCIATED_RESET' with value 'ps7_rst_n'.
+WARNING: [IP_Flow 19-3153] Bus Interface 'ps7_clk': ASSOCIATED_BUSIF bus parameter is missing.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+Upgrading '/home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/bd/design_1/design_1.bd'
+INFO: [IP_Flow 19-1972] Upgraded design_1_pulpino_0_0 from pulpino_v1_0 1.0 to pulpino_v1_0 1.0
+Wrote  : </home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/bd/design_1/design_1.bd> 
+validate_bd_design
+WARNING: [#UNDEF] When using EMIO pins for SPI_0 tie SSIN High in the PL bitstream
+INFO: [Ipptcl 7-1463] No Compatible Board Interface found. Board Tab not created in customize GUI
+WARNING: [#UNDEF] When using EMIO pins for SPI_0 tie SSIN High in the PL bitstream
+WARNING: [BD 41-2180] Resetting the memory initialization file of </blk_mem_gen_0> to default.
+WARNING: [BD 41-927] Following properties on pin /pulpino_0/ps7_clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_processing_system7_0_1_FCLK_CLK0 
+WARNING: [BD 41-927] Following properties on pin /pulpino_0/clking_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_processing_system7_0_1_FCLK_CLK0 
+validate_bd_design: Time (s): cpu = 00:00:08 ; elapsed = 00:00:07 . Memory (MB): peak = 8641.934 ; gain = 0.000 ; free physical = 4420 ; free virtual = 39759
+save_bd_design
+Wrote  : </home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/bd/design_1/design_1.bd> 
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+INFO: [BD 41-1662] The design 'design_1.bd' is already validated. Therefore parameter propagation will not be re-run.
+WARNING: [BD 41-2180] Resetting the memory initialization file of </blk_mem_gen_0> to default.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/blk_mem_gen_0/addrb'(32) to net 'axi_bram_ctrl_0_BRAM_PORTA_ADDR'(13) - Only lower order bits will be connected.
+VHDL Output written to : /home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/bd/design_1/synth/design_1.v
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/blk_mem_gen_0/addrb'(32) to net 'axi_bram_ctrl_0_BRAM_PORTA_ADDR'(13) - Only lower order bits will be connected.
+VHDL Output written to : /home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/bd/design_1/sim/design_1.v
+VHDL Output written to : /home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
+INFO: [BD 41-1029] Generation completed for the IP Integrator block blk_mem_gen_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_bram_ctrl_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_gpio_emu .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_jtag_emu .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_pulp_control .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconstant_0 .
+Exporting to file /home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/hw_handoff/design_1_axi_smc_0.hwh
+Generated Block Design Tcl file /home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/hw_handoff/design_1_axi_smc_0_bd.tcl
+Generated Hardware Definition File /home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/synth/design_1_axi_smc_0.hwdef
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_smc .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_ps7_0_50M .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block pulpino_0 .
+Exporting to file /home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/bd/design_1/hw_handoff/design_1.hwh
+Generated Block Design Tcl file /home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/bd/design_1/hw_handoff/design_1_bd.tcl
+Generated Hardware Definition File /home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.srcs/sources_1/bd/design_1/synth/design_1.hwdef
+[Wed May  1 12:05:06 2024] Launched design_1_pulpino_0_0_synth_1, synth_1...
+Run output will be captured here:
+design_1_pulpino_0_0_synth_1: /home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.runs/design_1_pulpino_0_0_synth_1/runme.log
+synth_1: /home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.runs/synth_1/runme.log
+[Wed May  1 12:05:06 2024] Launched impl_1...
+Run output will be captured here: /home/binh/work/pulpino-binh/fpga/ips/bram_control/bram_control.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:11 ; elapsed = 00:00:10 . Memory (MB): peak = 8657.941 ; gain = 0.000 ; free physical = 4310 ; free virtual = 39639
+close_project
+exit
+INFO: [Common 17-206] Exiting Vivado at Wed May  1 12:07:46 2024...

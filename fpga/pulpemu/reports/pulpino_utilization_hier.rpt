@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
-| Date         : Wed Apr 17 05:54:19 2024
+| Date         : Sat Jun  8 06:03:44 2024
 | Host         : binh-GF63 running 64-bit Ubuntu 22.04.4 LTS
 | Command      : report_utilization -hierarchical -hierarchical_depth 2 -cells pulpino_wrap_i -file reports/pulpino_utilization_hier.rpt
 | Design       : pulpemu_top
@@ -21,10 +21,10 @@ Table of Contents
 +----------------------+-------------+------------+------------+---------+------+------+--------+--------+--------------+
 |       Instance       |    Module   | Total LUTs | Logic LUTs | LUTRAMs | SRLs |  FFs | RAMB36 | RAMB18 | DSP48 Blocks |
 +----------------------+-------------+------------+------------+---------+------+------+--------+--------+--------------+
-| pulpino_wrap_i       |     pulpino |      13310 |      13306 |       0 |    4 | 9258 |     16 |      0 |            8 |
-|   pulpino_wrap_i     |     pulpino |      13310 |      13306 |       0 |    4 | 9258 |     16 |      0 |            8 |
+| pulpino_wrap_i       |     pulpino |      13305 |      13303 |       0 |    2 | 9249 |     16 |      0 |            8 |
+|   pulpino_wrap_i     |     pulpino |      13305 |      13303 |       0 |    2 | 9249 |     16 |      0 |            8 |
 |     (pulpino_wrap_i) |     pulpino |          0 |          0 |       0 |    0 |    0 |      0 |      0 |            0 |
-|     pulpino_i        | pulpino_top |      13310 |      13306 |       0 |    4 | 9258 |     16 |      0 |            8 |
+|     pulpino_i        | pulpino_top |      13305 |      13303 |       0 |    2 | 9249 |     16 |      0 |            8 |
 +----------------------+-------------+------------+------------+---------+------+------+--------+--------+--------------+
 * Note: The sum of lower-level cells may be larger than their parent cells total, due to cross-hierarchy LUT combining
 

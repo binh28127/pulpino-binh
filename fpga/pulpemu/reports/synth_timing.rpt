@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
-| Date         : Wed Apr 17 05:50:48 2024
+| Date         : Sat Jun  8 06:00:22 2024
 | Host         : binh-GF63 running 64-bit Ubuntu 22.04.4 LTS
 | Command      : report_timing -nworst 1 -delay_type max -sort_by group -file reports/synth_timing.rpt
 | Design       : pulpemu_top
@@ -108,7 +108,7 @@ Slack (MET) :             16.027ns  (required time - arrival time)
                          FDRE (Prop_fdre_C_Q)         0.478   182.178 r  ps7_wrapper_i/ps7_i/axi_pulp_control/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/Q
                          net (fo=3, unplaced)         0.329   182.507    ps7_wrapper_i/fetch_enable[1]
                          LUT1 (Prop_lut1_I0_O)        0.295   182.802 f  ps7_wrapper_i/LD_q[7]_i_1/O
-                         net (fo=11, unplaced)        0.822   183.624    ps7_wrapper_i_n_83
+                         net (fo=11, unplaced)        0.822   183.624    ps7_wrapper_i_n_82
                          FDCE                                         f  LD_q_reg[0]/CLR
   -------------------------------------------------------------------    -------------------
 
@@ -180,7 +180,7 @@ Slack (MET) :             17.790ns  (required time - arrival time)
                          BUFG (Prop_bufg_I_O)         0.091   201.066 r  clk_rst_gen_i/clk_manager_i/inst/CLK_CORE_DRP_I/clk_inst/clkout1_buf/O
                          net (fo=12, unplaced)        0.439   201.505    pulpino_wrap_i/clk
                          BUFG (Prop_bufg_I_O)         0.091   201.596 r  pulpino_wrap_i/clk_IBUF_BUFG_inst/O
-                         net (fo=9018, unplaced)      0.439   202.035    pulpino_wrap_i/pulpino_i/peripherals_i/apb_gpio_i/clk_IBUF_BUFG
+                         net (fo=9002, unplaced)      0.439   202.035    pulpino_wrap_i/pulpino_i/peripherals_i/apb_gpio_i/clk_IBUF_BUFG
                          FDCE                                         r  pulpino_wrap_i/pulpino_i/peripherals_i/apb_gpio_i/r_gpio_sync0_reg[21]/C
                          clock pessimism              0.050   202.085    
                          clock uncertainty           -1.552   200.534    
